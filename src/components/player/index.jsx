@@ -4,7 +4,7 @@ import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
 
 export default function Player({ skin }) {
-    const { dir, step, walk } = useWalk(3);
+    const { dir, step, walk, position } = useWalk(3);
 
     const data = {
         w:32,
@@ -17,5 +17,5 @@ export default function Player({ skin }) {
         e.preventDefault();
     });
 
-    return <Actor sprite={`m${skin}.png`} data={data} step={step} />
+    return <Actor sprite={`m${skin}.png`} data={data} step={step} dir={dir} position={position} />
 };
