@@ -1,12 +1,11 @@
 import './App.css';
 import Player from './components/player';
+import logo from './logo.svg'
 
-function App() {
+export default function App() {
   return (
     <div>
-      <Player />
+      <Player skin={1} />
     </div>
   );
 }
-
-export default App;
