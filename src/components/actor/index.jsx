@@ -1,7 +1,7 @@
 import React from 'react';
 import Sprite from '../sprite';
 
-export default function Actor({sprite, data, step=0, dir=0}) {
+export default function Actor({sprite, data, step=0, dir=0, position=0}) {
     const { w, h } = data;
     return(
         <Sprite 
@@ -12,6 +12,9 @@ export default function Actor({sprite, data, step=0, dir=0}) {
                 w,
                 h,
             }}
+            step={step}
+            dir={dir}
+            position={position}
         />
     )
 };
