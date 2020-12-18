@@ -1,10 +1,11 @@
 import './App.css';
 import Player from './components/player';
+import World from './components/map/world'
 
 export default function App() {
   return (
     <div>
-      <Player skin={1} />
+      <World idWorld={1} />
     </div>
   );
 }
