@@ -1,17 +1,13 @@
 import { useState } from 'react';
+import { SPRITE_SIZE, DIRECTIONS } from '../../config/const'
 
 export default function useWalk(maxSteps) {
     const [position, setPos] = useState({x: 0, y: 0});
     const [dir, setDir] = useState(0);
     const [step,setStep] = useState(0);
-    const directions = {
-        down:0,
-        left:1,
-        right:2,
-        up:3,
-    }
+    const directions = DIRECTIONS;
 
-    const stepSize = 16;
+    const stepSize = SPRITE_SIZE;
 
     const modifier ={
         down: { x: 0, y: stepSize },
