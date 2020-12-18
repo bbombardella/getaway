@@ -39,12 +39,12 @@ export default function World({ idWorld }) {
                 position: 'relative',
                 top: '0px',
                 left: '0px',
-                width: '0px',
-                height: '0px',
-                border: '4px solid black',
+                width: `${MAP_DIMENSION.column*SPRITE_SIZE}px`,
+                height: `${MAP_DIMENSION.line*SPRITE_SIZE}px`,
                 display: 'flex',
                 flexDirection: 'row',
-                flexWrap: 'wrap'
+                flexWrap: 'wrap',
+                border: '2px solid #3b3b3b'
             }}
         >
             {
