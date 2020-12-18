@@ -13,8 +13,9 @@ export default function Player({ skin }) {
     };
 
     useKeyPress((e) => {
-        walk(e.key.replace("Arrow", "").toLowerCase());
-
+        if(e.key.includes("Arrow")) {
+            walk(e.key.replace("Arrow", "").toLowerCase());
+        }
         e.preventDefault();
     });
 
