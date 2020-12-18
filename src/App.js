@@ -1,6 +1,6 @@
 import './App.css';
 import Player from './components/player';
-import World from './components/map/world'
+import World from './components/map/world';
 
 export default function App() {
   return (

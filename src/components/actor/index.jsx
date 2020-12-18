@@ -16,5 +16,5 @@ export default function Actor({sprite, data, step=0, dir=0, position=0}) {
             dir={dir}
             position={position}
         />
-    )
-};
+    );
+}

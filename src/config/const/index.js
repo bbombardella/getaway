@@ -6,3 +6,8 @@ export const DIRECTIONS = {
     right:2,
     up:3,
 }
+
+export const MAP_DIMENSION = {
+    column: 21,
+    line: 13
+}

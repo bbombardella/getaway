@@ -1,18 +1,17 @@
 import React from 'react';
 import * as tiles from './tiles/index.js';
-import { SPRITE_SIZE } from '../../../config/const'
+import { SPRITE_SIZE, MAP_DIMENSION } from '../../../config/const';
 
 function MapTile(props) {
-    console.log(props)
-    return <div
+    return (<div
         style={{
             backgroundColor: props.value,
             width: SPRITE_SIZE,
             height: SPRITE_SIZE
         }}
     >
-
     </div>
+    );
 }
 
 function MapRow(props) {
@@ -25,15 +24,14 @@ function MapRow(props) {
             }}
         >
             {
-                props.tiles.map(tile => <MapTile value={tile} />)
+                props.tiles.map((tile, index) => <MapTile key={index+(props.id*MAP_DIMENSION.column)} value={tile} />)
             }
         </div>
-    )
+    );
 }
 
 export default function World({ idWorld }) {
-    const chemin = `salle${idWorld}`;
-    const tile = tiles.salle1;
+    const tile = tiles[`salle${idWorld}`];
 
     return(
         <div
@@ -50,8 +48,8 @@ export default function World({ idWorld }) {
             }}
         >
             {
-                tile.map(row => <MapRow tiles={row} />)
+                tile.map((row, index) => <MapRow key={index} id={index} tiles={row} />)
             }
         </div>
-    )
+    );
 }

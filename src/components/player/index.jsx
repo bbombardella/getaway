@@ -19,4 +19,4 @@ export default function Player({ skin }) {
     });
 
     return <Actor sprite={`m${skin}.png`} data={data} step={step} dir={dir} position={position} />
-};
+}
