@@ -2,8 +2,27 @@ import './App.css';
 import React, { useState } from 'react'
 import Player from './components/player';
 import World from './components/map/world';
-import Map from './components/map'
+import Map from './components/map';
+import Inventory from './components/inventory';
+import Help from './components/help';
 import useKeyPress from './hooks/use-key-pressed';
+
+
+
+function Overlay(props) {
+  return(
+    <div id='overlay'
+      style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        backgroundColor: 'rgba(0, 0, 0, .5)'
+      }}
+    ></div>
+  )
+}
 
 export default function App() {
 
@@ -27,13 +46,13 @@ export default function App() {
         <Player skin={1} />
       </Map>
       <div className='tools'>
-        {helpNeeded ? <div>Menu Help : oui oui</div> : <div>Menu Help : non non</div>}
-        {inventoryNeeded ? <div>Inventaire : oui oui</div> : <div>Inventaire : non non</div>}
+        {helpNeeded && <Help><button onClick={() => setHelpNeeded(false)}>&times;</button></Help>}
+        {inventoryNeeded && <Inventory><button onClick={() => setInventoryNeeded(false)}>&times;</button></Inventory>}
+
         <button onClick={()=>setHelpNeeded(true)}>Help</button>
-        <button onClick={()=>setHelpNeeded(false)}>Quitter Help</button>
         <button onClick={()=>setInventoryNeeded(true)}>Inventaire</button>
-        <button onClick={()=>setInventoryNeeded(false)}>Quitter Inventaire</button>
       </div>
+        {(helpNeeded || inventoryNeeded) && <Overlay/>}
     </div>
   );
 }
