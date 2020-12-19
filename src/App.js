@@ -7,31 +7,35 @@ import useKeyPress from './hooks/use-key-pressed';
 
 export default function App() {
 
-  const [helpKeyPressed, setHelpKeyPressed] = useState(false);
-  const [inventoryKeyPressed, setInventoryKeyPressed] = useState(false);
+  const [helpNeeded, setHelpNeeded] = useState(false);
+  const [inventoryNeeded, setInventoryNeeded] = useState(false);
 
   useKeyPress((e) => {
       if(e.key === 'h') {
-          setHelpKeyPressed(!helpKeyPressed)
+          setHelpNeeded(!helpNeeded)
       }
       if(e.key === 'i') {
-        setInventoryKeyPressed(!inventoryKeyPressed)
+        setInventoryNeeded(!inventoryNeeded)
       }
       e.preventDefault();
     });
 
   return (
     <div>
-      {
-        helpKeyPressed ? <div>Menu Help : oui oui</div> : <div>Menu Help : non non</div>
-      }
-      {
-        inventoryKeyPressed ? <div>Inventaire : oui oui</div> : <div>Inventaire : non non</div>
-      }
       <Map>
         <World idWorld={1} />
         <Player skin={1} />
       </Map>
+      {
+        helpNeeded ? <div>Menu Help : oui oui</div> : <div>Menu Help : non non</div>
+      }
+      {
+        inventoryNeeded ? <div>Inventaire : oui oui</div> : <div>Inventaire : non non</div>
+      }
+      <button onClick={()=>setHelpNeeded(true)}>Help</button>
+      <button onClick={()=>setHelpNeeded(false)}>Quitter Help</button>
+      <button onClick={()=>setInventoryNeeded(true)}>Inventaire</button>
+      <button onClick={()=>setInventoryNeeded(false)}>Quitter Inventaire</button>
     </div>
   );
 }
