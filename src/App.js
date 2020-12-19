@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Player from './components/player';
 import World from './components/map/world';
 import Map from './components/map';
-import Inventory from './components/inventory';
+import {InventoryStore} from './components/inventory';
 import Help from './components/help';
 import useKeyPress from './hooks/use-key-pressed';
 
@@ -47,7 +47,7 @@ export default function App() {
       </Map>
       <div className='tools'>
         {helpNeeded && <Help><button onClick={() => setHelpNeeded(false)}>&times;</button></Help>}
-        {inventoryNeeded && <Inventory><button onClick={() => setInventoryNeeded(false)}>&times;</button></Inventory>}
+        {inventoryNeeded && <InventoryStore><button onClick={() => setInventoryNeeded(false)}>&times;</button></InventoryStore>}
 
         <button onClick={()=>setHelpNeeded(true)}>Help</button>
         <button onClick={()=>setInventoryNeeded(true)}>Inventaire</button>
