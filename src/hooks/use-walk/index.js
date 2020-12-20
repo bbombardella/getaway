@@ -28,7 +28,7 @@ export default function useWalk(maxSteps) {
     function testCollision({x, y}, dir) {
         const tempx = (x + modifier[dir].x)/SPRITE_SIZE
         const tempy = (y + modifier[dir].y)/SPRITE_SIZE
-        if (Collision1[tempy][tempx]===1)
+        if (Collision1[tempy][tempx] === 0)
         {     
             return ({ 
                 x: x + modifier[dir].x,
