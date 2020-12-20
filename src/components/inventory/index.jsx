@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-function InventoryItem({id,name,size}) {
+function InventoryItem({id,name,description}) {
     return(
         <div 
             style={{
@@ -10,7 +10,7 @@ function InventoryItem({id,name,size}) {
             }}
         key={id}>
             <p><strong>Nom :</strong> {name}</p>
-            <p><strong>Taille :</strong> {size}</p>
+            <p><strong>Description :</strong> {description}</p>
         </div>
     )
 }
@@ -39,11 +39,11 @@ export default function Inventory({children,inventory,dispatch}) {
             type: 'ADD',
             payload: {
                 name: 'BIG DILDO',
-                size: '65cm'
+                description: '65cm'
             }
         })}>Test ajout objet</button>
         <hr></hr>
-        {inventory.map((row) => <InventoryItem id={row.id} name={row.name} size={row.size} />)}
+        {inventory.map((row) => <InventoryItem id={row.id} name={row.name} description={row.description} />)}
         </div>
     );
 }

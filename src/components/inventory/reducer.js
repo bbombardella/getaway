@@ -1,25 +1,25 @@
 const initialState = [
     {
-        id: '1',
-        name: 'Dildo',
-        size: '25cm bitch'
+        id: '0',
+        name: 'Clé du cabanon',
+        description: 'Une clé couverte de mousse'
     },
     {
         id: '2',
         name: 'Vibro pete sa mère',
-        size: 'c\'est secret'
+        description: 'c\'est secret'
     }
 ];
 
 const ADD_ACTION = 'ADD';
-const REMOVE_ACTION = 'REMOVE';
+//const REMOVE_ACTION = 'REMOVE';
 
 export default function inventoryReducer(state=initialState, action) {
     switch(action.type) {
         case ADD_ACTION:
             return [...state, {
                 name: action.payload.name,
-                size: action.payload.size
+                description: action.payload.description
             }]
         default:
             return state

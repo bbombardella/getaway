@@ -34,7 +34,7 @@ export const link_key_door = [
 
 
 }*/
-
+/*
 function useDoor(usedObjectId, usedOnId){
 
     if(testKeyDoor(usedObjectId, usedOnId)){
@@ -58,4 +58,4 @@ function testKeyDoor(Key, Door){
     return false;
 }
 
-    //{Id: , type: , description: },
+    //{Id: , type: , description: },*/
