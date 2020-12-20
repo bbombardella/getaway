@@ -13,18 +13,18 @@ export const MAP_DIMENSION = {
 }
 
 export const MAP_TILES = {
-    0: 'sol.png',
+    0: 'sol_plancher.png',
     1: 'sol.png',
     2: 'mur_g_h.png',
     3: 'mur_g_d.png',
-    4: 'mur_b.png',
+    4: 'mur_bas.png',
     5: 'coin_in_h_g.png',
     6: 'coin_in_h_d.png',
     7: 'coin_in_b_d.png',
     8: 'coin_in_b_g.png',
     9: 'mur_ex_h.png',
     10: 'mur_ex_d.png',
-    11: 'mur_ex_b.png',
+    11: 'mur_bord_bas.png',
     12: 'mur_ex_d.png',
     13: 'coin_ex_h_g.png',
     14: 'coin_ex_h_d.png',

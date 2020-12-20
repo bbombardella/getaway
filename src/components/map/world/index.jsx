@@ -8,7 +8,7 @@ function MapTile({value}) {
     return (<div
         className='map-title'
         style={{
-            background: `url('./assets/tiles/${background})`,
+            backgroundImage: `url(./assets/tiles/${background})`,
             width: SPRITE_SIZE,
             height: SPRITE_SIZE
         }}
