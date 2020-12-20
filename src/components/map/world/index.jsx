@@ -1,13 +1,14 @@
 import React from 'react';
-import * as tiles from './tiles/index.js';
-import { SPRITE_SIZE, MAP_DIMENSION } from '../../../config/const';
+import * as tiles from './collision/index.jsx';
+import { SPRITE_SIZE, MAP_DIMENSION, MAP_TILES } from '../../../config/const';
 import './World.css';
 
-function MapTile(props) {
+function MapTile({value}) {
+    const background = MAP_TILES[value];
     return (<div
         className='map-title'
         style={{
-            backgroundColor: props.value,
+            background: `url('./assets/tiles/${background})`,
             width: SPRITE_SIZE,
             height: SPRITE_SIZE
         }}
@@ -27,7 +28,7 @@ function MapRow(props) {
 }
 
 export default function World({ idWorld }) {
-    const tile = tiles[`salle${idWorld}`];
+    const tile = tiles[`Collision${idWorld}`];
 
     return(
         <div className='world'>
