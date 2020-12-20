@@ -20,6 +20,8 @@ export default function Inventory({children,inventory,dispatch}) {
         <div className='inventory' id='inventory'
         style={{
         position: 'fixed',
+        minHeight: '40%',
+        maxHeight: '70%',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
@@ -27,7 +29,8 @@ export default function Inventory({children,inventory,dispatch}) {
         zIndex: '10',
         backgroundColor: 'black',
         width: '500px',
-        maxWidth: '80%'
+        maxWidth: '80%',
+        overflow: 'scroll'
         }}
         >
         {children}
