@@ -15,7 +15,7 @@ function InventoryItem({id,name,size}) {
     )
 }
 
-export default function Inventory({children,inventory}) {
+export default function Inventory({children,inventory,dispatch}) {
     return(
         <div className='inventory' id='inventory'
         style={{
@@ -32,6 +32,13 @@ export default function Inventory({children,inventory}) {
         >
         {children}
         <h1>Panneau Inventaire</h1>
+        <button onClick={() => dispatch({
+            type: 'ADD',
+            payload: {
+                name: 'BIG DILDO',
+                size: '65cm'
+            }
+        })}>Test ajout objet</button>
         <hr></hr>
         {inventory.map((row) => <InventoryItem id={row.id} name={row.name} size={row.size} />)}
         </div>

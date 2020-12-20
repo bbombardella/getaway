@@ -18,7 +18,7 @@ export default function inventoryReducer(state=initialState, action) {
     switch(action.type) {
         case ADD_ACTION:
             return [...state, {
-                nom: action.payload.nom,
+                name: action.payload.name,
                 size: action.payload.size
             }]
         default:
