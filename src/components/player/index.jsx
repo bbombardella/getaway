@@ -2,14 +2,14 @@ import React from 'react';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
-//import { SPRITE_SIZE } from '../../config/const';
+import { SPRITE_SIZE } from '../../config/const';
 
 export default function Player({ skin }) {
-    const { dir, step, walk, position } = useWalk(3);
+    const { dir, step, walk, position } = useWalk(4);
 
     const data = {
-        w:32,
-        h:32,
+        w:SPRITE_SIZE,
+        h:SPRITE_SIZE,
     };
 
     useKeyPress((e) => {
@@ -19,5 +19,5 @@ export default function Player({ skin }) {
         e.preventDefault();
     });
 
-    return <Actor sprite={`m${skin}.png`} data={data} step={step} dir={dir} position={position} />
+    return <Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} />
 }
