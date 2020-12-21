@@ -42,24 +42,33 @@ export default function useWalk(maxSteps) {
             if (Collision1[tempy+1][tempx] >= 20){
                 setInteract(true);
                 setObject(Collision1[tempy+1][tempx]);
+                console.log(interact);
+                    console.log(Collision1[tempy+1][tempx]);
             }
             else{
                 if(Collision1[tempy][tempx-1] >= 20){
                     setInteract(true);
                     setObject(Collision1[tempy][tempx-1]);
+                    console.log(interact);
+                    console.log(Collision1[tempy][tempx-1]);
                 }
                 else{
                     if(Collision1[tempy][tempx+1] >= 20){
                         setInteract(true);
                         setObject(Collision1[tempy][tempx+1]);
+                        console.log(interact);
+                        console.log(Collision1[tempy][tempx+1]);
                     }
                     else{
                         if(Collision1[tempy-1][tempx] >= 20){
                         setInteract(true);
                         setObject(Collision1[tempy-1][tempx]);
+                        console.log(interact);
+                        console.log(Collision1[tempy-1][tempx]);
                         }
                         else{
                             setInteract(false);
+                            console.log(interact);
                         }
                     }
                 } 
