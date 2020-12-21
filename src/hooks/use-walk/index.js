@@ -60,7 +60,6 @@ export default function useWalk(maxSteps) {
                         }
                         else{
                             setInteract(false);
-                            console.log('False');
                         }
                     }
                 } 
@@ -83,8 +82,6 @@ export default function useWalk(maxSteps) {
 
     function move(dir){
         setPos(prev => testCollision(prev, dir));
-        
-        
     }
 
     
