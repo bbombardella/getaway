@@ -39,42 +39,27 @@ export default function useWalk(maxSteps) {
 
         if (Collision1[tempy][tempx] === 0)
         {
-            if (Collision1[tempy+1][tempx] >= 20){
+            if(Collision1[tempy-1][tempx] >= 20) {
+                setInteract(true);
+                setObject(Collision1[tempy-1][tempx]);
+                console.log(interact, Collision1[tempy-1][tempx]);
+            }
+            if(Collision1[tempy+1][tempx] >= 20) {
                 setInteract(true);
                 setObject(Collision1[tempy+1][tempx]);
-                console.log(interact);
-                    console.log(Collision1[tempy+1][tempx]);
+                console.log(interact, Collision1[tempy+1][tempx]);
             }
-            else{
-                if(Collision1[tempy][tempx-1] >= 20){
-                    setInteract(true);
-                    setObject(Collision1[tempy][tempx-1]);
-                    console.log(interact);
-                    console.log(Collision1[tempy][tempx-1]);
-                }
-                else{
-                    if(Collision1[tempy][tempx+1] >= 20){
-                        setInteract(true);
-                        setObject(Collision1[tempy][tempx+1]);
-                        console.log(interact);
-                        console.log(Collision1[tempy][tempx+1]);
-                    }
-                    else{
-                        if(Collision1[tempy-1][tempx] >= 20){
-                        setInteract(true);
-                        setObject(Collision1[tempy-1][tempx]);
-                        console.log(interact);
-                        console.log(Collision1[tempy-1][tempx]);
-                        }
-                        else{
-                            setInteract(false);
-                            console.log(interact);
-                        }
-                    }
-                } 
-            }      
-    
-                 
+            if(Collision1[tempy][tempx-1] >= 20) {
+                setInteract(true);
+                setObject(Collision1[tempy][tempx-1]);
+                console.log(interact, Collision1[tempy][tempx-1]);
+            }
+            if(Collision1[tempy][tempx+1] >= 20) {
+                setInteract(true);
+                setObject(Collision1[tempy][tempx+1]);
+                console.log(interact, Collision1[tempy][tempx+1]);
+            }
+
             return ({ 
                 x: x + modifier[dir].x,
                 y: y + modifier[dir].y,
