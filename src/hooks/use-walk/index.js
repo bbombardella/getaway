@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SPRITE_SIZE, DIRECTIONS, Interact } from '../../config/const'
+import { SPRITE_SIZE, DIRECTIONS } from '../../config/const'
 import { Collision1 } from '../../components/map/world/collision'
 
 
@@ -28,25 +28,44 @@ export default function useWalk(maxSteps) {
             
         });
         setStep((prev) => prev < maxSteps-1 ? prev+1 : 0);
+
     }
 
     function testCollision({x, y}, dir) {
         const tempx = (x + modifier[dir].x)/SPRITE_SIZE
         const tempy = (y + modifier[dir].y)/SPRITE_SIZE
-        const x2 = tempx + modifier[dir].x/SPRITE_SIZE
-        const y2 = tempy + modifier[dir].y/SPRITE_SIZE
-        
-        if (Collision1[y2][x2] >= 20 || Collision1[tempy][tempx]){
-            setInteract(true);
-            console.log('Ca marche');
-        }
-        else{
-            setInteract(false);
-            console.log('False');
-        }
+
 
         if (Collision1[tempy][tempx] === 0)
         {
+            if (Collision1[tempy+1][tempx] >= 20){
+                setInteract(true);
+                console.log('Ca marche');
+            }
+            else{
+                if(Collision1[tempy][tempx-1] >= 20){
+                    setInteract(true);
+                    console.log('Ca marche');
+                }
+                else{
+                    if(Collision1[tempy][tempx+1] >= 20){
+                        setInteract(true);
+                        console.log('Ca marche');
+                    }
+                    else{
+                        if(Collision1[tempy-1][tempx] >= 20){
+                        setInteract(true);
+                        console.log('Ca marche');
+                        }
+                        else{
+                            setInteract(false);
+                            console.log('False');
+                        }
+                    }
+                } 
+            }
+        
+    
                  
             return ({ 
                 x: x + modifier[dir].x,
@@ -65,9 +84,10 @@ export default function useWalk(maxSteps) {
     function move(dir){
         setPos(prev => testCollision(prev, dir));
         
+        
     }
 
-
+    
     return {
         walk,
         dir,
