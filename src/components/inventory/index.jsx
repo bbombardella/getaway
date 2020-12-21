@@ -35,15 +35,8 @@ export default function Inventory({children,inventory,dispatch}) {
         >
         {children}
         <h1>Panneau Inventaire</h1>
-        <button onClick={() => dispatch({
-            type: 'ADD',
-            payload: {
-                name: 'BIG DILDO',
-                description: '65cm'
-            }
-        })}>Test ajout objet</button>
         <hr></hr>
-        {inventory.map((row) => <InventoryItem id={row.id} name={row.name} description={row.description} />)}
+        {inventory.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
         </div>
     );
 }

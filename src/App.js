@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'
-import Player from './components/player';
+import {PlayerStore} from './components/player';
 import World from './components/map/world';
 import Map from './components/map';
 import {InventoryStore} from './components/inventory';
@@ -43,7 +43,7 @@ export default function App() {
     <div className='game'>
       <Map>
         <World idWorld={1} />
-        <Player skin={1} />
+        <PlayerStore skin={1} />
       </Map>
       <div className='tools'>
         {helpNeeded && <Help><button onClick={() => setHelpNeeded(false)}>&times;</button></Help>}

@@ -44,3 +44,13 @@ export const MAP_TILES = {
     35: 'mur_porte_hautdroite.png',
     36: 'mur_porte_bord_hautdroite.png'
 }
+
+export const INVENTORY_ADD_ACTION = 'ADD';
+
+export const INVENTORY_OBJECTS = {
+    22: {
+        id: "22",
+        name: 'Fleurs',
+        description: 'De manifique plantes vertes...'
+    }
+}

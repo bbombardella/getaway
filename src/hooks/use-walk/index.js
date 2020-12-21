@@ -8,6 +8,7 @@ export default function useWalk(maxSteps) {
     const [dir, setDir] = useState(0);
     const [step,setStep] = useState(0);
     const [interact, setInteract] = useState(false);
+    const [object, setObject] = useState(0);
     const directions = DIRECTIONS;
 
     const stepSize = SPRITE_SIZE;
@@ -22,7 +23,7 @@ export default function useWalk(maxSteps) {
 
     function walk(dir) {
         setDir((prev) => {
-            if(directions[dir] === prev ) move(dir)
+            if(directions[dir] === prev) move(dir)
             
             return directions[dir];
             
@@ -40,22 +41,22 @@ export default function useWalk(maxSteps) {
         {
             if (Collision1[tempy+1][tempx] >= 20){
                 setInteract(true);
-                console.log('Ca marche');
+                setObject(Collision1[tempy+1][tempx]);
             }
             else{
                 if(Collision1[tempy][tempx-1] >= 20){
                     setInteract(true);
-                    console.log('Ca marche');
+                    setObject(Collision1[tempy][tempx-1]);
                 }
                 else{
                     if(Collision1[tempy][tempx+1] >= 20){
                         setInteract(true);
-                        console.log('Ca marche');
+                        setObject(Collision1[tempy][tempx+1]);
                     }
                     else{
                         if(Collision1[tempy-1][tempx] >= 20){
                         setInteract(true);
-                        console.log('Ca marche');
+                        setObject(Collision1[tempy-1][tempx]);
                         }
                         else{
                             setInteract(false);
@@ -63,8 +64,7 @@ export default function useWalk(maxSteps) {
                         }
                     }
                 } 
-            }
-        
+            }      
     
                  
             return ({ 
@@ -94,5 +94,6 @@ export default function useWalk(maxSteps) {
         step,
         position,
         interact,
+        object
     }
 }
