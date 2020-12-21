@@ -29,7 +29,16 @@ export default function Player({ skin,dispatch }) {
         e.preventDefault();
     });
 
-    return <Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} />
+    if(interact) {
+        return(
+            <div>
+                <Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} />
+                <div>Interact</div>
+            </div>
+        );
+    } else {
+        return <div><Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} /><div>Pas interact</div></div>
+    }
 }
 
 function mapStateToProps(state) {

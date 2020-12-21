@@ -39,6 +39,7 @@ export default function useWalk(maxSteps) {
 
         if (Collision1[tempy][tempx] === 0)
         {
+            setInteract(false);
             if(Collision1[tempy-1][tempx] >= 20) {
                 setInteract(true);
                 setObject(Collision1[tempy-1][tempx]);
