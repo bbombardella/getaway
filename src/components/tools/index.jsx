@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './Tools.css';
 import { connect } from 'react-redux';
-import {InventoryStore} from '../inventory/';
+import { InventoryStore } from '../inventory/';
 import Help from '../help/';
 import useKeyPress from '../../hooks/use-key-pressed/';
 import PopUpInteraction from '../interaction/';
@@ -26,14 +27,23 @@ export default function ToolsPanel({dispatch,interaction}) {
     const [inventoryNeeded, setInventoryNeeded] = useState(false);
     const [interactNeeded, setInteractNeeded] = useState(false);
 
+    const resetBoolean = () => {
+      setHelpNeeded(false);
+      setInventoryNeeded(false);
+      setInteractNeeded(false);
+    };
+
     useKeyPress((e) => {
         if(e.key === 'h') {
+          resetBoolean();
           setHelpNeeded(!helpNeeded)
         }
         if(e.key === 'i') {
+          resetBoolean();
           setInventoryNeeded(!inventoryNeeded)
         }
         if(e.key === 'm') {
+          resetBoolean();
           setInteractNeeded(!interactNeeded)
         }
         e.preventDefault();
@@ -41,12 +51,12 @@ export default function ToolsPanel({dispatch,interaction}) {
 
     return(
         <div className='tools'>
-          {helpNeeded && <Help><button onClick={() => setHelpNeeded(false)}>&times;</button></Help>}
-          {inventoryNeeded && <InventoryStore><button onClick={() => setInventoryNeeded(false)}>&times;</button></InventoryStore>}
-          {(interactNeeded && interaction.interact) && <PopUpInteraction />}
-          <button onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir : m</button>
-          <button onClick={()=>setHelpNeeded(true)}>Help : h</button>
-          <button onClick={()=>setInventoryNeeded(true)}>Inventaire : i</button>
+          {helpNeeded && <Help><button className="panel-button" onClick={() => setHelpNeeded(false)}>x</button></Help>}
+          {inventoryNeeded && <InventoryStore><button className="panel-button" onClick={() => setInventoryNeeded(false)}>x</button></InventoryStore>}
+          {(interactNeeded && interaction.interact) && <PopUpInteraction objectdata={interaction}><button className="panel-button" onClick={() => setInteractNeeded(false)}>x</button></PopUpInteraction>}
+          <button className="tools-button" onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir [M]</button>
+          <button className="tools-button" onClick={()=>setHelpNeeded(true)}>Help [H]</button>
+          <button className="tools-button" onClick={()=>setInventoryNeeded(true)}>Inventaire [I]</button>
           {(helpNeeded || inventoryNeeded) && <Overlay/>}
         </div>
     )

@@ -1,17 +1,6 @@
 import { INVENTORY_ADD_ACTION } from '../../config/const';
 
-const initialState = [
-    {
-        id: '0',
-        name: 'Clé du cabanon',
-        description: 'Une clé couverte de mousse'
-    },
-    {
-        id: '2',
-        name: 'Vibro pete sa mère',
-        description: 'c\'est secret'
-    }
-];
+const initialState = [ ];
 
 function checkAlreadyExist(array, id) {
     for(var i=0;i<array.length;i++) {

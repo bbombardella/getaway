@@ -16,27 +16,15 @@ function InventoryItem({id,name,description}) {
 }
 
 export default function Inventory({children,inventory,dispatch}) {
+
+    const isEmpty = inventory.length===0;
+
     return(
-        <div className='inventory' id='inventory'
-        style={{
-        position: 'fixed',
-        minHeight: '40%',
-        maxHeight: '70%',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        border: '2px solid white',
-        zIndex: '10',
-        backgroundColor: 'black',
-        width: '500px',
-        maxWidth: '80%',
-        overflow: 'scroll'
-        }}
-        >
+        <div className='tools-panel' id='inventory'>
         {children}
         <h1>Panneau Inventaire</h1>
         <hr></hr>
-        {inventory.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
+        {isEmpty ? <p>(Vous n'avez pas d'objets pour le moment...)</p> : inventory.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
         </div>
     );
 }
