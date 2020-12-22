@@ -6,6 +6,7 @@ import { Collision1 } from '../../components/map/world/collision'
 export default function useWalk(maxSteps) {
     const [position, setPos] = useState({x: 2*SPRITE_SIZE, y: 3*SPRITE_SIZE});
     const [dir, setDir] = useState(0);
+    const [prevdir, setprevDir] = useState(0);
     const [step,setStep] = useState(0);
     const [interact, setInteract] = useState(false);
     const [object, setObject] = useState(0);
@@ -22,12 +23,11 @@ export default function useWalk(maxSteps) {
     
 
     function walk(dir) {
-        setDir((prev) => {
-            if(directions[dir] === prev) move(dir)
-            
-            return directions[dir];
-            
-        });
+        setprevDir(dir);
+        setDir((prev) => {return directions[dir]});
+        if(prevdir===dir){
+            move(dir);
+        }
         setStep((prev) => prev < maxSteps-1 ? prev+1 : 0);
 
     }
