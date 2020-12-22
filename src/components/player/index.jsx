@@ -36,6 +36,16 @@ export default function Player({ skin,dispatch }) {
                     });
                 }
             }
+        } else {
+            dispatch({
+                type: INTERACTION_SET_TEXT,
+                payload: {
+                    interact: false,
+                    id: 0,
+                    name: '',
+                    description: '',
+                }
+            });
         }
         e.preventDefault();
     });
