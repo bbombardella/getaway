@@ -52,40 +52,50 @@ export const INVENTORY_OBJECTS = {
         id: "22",
         name: 'Fleurs',
         description: 'De manifique plantes vertes...'
-    },
-    20: {
-        id: "20",
-        name: 'Coffre',
-        description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?'
-    },
-    21: {
-        id: "21",
-        name: 'Coffre',
-        description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?'
-    },
-    23: {
-        id: "23",
-        name: 'Table',
-        description: "C'est une ancienne table en bois"
-    },
-    24: {
-        id: "24",
-        name: 'Table',
-        description: "C'est une ancienne table en bois"
-    },
-    25: {
-        id: "25",
-        name: 'Table',
-        description: "C'est une ancienne table en bois"
-    },
-    26: {
-        id: "26",
-        name: 'Table',
-        description: "C'est une ancienne table en bois"
-    },
-    32: {
-        id: "32",
-        name: 'Porte',
-        description: "La pote est vérouillée..."
     }
+}
+
+    export const INTERACTION_OBJECTS = {
+        22: {
+            id: "22",
+            name: 'Fleurs',
+            description: 'De manifique plantes vertes...'
+        },
+        20: {
+            id: "20",
+            name: 'Coffre',
+            description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?'
+        },
+        21: {
+            id: "21",
+            name: 'Coffre',
+            description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?'
+        },
+        23: {
+            id: "23",
+            name: 'Table',
+            description: "C'est une ancienne table en bois"
+        },
+        24: {
+            id: "24",
+            name: 'Table',
+            description: "C'est une ancienne table en bois"
+        },
+        25: {
+            id: "25",
+            name: 'Table',
+            description: "C'est une ancienne table en bois"
+        },
+        26: {
+            id: "26",
+            name: 'Table',
+            description: "C'est une ancienne table en bois"
+        },
+        32: {
+            id: "32",
+            name: 'Porte',
+            description: "La pote est vérouillée..."
+        }
+    
+       
 }
