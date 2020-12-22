@@ -6,7 +6,7 @@ import Map from './components/map';
 import {InventoryStore} from './components/inventory';
 import Help from './components/help';
 import useKeyPress from './hooks/use-key-pressed';
-import PopUpInteraction from './components/interaction'
+import { PopUpInteractionStore } from './components/interaction';
 
 
 
@@ -29,17 +29,17 @@ export default function App() {
 
   const [helpNeeded, setHelpNeeded] = useState(false);
   const [inventoryNeeded, setInventoryNeeded] = useState(false);
-  const [Interact, setInteractOn] = useState(false);
+  const [interactNeeded, setInteractNeeded] = useState(false);
 
   useKeyPress((e) => {
       if(e.key === 'h') {
-          setHelpNeeded(!helpNeeded)
+        setHelpNeeded(!helpNeeded)
       }
       if(e.key === 'i') {
         setInventoryNeeded(!inventoryNeeded)
       }
       if(e.key === 'm') {
-        setInteractOn(!Interact)
+        setInteractNeeded(!interactNeeded)
       }
       e.preventDefault();
     });
@@ -51,11 +51,11 @@ export default function App() {
         <PlayerStore skin={1} />
       </Map>
       <div className='tools'>
-      {Interact && <PopUpInteraction><button onClick={() => setInteractOn(false)}>&times;</button></PopUpInteraction>}
+      <PopUpInteractionStore interactneeded={interactNeeded.toString()} />
         {helpNeeded && <Help><button onClick={() => setHelpNeeded(false)}>&times;</button></Help>}
         {inventoryNeeded && <InventoryStore><button onClick={() => setInventoryNeeded(false)}>&times;</button></InventoryStore>}
 
-        <button onClick={()=>setInteractOn(true)}>Interagir : m</button>
+        <button onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir : m</button>
         <button onClick={()=>setHelpNeeded(true)}>Help : h</button>
         <button onClick={()=>setInventoryNeeded(true)}>Inventaire : i</button>
       </div>
