@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
-import { SPRITE_SIZE, INVENTORY_ADD_ACTION, INVENTORY_OBJECTS, INTERACTION_OBJECTS } from '../../config/const';
+import { SPRITE_SIZE, INVENTORY_ADD_ACTION, INVENTORY_OBJECTS } from '../../config/const';
 
 export default function Player({ skin,dispatch }) {
     const { dir, step, walk, position, interact, object } = useWalk(4);
@@ -30,13 +30,6 @@ export default function Player({ skin,dispatch }) {
     });
 
     if(interact && INVENTORY_OBJECTS[object]!=null) {
-        return(
-            <div>
-                <Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} />
-                <div>Interact</div>
-            </div>
-        );
-    } else if(interact && INTERACTION_OBJECTS[object]!=null) {
         return(
             <div>
                 <Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} />
