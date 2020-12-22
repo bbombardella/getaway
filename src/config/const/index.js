@@ -40,8 +40,8 @@ export const MAP_TILES = {
     31: 'mur_porte_bord_hautcentre.png',
     32: 'porte_haut.png',
     33: 'mur_porte_bord_hautgauche.png',
-    34: 'mur_porte_hautgauche.png',
-    35: 'mur_porte_hautdroite.png',
+    17: 'mur_porte_hautgauche.png',
+    18: 'mur_porte_hautdroite.png',
     36: 'mur_porte_bord_hautdroite.png'
 }
 
