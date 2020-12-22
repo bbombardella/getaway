@@ -32,7 +32,7 @@ export const MAP_TILES = {
     16: 'mur_bord_coin_basgauche.png',
     20: 'coffre1_gauche.png',
     21: 'coffre1_droite.png',
-    22: 'fleur.png',
+    22: 'fleurs.png',
     23: 'table_hautgauche.png',
     24: 'table_hautdroite.png',
     25: 'table_basgauche.png',
