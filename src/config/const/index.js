@@ -97,3 +97,7 @@ export const INVENTORY_OBJECTS = {
         pickable: false
     }
 }
+
+export const INTERACTION_SET_TEXT = 'SET';
+
+export const INTERACTION_DELETE_ALL = 'DELETE';

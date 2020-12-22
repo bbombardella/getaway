@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
-import { SPRITE_SIZE, INVENTORY_ADD_ACTION, INVENTORY_OBJECTS } from '../../config/const';
+import { SPRITE_SIZE, INVENTORY_ADD_ACTION, INVENTORY_OBJECTS, INTERACTION_SET_TEXT } from '../../config/const';
 
 export default function Player({ skin,dispatch }) {
     const { dir, step, walk, position, interact, object } = useWalk(4);
@@ -17,13 +17,24 @@ export default function Player({ skin,dispatch }) {
         if(e.key.includes("Arrow")) {
             walk(e.key.replace("Arrow", "").toLowerCase());
         }
-        if(e.key === 'a' && interact){
+        if(interact){
             const objectPayload = INVENTORY_OBJECTS[object];
-            if(objectPayload!=null) {
+            if(objectPayload.pickable) {
                 dispatch({
-                    type: INVENTORY_ADD_ACTION,
-                    payload: objectPayload
+                    type: INTERACTION_SET_TEXT,
+                    payload: {
+                        interact: true,
+                        id: objectPayload.id,
+                        name: objectPayload.name,
+                        description: objectPayload.description,
+                    }
                 });
+                if(e.key === 'a') {
+                    dispatch({
+                        type: INVENTORY_ADD_ACTION,
+                        payload: objectPayload
+                    });
+                }
             }
         }
         e.preventDefault();
@@ -43,7 +54,7 @@ export default function Player({ skin,dispatch }) {
 }
 
 function mapStateToProps(state) {
-    return {inventory: state.inventory}
+    return {inventory: state.inventory, interaction: state.interaction}
 }
 
 export const PlayerStore = connect(mapStateToProps)(Player)
