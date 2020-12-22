@@ -29,7 +29,7 @@ export default function Player({ skin,dispatch }) {
         e.preventDefault();
     });
 
-    if(interact) {
+    if(interact && INVENTORY_OBJECTS[object]!=null) {
         return(
             <div>
                 <Actor sprite={`spritesheetHerosTemplate.png`} data={data} step={step} dir={dir} position={position} />
