@@ -110,3 +110,20 @@ export const INTERACTION_SET_TEXT = 'SET';
 export const INTERACTION_DELETE_ALL = 'DELETE';
 
 export const WORLD_SET_NUMBER = 'SET_WORLD';
+
+export const INTRO = [
+    "Vous vous relevez, titubant, votre tete vous fait mal, un terrible sifflement dans les oreilles.",
+    "Votre vue est floue, vous percevez une faible lueur, vous vous asseyez, rassemblant vos souvenirs, comment êtes-vous arrivé ici ?",
+    "Où étiez-vous avant ?",
+    "Qui êtes-vous ?",
+    "Submergé par vos questions, vous n’avez pas remarqué que votre vue était revenue, que votre mal de tête s’était apaisé et que le sifflement s’était évanoui.",
+    "Vous regardez autour de vous, une pièce, sombre, éclairée par un filet de lumière traversant le mur. Vous vous approchez, observez l’extérieur.",
+    "Ce n’est pas le monde que vous connaissez, vous pensez reconnaitre des arbres, mais ils sont différents, plus volumineux, leurs branches plus aventureuses, arborant des couleurs agréables, certains ont des feuilles d’un rose flamand, d’autres d’un jaune, vif, rien d’un arbre dont les feuilles mourraient.",
+    "Ces couleurs atypiques forment une forêt des plus particulières, gouvernée par un arbre paré d’un incroyable feuillage violacé.",
+    "Il est si imposant, si grand que vous ne pouvez en voir le sommet par votre ouverture.",
+    "Cet arbre roi est entouré d’une vaste clairière dans laquelle, vous distinguez une faune des plus étranges, non loin des animaux que vous aviez l’habitude de côtoyer, mais sans en être, ce qui semble être une biche à six pattes avance tranquillement vers un point d’eau accompagné d’un lion ailé à la crinière imposante et rayonnante…",
+    "Un lion dans une clairière, « suis-je fou ? », vous vous attardez sur autre chose, par cette brèche, vous pouvez contempler le ciel, un ciel brillant, bercé par l’éclat de deux magnifiques astres, l’un plus rouge que les enfers, le second d’un bleu calme et paisible.",
+    "Un courant d’air frais, pur vous effleure le visage, il est pur, vous frémissez, à quand remonte la dernière fois que vous avez respiré un air de cette qualité ?",
+    "Vous ne savez plus, vous avez oublié.",
+    "La mémoire rafraichie, vous vous retournez et faites face à cette pièce sombre, déterminé à comprendre comment vous avez atterri ici.",
+]

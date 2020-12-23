@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, MAP_DIMENSION} from '../../config/const';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER } from '../../config/const';
 import * as collisions from '../../components/map/world/collision/';
 
 

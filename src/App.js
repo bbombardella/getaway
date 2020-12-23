@@ -12,9 +12,8 @@ export default function App() {
   const [ isIntro, setIsIntro ] = useState(true);
     if (isIntro){
       return (
-      <div className='intro'>
-      <Introduction />
-      <button onClick={()=>setIsIntro(false)}>Passer</button>
+      <div className='game'>
+      <Introduction><button onClick={()=>setIsIntro(false)}>Passer</button></Introduction>
       </div>
       );
     } else {
