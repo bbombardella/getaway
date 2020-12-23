@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Introduction(url){
     return (
-        <p>COUCOU TOI C'EST L'INTRO</p>
+        <p>Vous vous relevez, titubant, votre tete vous fait mal, un terrible sifflement dans les oreilles. </p>
     )
 }
