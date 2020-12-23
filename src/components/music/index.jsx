@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function music (url){
+export default function Music (url){
     return (
         <figure>
         <figcaption>Listen to the music</figcaption>
