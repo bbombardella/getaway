@@ -42,7 +42,8 @@ export const MAP_TILES = {
     33: 'mur_porte_bord_hautgauche.png',
     17: 'mur_porte_hautgauche.png',
     18: 'mur_porte_hautdroite.png',
-    36: 'mur_porte_bord_hautdroite.png'
+    36: 'mur_porte_bord_hautdroite.png',
+    34: 'porte_bas.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
@@ -95,9 +96,17 @@ export const INVENTORY_OBJECTS = {
         name: 'Porte',
         description: "La pote est vérouillée...",
         pickable: false
+    },
+    34: {
+        id: "34",
+        name: 'Porte',
+        description: "La pote est vérouillée...",
+        pickable: false
     }
 }
 
 export const INTERACTION_SET_TEXT = 'SET';
 
 export const INTERACTION_DELETE_ALL = 'DELETE';
+
+export const WORLD_SET_NUMBER = 'SET_WORLD';

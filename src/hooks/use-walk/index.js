@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { SPRITE_SIZE, DIRECTIONS } from '../../config/const'
-import { Collision1 } from '../../components/map/world/collision'
+import { useDispatch, useSelector } from "react-redux";
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, MAP_DIMENSION} from '../../config/const';
+import * as collisions from '../../components/map/world/collision/';
 
 
 export default function useWalk(maxSteps) {
@@ -20,6 +21,9 @@ export default function useWalk(maxSteps) {
         right: { x: stepSize, y: 0 },
         up: { x: 0, y: -stepSize },
     }
+
+    const world = useSelector(state => state.world);
+    const dispatch = useDispatch();
     
 
     function walk(dir) {
@@ -33,38 +37,55 @@ export default function useWalk(maxSteps) {
     }
 
     function testCollision({x, y}, dir) {
+        const collisionArray = collisions[`Collision${world}`]
         const tempx = (x + modifier[dir].x)/SPRITE_SIZE
         const tempy = (y + modifier[dir].y)/SPRITE_SIZE
 
 
-        if (Collision1[tempy][tempx] === 0)
+        if (collisionArray[tempy][tempx] === 0)
         {
             setInteract(false);
-            if(Collision1[tempy-1][tempx] >= 20) {
+            if(collisionArray[tempy-1][tempx] >= 20) {
                 setInteract(true);
-                setObject(Collision1[tempy-1][tempx]);
-                console.log(interact, Collision1[tempy-1][tempx]);
+                setObject(collisionArray[tempy-1][tempx]);
+                console.log(interact, collisionArray[tempy-1][tempx]);
             }
-            if(Collision1[tempy+1][tempx] >= 20) {
+            if(collisionArray[tempy+1][tempx] >= 20) {
                 setInteract(true);
-                setObject(Collision1[tempy+1][tempx]);
-                console.log(interact, Collision1[tempy+1][tempx]);
+                setObject(collisionArray[tempy+1][tempx]);
+                console.log(interact, collisionArray[tempy+1][tempx]);
             }
-            if(Collision1[tempy][tempx-1] >= 20) {
+            if(collisionArray[tempy][tempx-1] >= 20) {
                 setInteract(true);
-                setObject(Collision1[tempy][tempx-1]);
-                console.log(interact, Collision1[tempy][tempx-1]);
+                setObject(collisionArray[tempy][tempx-1]);
+                console.log(interact, collisionArray[tempy][tempx-1]);
             }
-            if(Collision1[tempy][tempx+1] >= 20) {
+            if(collisionArray[tempy][tempx+1] >= 20) {
                 setInteract(true);
-                setObject(Collision1[tempy][tempx+1]);
-                console.log(interact, Collision1[tempy][tempx+1]);
+                setObject(collisionArray[tempy][tempx+1]);
+                console.log(interact, collisionArray[tempy][tempx+1]);
             }
 
             return ({ 
                 x: x + modifier[dir].x,
                 y: y + modifier[dir].y,
             })
+        } else if(collisionArray[tempy][tempx] === 32) {
+            dispatch({
+                type: WORLD_SET_NUMBER,
+                payload: {
+                    number: world+1
+                }
+            });
+            return({x, y: y+(8*SPRITE_SIZE)});
+        } else if(collisionArray[tempy][tempx] === 34) {
+            dispatch({
+                type: WORLD_SET_NUMBER,
+                payload: {
+                    number: world-1
+                }
+            });
+            return({x, y: y-(8*SPRITE_SIZE)});
         }
         else
         {
