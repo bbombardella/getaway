@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Tools.css';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { InventoryStore } from '../inventory/';
 import Help from '../help/';
 import useKeyPress from '../../hooks/use-key-pressed/';
@@ -21,11 +21,13 @@ function Overlay(props) {
     )
   }
 
-export default function ToolsPanel({dispatch,interaction}) {
+export default function Tools(props) {
 
     const [helpNeeded, setHelpNeeded] = useState(false);
     const [inventoryNeeded, setInventoryNeeded] = useState(false);
     const [interactNeeded, setInteractNeeded] = useState(false);
+
+    const interaction = useSelector(state => state.interaction)
 
     const resetBoolean = () => {
       setHelpNeeded(false);
@@ -61,9 +63,3 @@ export default function ToolsPanel({dispatch,interaction}) {
         </div>
     )
 }
-
-function mapStateToProps(state) {
-    return {interaction: state.interaction}
-}
-
-export const Tools = connect(mapStateToProps)(ToolsPanel)

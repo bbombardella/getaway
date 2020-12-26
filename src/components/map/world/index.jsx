@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import * as tiles from './collision/';
 import { SPRITE_SIZE, MAP_DIMENSION, MAP_TILES } from '../../../config/const';
 import './World.css';
@@ -28,7 +28,9 @@ function MapRow(props) {
     );
 }
 
-export default function World({world}) {
+export default function World(props) {
+    const world = useSelector(state => state.world);
+
     const tile = tiles[`Collision${world}`];
 
     return(
@@ -39,9 +41,3 @@ export default function World({world}) {
         </div>
     );
 }
-
-function mapStateToProps(state) {
-    return {world: state.world}
-}
-
-export const WorldStore = connect(mapStateToProps)(World)

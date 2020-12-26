@@ -1,12 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
 import { SPRITE_SIZE, INVENTORY_ADD_ACTION, INVENTORY_OBJECTS, INTERACTION_SET_TEXT } from '../../config/const';
 
-export default function Player({ skin,dispatch }) {
+export default function Player({ skin }) {
     const { dir, step, walk, position, interact, object } = useWalk(4);
+
+    const dispatch = useDispatch();
 
     const data = {
         w:SPRITE_SIZE,
@@ -52,9 +54,3 @@ export default function Player({ skin,dispatch }) {
 
     return <Actor sprite={`spritesheetHeros.png`} data={data} step={step} dir={dir} position={position} />
 }
-
-function mapStateToProps(state) {
-    return {inventory: state.inventory, interaction: state.interaction}
-}
-
-export const PlayerStore = connect(mapStateToProps)(Player)
