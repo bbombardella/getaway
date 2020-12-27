@@ -52,56 +52,65 @@ export const INVENTORY_OBJECTS = {
     22: {
         id: "22",
         name: 'Fleurs',
-        description: 'De manifique plantes vertes...',
-        pickable: true
+        description: 'De manifiques plantes vertes...',
+        pickable: true,
+        descVisible : true,
     },  
     20: {
         id: "20",
         name: 'Coffre',
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     21: {
         id: "21",
         name: 'Coffre',
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     23: {
         id: "23",
         name: 'Table',
         description: "C'est une ancienne table en bois",
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     24: {
         id: "24",
         name: 'Table',
         description: "C'est une ancienne table en bois",
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     25: {
         id: "25",
         name: 'Table',
         description: "C'est une ancienne table en bois",
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     26: {
         id: "26",
         name: 'Table',
         description: "C'est une ancienne table en bois",
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     32: {
         id: "32",
         name: 'Porte',
         description: "La pote est vérouillée...",
-        pickable: false
+        pickable: false,
+        descVisible : true,
     },
     34: {
         id: "34",
         name: 'Porte',
         description: "La pote est vérouillée...",
-        pickable: false
+        pickable: false,
+        descVisible : true,
     }
 }
 

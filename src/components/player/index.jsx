@@ -21,7 +21,7 @@ export default function Player({ skin }) {
         }
         if(interact){
             const objectPayload = INVENTORY_OBJECTS[object];
-            if(objectPayload.pickable) {
+            if(objectPayload.descVisible) {
                 dispatch({
                     type: INTERACTION_SET_TEXT,
                     payload: {
