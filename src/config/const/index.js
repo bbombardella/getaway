@@ -113,7 +113,7 @@ export const WORLD_SET_NUMBER = 'SET_WORLD';
 
 export const INTRO = [
     "Vous vous relevez, titubant, votre tete vous fait mal, un terrible sifflement dans les oreilles.",
-    "Votre vue est floue, vous percevez une faible lueur, vous vous asseyez, rassemblant vos souvenirs, comment êtes-vous arrivé ici ?",
+    "Votre vue est floue, vous percevez une faible lueur, vous vous asseyez, rassemblant vos souvenirs, comment etes-vous arrive ici ?",
     "Où étiez-vous avant ?",
     "Qui êtes-vous ?",
     "Submergé par vos questions, vous n’avez pas remarqué que votre vue était revenue, que votre mal de tête s’était apaisé et que le sifflement s’était évanoui.",
