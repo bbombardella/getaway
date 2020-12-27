@@ -1,14 +1,23 @@
 @font-face {
-  font-family: 'hydrophiliaiced';
-  src: local('hydrophiliaiced'), url('./fonts/hydrophilia_iced-webfont.woff2') format('woff2'),
-       local('hydrophiliaiced'), url('./fonts/hydrophilia_iced-webfont.woff') format('woff'),
-       local('hydrophiliaiced'), url('./fonts/hydrophilia_iced-webfont.ttf') format('truetype');
+  font-family: 'pixel';
+  src: local('pixel'), url('./fonts/Uni0553.svg#Uni0553') format('svg'),
+       local('pixel'), url('./fonts/Uni0553.ttf') format('truetype'),
+       local('pixel'), url('./fonts/Uni0553.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pixel';
+  src: local('pixel'), url('./fonts/uni0553-webfont.eot');
+  src: local('pixel'), url('./fonts/uni0553-webfont.eot?#iefix') format('embedded-opentype'),
+       local('pixel'), url('./fonts/uni0553-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 * {
-  font-family: 'hydrophiliaiced';
+  font-family: 'pixel';
 }
 
 .intro {
