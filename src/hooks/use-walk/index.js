@@ -37,7 +37,7 @@ export default function useWalk(maxSteps) {
     }
 
     function testCollision({x, y}, dir) {
-        const collisionArray = collisions[`Collision${world}`]
+        const collisionArray = collisions[`collision${world}`]
         const tempx = (x + modifier[dir].x)/SPRITE_SIZE
         const tempy = (y + modifier[dir].y)/SPRITE_SIZE
 
@@ -70,7 +70,7 @@ export default function useWalk(maxSteps) {
                 x: x + modifier[dir].x,
                 y: y + modifier[dir].y,
             })
-        } else if(collisionArray[tempy][tempx] === 32) {
+        } else if(collisionArray[tempy][tempx] === 40) {
             dispatch({
                 type: WORLD_SET_NUMBER,
                 payload: {
@@ -78,7 +78,7 @@ export default function useWalk(maxSteps) {
                 }
             });
             return({x, y: y+(8*SPRITE_SIZE)});
-        } else if(collisionArray[tempy][tempx] === 34) {
+        } else if(collisionArray[tempy][tempx] === 41) {
             dispatch({
                 type: WORLD_SET_NUMBER,
                 payload: {

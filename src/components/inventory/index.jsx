@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function InventoryItem({id,name,description}) {
     return(
@@ -15,7 +15,8 @@ function InventoryItem({id,name,description}) {
     )
 }
 
-export default function Inventory({children,inventory,dispatch}) {
+export default function Inventory({children}) {
+    const inventory = useSelector(state => state.inventory);
 
     const isEmpty = inventory.length===0;
 
@@ -28,9 +29,3 @@ export default function Inventory({children,inventory,dispatch}) {
         </div>
     );
 }
-
-function mapStateToProps(state) {
-    return {inventory: state.inventory}
-}
-
-export const InventoryStore = connect(mapStateToProps)(Inventory)

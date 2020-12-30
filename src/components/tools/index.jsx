@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Tools.css';
 import { useSelector } from 'react-redux';
-import { InventoryStore } from '../inventory/';
+import Inventory from '../inventory/';
 import Help from '../help/';
 import useKeyPress from '../../hooks/use-key-pressed/';
 import PopUpInteraction from '../interaction/';
@@ -54,7 +54,7 @@ export default function Tools(props) {
     return(
         <div className='tools'>
           {helpNeeded && <Help><button className="panel-button" onClick={() => setHelpNeeded(false)}>x</button></Help>}
-          {inventoryNeeded && <InventoryStore><button className="panel-button" onClick={() => setInventoryNeeded(false)}>x</button></InventoryStore>}
+          {inventoryNeeded && <Inventory><button className="panel-button" onClick={() => setInventoryNeeded(false)}>x</button></Inventory>}
           {(interactNeeded && interaction.interact) && <PopUpInteraction objectdata={interaction}><button className="panel-button" onClick={() => setInteractNeeded(false)}>x</button></PopUpInteraction>}
           <button className="tools-button" onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir [M]</button>
           <button className="tools-button" onClick={()=>setHelpNeeded(true)}>Help [H]</button>
