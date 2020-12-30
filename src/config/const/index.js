@@ -129,6 +129,25 @@ export const INVENTORY_OBJECTS = {
     }
 }
 
+export const DOORS = {
+    40: {
+        id: '40',
+        nextWorld: '2',
+        newPosition: {
+            x: 0,
+            y: (8*SPRITE_SIZE)
+        }
+    },
+    41: {
+        id: '41',
+        nextWorld: '1',
+        newPosition: {
+            x: 0,
+            y: -(8*SPRITE_SIZE)
+        }
+    }
+}
+
 export const INTERACTION_SET_TEXT = 'SET';
 
 export const INTERACTION_DELETE_ALL = 'DELETE';

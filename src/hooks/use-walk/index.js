@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER } from '../../config/const';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS } from '../../config/const';
 import * as collisions from '../../components/map/world/collision/';
 
 
@@ -70,22 +70,18 @@ export default function useWalk(maxSteps) {
                 x: x + modifier[dir].x,
                 y: y + modifier[dir].y,
             })
-        } else if(collisionArray[tempy][tempx] === 40) {
+        } else if(collisionArray[tempy][tempx]>=40 && collisionArray[tempy][tempx]<=60) {
+            const door = DOORS[collisionArray[tempy][tempx]];
             dispatch({
                 type: WORLD_SET_NUMBER,
                 payload: {
-                    number: world+1
+                    number: door.nextWorld
                 }
             });
-            return({x, y: y+(8*SPRITE_SIZE)});
-        } else if(collisionArray[tempy][tempx] === 41) {
-            dispatch({
-                type: WORLD_SET_NUMBER,
-                payload: {
-                    number: world-1
-                }
-            });
-            return({x, y: y-(8*SPRITE_SIZE)});
+            return({
+                x: x+door.newPosition.x,
+                y: y+door.newPosition.y
+            })
         }
         else
         {
