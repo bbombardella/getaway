@@ -59,6 +59,8 @@ export const MAP_TILES = {
     74: 'table_hautdroite.png',
     75: 'table_basgauche.png',
     76: 'table_basdroite.png',
+    78: 'coffre1_gauche.png',
+    79: 'coffre1_droite.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
@@ -135,7 +137,34 @@ export const INVENTORY_OBJECTS = {
         pickable: false,
         descVisible : true,
         visible: false,
-    }
+    },
+
+    77: {
+        id: "77",
+        name: 'Table',
+        description: "C'est une ancienne table en bois",
+        pickable: false,
+        descVisible : true,
+        visible: false,
+    },
+    78: {
+        id: "78",
+        name: 'Coffre',
+        description: 'Vous récupérez la clé du cabanon',
+        pickable: false,
+        descVisible : true,
+        visible: false,
+    },
+
+    79: {
+        id: "79",
+        name: 'Coffre',
+        description: 'Vous récupérez la clé du cabanon',
+        pickable: false,
+        descVisible : true,
+        visible: false,
+    },
+
 }
 
 export const DOORS = {
