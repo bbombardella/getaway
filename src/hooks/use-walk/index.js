@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS } from '../../config/const';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS, INVENTORY_OBJECTS } from '../../config/const';
 import * as collisions from '../../components/map/world/collision/';
 
 
@@ -45,25 +45,25 @@ export default function useWalk(maxSteps) {
         if (collisionArray[tempy][tempx] === 0)
         {
             setInteract(false);
-            if(collisionArray[tempy-1][tempx] >= 20) {
+            if(INVENTORY_OBJECTS[collisionArray[tempy-1][tempx]]!=null) {
                 setInteract(true);
                 setObject(collisionArray[tempy-1][tempx]);
-                console.log(interact, collisionArray[tempy-1][tempx]);
+                console.log('true', collisionArray[tempy-1][tempx]);
             }
-            if(collisionArray[tempy+1][tempx] >= 20) {
+            if(INVENTORY_OBJECTS[collisionArray[tempy+1][tempx]]!=null) {
                 setInteract(true);
                 setObject(collisionArray[tempy+1][tempx]);
-                console.log(interact, collisionArray[tempy+1][tempx]);
+                console.log('true', collisionArray[tempy+1][tempx]);
             }
-            if(collisionArray[tempy][tempx-1] >= 20) {
+            if(INVENTORY_OBJECTS[collisionArray[tempy][tempx-1]]!=null) {
                 setInteract(true);
                 setObject(collisionArray[tempy][tempx-1]);
-                console.log(interact, collisionArray[tempy][tempx-1]);
+                console.log('true', collisionArray[tempy][tempx-1]);
             }
-            if(collisionArray[tempy][tempx+1] >= 20) {
+            if(INVENTORY_OBJECTS[collisionArray[tempy][tempx+1]]!=null) {
                 setInteract(true);
                 setObject(collisionArray[tempy][tempx+1]);
-                console.log(interact, collisionArray[tempy][tempx+1]);
+                console.log('true', collisionArray[tempy][tempx+1]);
             }
 
             return ({ 
