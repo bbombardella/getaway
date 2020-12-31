@@ -21,22 +21,21 @@ export default function Player({ skin }) {
         }
         if(interact){
             const objectPayload = INVENTORY_OBJECTS[object];
-            if(objectPayload.descVisible) {
-                dispatch({
-                    type: INTERACTION_SET_TEXT,
-                    payload: {
-                        interact: true,
-                        id: objectPayload.id,
-                        name: objectPayload.name,
-                        description: objectPayload.description,
-                        visible: objectPayload.visible
-                    }
-                });
-                if(e.key === 'a') {
+            if(objectPayload!=null) {
+                if(objectPayload.descVisible) {
                     dispatch({
-                        type: INVENTORY_ADD_ACTION,
-                        payload: objectPayload
+                        type: INTERACTION_SET_TEXT,
+                        payload: {
+                            interact: true,
+                            ...objectPayload
+                        }
                     });
+                }
+                if(e.key === 'a' && objectPayload.pickable) {
+                        dispatch({
+                            type: INVENTORY_ADD_ACTION,
+                            payload: objectPayload
+                        });
                 }
             }
         } else {
