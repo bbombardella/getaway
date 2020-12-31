@@ -19,7 +19,8 @@ export default function inventoryReducer(state=initialState, action) {
                 return [...state, {
                     id: action.payload.id,
                     name: action.payload.name,
-                    description: action.payload.description
+                    description: action.payload.description,
+                    visible: action.payload.visible
                 }]
             } else {
                 return state

@@ -29,6 +29,7 @@ export default function Player({ skin }) {
                         id: objectPayload.id,
                         name: objectPayload.name,
                         description: objectPayload.description,
+                        visible: objectPayload.visible
                     }
                 });
                 if(e.key === 'a') {

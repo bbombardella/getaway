@@ -17,15 +17,16 @@ function InventoryItem({id,name,description}) {
 
 export default function Inventory({children}) {
     const inventory = useSelector(state => state.inventory);
+    const inventoryVisibleItems = inventory.filter(item => item.visible);
 
-    const isEmpty = inventory.length===0;
+    const isEmpty = inventoryVisibleItems.length===0;
 
     return(
         <div className='tools-panel' id='inventory'>
         {children}
         <h1>Panneau Inventaire</h1>
         <hr></hr>
-        {isEmpty ? <p>(Vous n'avez pas d'objets pour le moment...)</p> : inventory.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
+        {isEmpty ? <p>(Vous n'avez pas d'objets pour le moment...)</p> : inventoryVisibleItems.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
         </div>
     );
 }

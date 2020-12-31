@@ -70,6 +70,7 @@ export const INVENTORY_OBJECTS = {
         description: "La pote est vérouillée...",
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     41: {
         id: "41",
@@ -77,6 +78,7 @@ export const INVENTORY_OBJECTS = {
         description: "La pote est vérouillée...",
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     70: {
         id: "70",
@@ -84,6 +86,7 @@ export const INVENTORY_OBJECTS = {
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     71: {
         id: "71",
@@ -91,6 +94,7 @@ export const INVENTORY_OBJECTS = {
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     72: {
         id: "72",
@@ -98,6 +102,7 @@ export const INVENTORY_OBJECTS = {
         description: 'De manifiques plantes vertes...',
         pickable: true,
         descVisible : true,
+        visible: true,
     },
     73: {
         id: "73",
@@ -105,6 +110,7 @@ export const INVENTORY_OBJECTS = {
         description: "C'est une ancienne table en bois",
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     74: {
         id: "74",
@@ -112,6 +118,7 @@ export const INVENTORY_OBJECTS = {
         description: "C'est une ancienne table en bois",
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     75: {
         id: "75",
@@ -119,6 +126,7 @@ export const INVENTORY_OBJECTS = {
         description: "C'est une ancienne table en bois",
         pickable: false,
         descVisible : true,
+        visible: false,
     },
     76: {
         id: "76",
@@ -126,6 +134,7 @@ export const INVENTORY_OBJECTS = {
         description: "C'est une ancienne table en bois",
         pickable: false,
         descVisible : true,
+        visible: false,
     }
 }
 
