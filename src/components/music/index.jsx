@@ -3,7 +3,7 @@ import React from 'react';
 export default function Music (url){
     return (
         <figure>
-        <figcaption>Listen to the music</figcaption>
+        <figcaption>Écoutez de la musique :</figcaption>
         <audio
             controls
             src="./assets/music/monplaisir.mp3">
