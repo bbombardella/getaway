@@ -31,21 +31,11 @@ export default function Player({ skin }) {
                         }
                     });
                 }
-                if(e.key === 'a') {
-                    if(objectPayload.id>=70 && objectPayload.id<=71) {
-                        const keyPayload = INVENTORY_OBJECTS[objectPayload.associatedKey];
+                if(e.key === 'a' && objectPayload.pickable) {
                         dispatch({
                             type: INVENTORY_ADD_ACTION,
-                            payload: keyPayload
-                        })
-                    } else {
-                        if(objectPayload.pickable) {
-                            dispatch({
-                                type: INVENTORY_ADD_ACTION,
-                                payload: objectPayload
-                            });
-                        }
-                    }   
+                            payload: objectPayload
+                        }); 
                 }
             }
         } else {

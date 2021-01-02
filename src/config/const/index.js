@@ -142,6 +142,7 @@ export const INVENTORY_OBJECTS = {
     77: {
         id: 77,
         name: 'Clé poisseuse',
+        description: "C'est une clé poisseuse",
         pickable: true,
         descVisible : true,
         visible: false,
