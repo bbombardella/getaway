@@ -59,7 +59,7 @@ export const MAP_TILES = {
     74: 'table_hautdroite.png',
     75: 'table_basgauche.png',
     76: 'table_basdroite.png',
-    77: 'cle_poisseuse.png'
+    77: 'cle_poisseuse.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
@@ -88,6 +88,7 @@ export const INVENTORY_OBJECTS = {
         pickable: false,
         descVisible : true,
         visible: false,
+        associatedKey: 77
     },
     71: {
         id: 71,
@@ -96,6 +97,7 @@ export const INVENTORY_OBJECTS = {
         pickable: false,
         descVisible : true,
         visible: false,
+        associatedKey: 77
     },
     72: {
         id: 72,
