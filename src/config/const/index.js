@@ -59,13 +59,14 @@ export const MAP_TILES = {
     74: 'table_hautdroite.png',
     75: 'table_basgauche.png',
     76: 'table_basdroite.png',
+    77: 'cle_poisseuse.png'
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
 
 export const INVENTORY_OBJECTS = {
     40: {
-        id: "40",
+        id: 40,
         name: 'Porte',
         description: "La pote est vérouillée...",
         pickable: false,
@@ -73,7 +74,7 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     41: {
-        id: "41",
+        id: 41,
         name: 'Porte',
         description: "La pote est vérouillée...",
         pickable: false,
@@ -81,7 +82,7 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     70: {
-        id: "70",
+        id: 70,
         name: 'Coffre',
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
         pickable: false,
@@ -89,7 +90,7 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     71: {
-        id: "71",
+        id: 71,
         name: 'Coffre',
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
         pickable: false,
@@ -97,7 +98,7 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     72: {
-        id: "72",
+        id: 72,
         name: 'Fleurs',
         description: 'De manifiques plantes vertes...',
         pickable: true,
@@ -105,7 +106,7 @@ export const INVENTORY_OBJECTS = {
         visible: true,
     },
     73: {
-        id: "73",
+        id: 73,
         name: 'Table',
         description: "C'est une ancienne table en bois",
         pickable: false,
@@ -113,7 +114,7 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     74: {
-        id: "74",
+        id: 74,
         name: 'Table',
         description: "C'est une ancienne table en bois",
         pickable: false,
@@ -121,7 +122,7 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     75: {
-        id: "75",
+        id: 75,
         name: 'Table',
         description: "C'est une ancienne table en bois",
         pickable: false,
@@ -129,10 +130,17 @@ export const INVENTORY_OBJECTS = {
         visible: false,
     },
     76: {
-        id: "76",
+        id: 76,
         name: 'Table',
         description: "C'est une ancienne table en bois",
         pickable: false,
+        descVisible : true,
+        visible: false,
+    },
+    77: {
+        id: 77,
+        name: 'Clé poisseuse',
+        pickable: true,
         descVisible : true,
         visible: false,
     }
@@ -145,7 +153,8 @@ export const DOORS = {
         newPosition: {
             x: 0,
             y: (8*SPRITE_SIZE)
-        }
+        },
+        keyNeeded: 77,
     },
     41: {
         id: '41',
@@ -153,7 +162,8 @@ export const DOORS = {
         newPosition: {
             x: 0,
             y: -(8*SPRITE_SIZE)
-        }
+        },
+        keyNeeded: 77,
     }
 }
 

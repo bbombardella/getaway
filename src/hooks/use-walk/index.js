@@ -11,6 +11,7 @@ export default function useWalk(maxSteps) {
     const [step,setStep] = useState(0);
     const [interact, setInteract] = useState(false);
     const [object, setObject] = useState(0);
+    const [hasKey, setHasKey] = useState(false);
     const directions = DIRECTIONS;
 
     const stepSize = SPRITE_SIZE;
@@ -22,7 +23,10 @@ export default function useWalk(maxSteps) {
         up: { x: 0, y: -stepSize },
     }
 
-    const world = useSelector(state => state.world);
+    const { world, inventory } = useSelector(state => ({
+        world: state.world,
+        inventory: state.inventory
+    }));
     const dispatch = useDispatch();
     
 
@@ -71,17 +75,26 @@ export default function useWalk(maxSteps) {
                 y: y + modifier[dir].y,
             })
         } else if(collisionArray[tempy][tempx]>=40 && collisionArray[tempy][tempx]<=60) {
-            const door = DOORS[collisionArray[tempy][tempx]];
-            dispatch({
-                type: WORLD_SET_NUMBER,
-                payload: {
-                    number: door.nextWorld
-                }
-            });
-            return({
-                x: x+door.newPosition.x,
-                y: y+door.newPosition.y
-            })
+            const doorNumber = collisionArray[tempy][tempx];
+            const door = DOORS[doorNumber];
+            setHasKey(() => containKey(door.keyNeeded));
+            if(hasKey) {
+                dispatch({
+                    type: WORLD_SET_NUMBER,
+                    payload: {
+                        number: door.nextWorld
+                    }
+                });
+                return({
+                    x: x+door.newPosition.x,
+                    y: y+door.newPosition.y
+                })
+            } else {
+                return ({ 
+                    x,
+                    y
+                })
+            }
         }
         else
         {
@@ -94,6 +107,18 @@ export default function useWalk(maxSteps) {
 
     function move(dir){
         setPos(prev => testCollision(prev, dir));
+    }
+
+    function containKey(keyNumber) {
+        if(keyNumber===false) {
+            return true;
+        }
+        for(var i= 0; i < inventory.length; i++) {
+            if(inventory[i].id===keyNumber) {
+                return true;
+            }
+        }
+        return false;
     }
 
     
