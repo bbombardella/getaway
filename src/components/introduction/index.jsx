@@ -7,7 +7,7 @@ export default function Introduction({children}){
     const [idPhrase, setIdPhrase] = useState(0);
 
     return(
-        <div className='introduction'>
+        <div className='intro'>
             {
             idPhrase >= INTRO.length ? 
             <p>(Fin de l'introduction...)</p> 
