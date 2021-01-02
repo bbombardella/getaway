@@ -53,9 +53,9 @@ export default function Tools(props) {
 
     return(
         <div className='tools'>
-          {helpNeeded && <Help><button className="panel-button" onClick={() => setHelpNeeded(false)}>x</button></Help>}
-          {inventoryNeeded && <Inventory><button className="panel-button" onClick={() => setInventoryNeeded(false)}>x</button></Inventory>}
-          {(interactNeeded && interaction.interact) && <PopUpInteraction objectdata={interaction}><button className="panel-button" onClick={() => setInteractNeeded(false)}>x</button></PopUpInteraction>}
+          {helpNeeded && <Help closeDialog={() => setHelpNeeded(false)}/>}
+          {inventoryNeeded && <Inventory closeDialog={() => setInventoryNeeded(false)} />}
+          {(interactNeeded && interaction.interact) && <PopUpInteraction closeDialog={() => setInteractNeeded(false)} objectdata={interaction} />}
           <button className="tools-button" onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir [M]</button>
           <button className="tools-button" onClick={()=>setHelpNeeded(true)}>Aide [H]</button>
           <button className="tools-button" onClick={()=>setInventoryNeeded(true)}>Inventaire [I]</button>

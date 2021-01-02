@@ -2,7 +2,7 @@ import React, {useState, Fragment} from 'react';
 import {useDispatch} from 'react-redux';
 import {INVENTORY_ADD_ACTION, INVENTORY_OBJECTS} from '../../config/const';
 
-export default function PopUpInteraction({children, objectdata}) {
+export default function PopUpInteraction({closeDialog, objectdata}) {
 
     const dispatch = useDispatch();
     const [keyTaken, setKeyTaken] = useState(false);
@@ -17,7 +17,7 @@ export default function PopUpInteraction({children, objectdata}) {
 
     return(
         <div className='tools-panel' id='interaction'>
-            {children}
+            <button className="panel-button" onClick={() => closeDialog()}>x</button>
             {keyTaken ? (
                 <Fragment>
                     <p>Bravo ! Vous possédez désormais la clé !</p>

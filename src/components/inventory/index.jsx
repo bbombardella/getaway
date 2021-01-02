@@ -15,7 +15,7 @@ function InventoryItem({id,name,description}) {
     )
 }
 
-export default function Inventory({children}) {
+export default function Inventory({closeDialog}) {
     const inventory = useSelector(state => state.inventory);
     const inventoryVisibleItems = inventory.filter(item => item.visible);
 
@@ -23,10 +23,10 @@ export default function Inventory({children}) {
 
     return(
         <div className='tools-panel' id='inventory'>
-        {children}
-        <h1>Panneau Inventaire</h1>
-        <hr></hr>
-        {isEmpty ? <p>(Vous n'avez pas d'objets pour le moment...)</p> : inventoryVisibleItems.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
+            <button className="panel-button" onClick={() => closeDialog()}>x</button>
+            <h1>Panneau Inventaire</h1>
+            <hr></hr>
+            {isEmpty ? <p>(Vous n'avez pas d'objets pour le moment...)</p> : inventoryVisibleItems.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
         </div>
     );
 }
