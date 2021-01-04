@@ -6,7 +6,7 @@ export default function Help({closeDialog}) {
             <button className="panel-button" onClick={() => closeDialog()}>x</button>
             <h1>Panneau Help</h1>
             <hr></hr>
-            <p>Contenu a venir...</p>
+            <p>Ajouter un objet à l'inventaire : touche A</p>
         </div>
     );
 }
