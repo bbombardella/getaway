@@ -37,11 +37,15 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
             ) : (
                 <Fragment>
                 <p>{objectdata.name} : {objectdata.description}</p>
-                {!(objectdata.id>=70 && objectdata.id<=71) && <p>Voulez-vous l'ajouter dans l'inventaire ?</p>}
-                <div>
-                    <button onClick={() => addObject()}>Oui</button>
-                    <button onClick={() => closeDialog()}>Non</button>
-                </div>
+                {objectdata.pickable &&
+                    <Fragment>
+                        {!(objectdata.id>=70 && objectdata.id<=71) && <p>Voulez-vous l'ajouter dans l'inventaire ?</p>}
+                        <div>
+                            <button onClick={() => addObject()}>Oui</button>
+                            <button onClick={() => closeDialog()}>Non</button>
+                        </div>
+                    </Fragment>
+                }
                 </Fragment>
             )}
         </div>
