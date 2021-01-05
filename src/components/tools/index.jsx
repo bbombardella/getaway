@@ -44,7 +44,7 @@ export default function Tools(props) {
           resetBoolean();
           setInventoryNeeded(!inventoryNeeded)
         }
-        if(e.key === 'm') {
+        if(e.key === 'a') {
           resetBoolean();
           setInteractNeeded(!interactNeeded)
         }
