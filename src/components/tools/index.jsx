@@ -56,7 +56,7 @@ export default function Tools(props) {
           {helpNeeded && <Help closeDialog={() => setHelpNeeded(false)}/>}
           {inventoryNeeded && <Inventory closeDialog={() => setInventoryNeeded(false)} />}
           {(interactNeeded && interaction.interact) && <PopUpInteraction closeDialog={() => setInteractNeeded(false)} objectdata={interaction} />}
-          <button className="tools-button" onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir [M]</button>
+          <button className="tools-button" onClick={()=>setInteractNeeded(!interactNeeded)}>Interagir [A]</button>
           <button className="tools-button" onClick={()=>setHelpNeeded(true)}>Aide [H]</button>
           <button className="tools-button" onClick={()=>setInventoryNeeded(true)}>Inventaire [I]</button>
           {(helpNeeded || inventoryNeeded) && <Overlay/>}
