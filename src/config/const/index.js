@@ -85,7 +85,7 @@ export const INVENTORY_OBJECTS = {
         id: 70,
         name: 'Coffre',
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
-        pickable: false,
+        pickable: true,
         descVisible : true,
         visible: false,
         associatedKey: 77
@@ -94,7 +94,7 @@ export const INVENTORY_OBJECTS = {
         id: 71,
         name: 'Coffre',
         description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
-        pickable: false,
+        pickable: true,
         descVisible : true,
         visible: false,
         associatedKey: 77

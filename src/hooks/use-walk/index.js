@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS, INVENTORY_OBJECTS } from '../../config/const';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS, INVENTORY_OBJECTS, INTERACTION_SET_TEXT } from '../../config/const';
 import * as collisions from '../../components/map/world/collision/';
 
 
@@ -37,7 +37,30 @@ export default function useWalk(maxSteps) {
             move(dir);
         }
         setStep((prev) => prev < maxSteps-1 ? prev+1 : 0);
-
+        if(interact){
+            const objectPayload = INVENTORY_OBJECTS[object];
+            if(objectPayload!=null) {
+                if(objectPayload.descVisible) {
+                    dispatch({
+                        type: INTERACTION_SET_TEXT,
+                        payload: {
+                            interact: true,
+                            ...objectPayload
+                        }
+                    });
+                }
+            }
+        } else {
+            dispatch({
+                type: INTERACTION_SET_TEXT,
+                payload: {
+                    interact: false,
+                    id: 0,
+                    name: '',
+                    description: '',
+                }
+            });
+        }
     }
 
     function testCollision({x, y}, dir) {
@@ -126,8 +149,6 @@ export default function useWalk(maxSteps) {
         walk,
         dir,
         step,
-        position,
-        interact,
-        object
+        position
     }
 }
