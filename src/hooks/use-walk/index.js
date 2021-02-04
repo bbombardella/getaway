@@ -5,7 +5,7 @@ import * as collisions from '../../components/map/world/collision/';
 
 
 export default function useWalk(maxSteps) {
-    const [position, setPos] = useState({x: 2*SPRITE_SIZE, y: 3*SPRITE_SIZE});
+    const [position, setPos] = useState({x: 6*SPRITE_SIZE, y: 4*SPRITE_SIZE});
     const [dir, setDir] = useState(0);
     const [prevdir, setprevDir] = useState(0);
     const [step,setStep] = useState(0);
