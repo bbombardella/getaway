@@ -73,7 +73,7 @@ export const MAP_TILES = {
     87: 'chemin.png',
     88: 'extrem_gauche.png',
     89: 'extrem_droite.png',
-    90: 'vide_vert',
+    90: 'vide_vert.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
@@ -166,15 +166,24 @@ export const INVENTORY_OBJECTS = {
 export const DOORS = {
     40: {
         id: '40',
-        nextWorld: '2',
+        nextWorld: '4',
         newPosition: {
-            x: 0,
-            y: (8*SPRITE_SIZE)
+            x: -(10*SPRITE_SIZE),
+            y: 3*SPRITE_SIZE
         },
         keyNeeded: 77,
     },
     41: {
         id: '41',
+        nextWorld: '1',
+        newPosition: {
+            x: 0,
+            y: -(8*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
+    88: {
+        id: '88',
         nextWorld: '1',
         newPosition: {
             x: 0,
