@@ -52,6 +52,7 @@ export const MAP_TILES = {
     36: 'mur_porte_gauchebas.png',
     40: 'porte_haut.png',
     41: 'porte_bas.png',
+    69: 'vide_ss_sol.png',
     70: 'coffre1_gauche.png',
     71: 'coffre1_droite.png',
     72: 'fleurs.png',
@@ -67,6 +68,12 @@ export const MAP_TILES = {
     82: 'socle_droit.png',
     83: 'escalier_haut.png',
     84: 'escalier_bas.png',
+    85: 'barriere_h.png',
+    86: 'herbe.png',
+    87: 'chemin.png',
+    88: 'extrem_gauche.png',
+    89: 'extrem_droite.png',
+    90: 'vide_vert',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
