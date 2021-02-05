@@ -60,6 +60,13 @@ export const MAP_TILES = {
     75: 'table_basgauche.png',
     76: 'table_basdroite.png',
     77: 'cle_poisseuse.png',
+    78: 'glace.png',
+    79: 'caillou.png',
+    80: 'dalle.png',
+    81: 'socle_gauche.png',
+    82: 'socle_droit.png',
+    83: 'escalier_haut.png',
+    84: 'escalier_bas.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';

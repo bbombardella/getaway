@@ -69,7 +69,7 @@ export default function useWalk(maxSteps) {
         const tempy = (y + modifier[dir].y)/SPRITE_SIZE
 
 
-        if (collisionArray[tempy][tempx] === 0)
+        if (collisionArray[tempy][tempx] === 0 || collisionArray[tempy][tempx] === 1)
         {
             setInteract(false);
             if(INVENTORY_OBJECTS[collisionArray[tempy-1][tempx]]!=null) {
