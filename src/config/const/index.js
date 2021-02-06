@@ -82,7 +82,7 @@ export const INVENTORY_OBJECTS = {
     40: {
         id: 40,
         name: 'Porte',
-        description: "La pote est vérouillée...",
+        description: "La porte est verrouillée...",
         pickable: false,
         descVisible : true,
         visible: false,
@@ -90,7 +90,7 @@ export const INVENTORY_OBJECTS = {
     41: {
         id: 41,
         name: 'Porte',
-        description: "La pote est vérouillée...",
+        description: "La porte est verrouillée...",
         pickable: false,
         descVisible : true,
         visible: false,
@@ -98,7 +98,7 @@ export const INVENTORY_OBJECTS = {
     70: {
         id: 70,
         name: 'Coffre',
-        description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
+        description: 'Un coffre imposant se trouve devant vous. Voulez-vous l’ouvrir ?',
         pickable: true,
         descVisible : true,
         visible: false,
@@ -107,7 +107,7 @@ export const INVENTORY_OBJECTS = {
     71: {
         id: 71,
         name: 'Coffre',
-        description: 'Un joli coffre se trouve devant vous, voulez-vous l’ouvrir ?',
+        description: 'Un coffre imposant se trouve devant vous. Voulez-vous l’ouvrir ?',
         pickable: true,
         descVisible : true,
         visible: false,
@@ -116,7 +116,7 @@ export const INVENTORY_OBJECTS = {
     72: {
         id: 72,
         name: 'Fleurs',
-        description: 'De manifiques plantes vertes...',
+        description: 'De magnifiques fleurs blanches. L\'une d\'elles semble vous observer.',
         pickable: true,
         descVisible : true,
         visible: true,
@@ -124,7 +124,7 @@ export const INVENTORY_OBJECTS = {
     73: {
         id: 73,
         name: 'Table',
-        description: "C'est une ancienne table en bois",
+        description: "C'est une vieille table en bois.",
         pickable: false,
         descVisible : true,
         visible: false,
@@ -132,7 +132,7 @@ export const INVENTORY_OBJECTS = {
     74: {
         id: 74,
         name: 'Table',
-        description: "C'est une ancienne table en bois",
+        description: "C'est une vieille table en bois.",
         pickable: false,
         descVisible : true,
         visible: false,
@@ -140,7 +140,7 @@ export const INVENTORY_OBJECTS = {
     75: {
         id: 75,
         name: 'Table',
-        description: "C'est une ancienne table en bois",
+        description: "C'est une vieille table en bois",
         pickable: false,
         descVisible : true,
         visible: false,
@@ -148,15 +148,15 @@ export const INVENTORY_OBJECTS = {
     76: {
         id: 76,
         name: 'Table',
-        description: "C'est une ancienne table en bois",
+        description: "C'est une vieille table en bois",
         pickable: false,
         descVisible : true,
         visible: false,
     },
     77: {
         id: 77,
-        name: 'Clé poisseuse',
-        description: "C'est une clé poisseuse",
+        name: 'Clé moussue',
+        description: "C'est une clé couverte de mousse.",
         pickable: true,
         descVisible : true,
         visible: false,
@@ -200,18 +200,20 @@ export const INTERACTION_DELETE_ALL = 'DELETE';
 export const WORLD_SET_NUMBER = 'SET_WORLD';
 
 export const INTRO = [
-    "Vous vous relevez, titubant, votre tete vous fait mal, un terrible sifflement dans les oreilles.",
-    "Votre vue est floue, vous percevez une faible lueur, vous vous asseyez, rassemblant vos souvenirs, comment êtes-vous arrivé.e ici ?",
+    "Vous vous relevez, titubant. Votre tête vous fait mal, un terrible sifflement résonne dans vos oreilles.",
+    "Votre vue est floue. Vous percevez une faible lueur. Vous vous asseyez à même le sol, et essayez de rassembler vos souvenirs...",
+    "Comment êtes-vous arrivé.e ici ?",
     "Où étiez-vous avant ?",
-    "Qui êtes-vous ?",
+    "...Qui êtes-vous ?",
     "Submergé.e par vos questions, vous n’avez pas remarqué que votre vue était revenue, que votre mal de tête s’était apaisé et que le sifflement s’était évanoui.",
-    "Vous regardez autour de vous, une pièce, sombre, éclairée par un filet de lumière traversant le mur. Vous vous approchez, observez l’extérieur.",
-    "Ce n’est pas le monde que vous connaissez, vous pensez reconnaitre des arbres, mais ils sont différents, plus volumineux, leurs branches plus aventureuses, arborant des couleurs agréables, certains ont des feuilles d’un rose flamand, d’autres d’un jaune, vif, rien d’un arbre dont les feuilles mourraient.",
-    "Ces couleurs atypiques forment une forêt des plus particulières, gouvernée par un arbre paré d’un incroyable feuillage violacé.",
+    "Vous regardez alors autour de vous : une pièce, sombre, éclairée par un filet de lumière traversant le mur. Vous vous approchez, observez l’extérieur.",
+    "Ce n’est pas le monde que vous connaissez, vous pensez reconnaître des arbres, mais ils sont différents : ils sont plus volumineux, leurs branches sont plus aventureuses et arborent des couleurs agréables, certains ont des feuilles d’un rose flamant, d’autres d’un jaune vif - rien d’un arbre dont les feuilles mourraient.",
+    "Ces couleurs atypiques forment une forêt des plus particulières, gouvernée par un immense arbre paré d’un incroyable feuillage violacé.",
     "Il est si imposant, si grand que vous ne pouvez en voir le sommet par votre ouverture.",
-    "Cet arbre roi est entouré d’une vaste clairière dans laquelle, vous distinguez une faune des plus étranges, non loin des animaux que vous aviez l’habitude de côtoyer, mais sans en être, ce qui semble être une biche à six pattes avance tranquillement vers un point d’eau accompagné d’un lion ailé à la crinière imposante et rayonnante…",
-    "Un lion dans une clairière, « suis-je fou ? », vous vous attardez sur autre chose, par cette brèche, vous pouvez contempler le ciel, un ciel brillant, bercé par l’éclat de deux magnifiques astres, l’un plus rouge que les enfers, le second d’un bleu calme et paisible.",
-    "Un courant d’air frais, pur vous effleure le visage, il est pur, vous frémissez, à quand remonte la dernière fois que vous avez respiré un air de cette qualité ?",
+    "Cet arbre roi est entouré d’une vaste clairière dans laquelle vous distinguez une faune des plus étranges, empruntant des traits à des animaux que vous connaissez, sans être ces animaux. Vous apercevez ce qui semble être une biche à six pattes avancer tranquillement vers un point d’eau, accompagnée d’un lion ailé à la crinière imposante et rayonnante…",
+    "Un lion dans une clairière ? Pendant que vous vous demandez si vous n'avez pas perdu la tête, votre regard s'attarde sur autre chose. Par cette brèche, vous contemplez le ciel brillant et bercé par l’éclat de deux magnifiques astres : le premier plus rouge que les enfers, le second d’un bleu calme et paisible.",
+    "Un courant d’air frais, pur, vous effleure le visage. Vous frémissez.",
+    "À quand remonte la dernière fois que vous avez respiré un air de cette qualité ?",
     "Vous ne savez plus, vous avez oublié.",
     "La mémoire rafraichie, vous vous retournez et faites face à cette pièce sombre, déterminé.e à comprendre comment vous avez atterri ici.",
 ]

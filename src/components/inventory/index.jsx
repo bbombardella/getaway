@@ -26,7 +26,7 @@ export default function Inventory({closeDialog}) {
             <button className="panel-button" onClick={() => closeDialog()}>x</button>
             <h1>Panneau Inventaire</h1>
             <hr></hr>
-            {isEmpty ? <p>(Vous n'avez pas d'objets pour le moment...)</p> : inventoryVisibleItems.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
+            {isEmpty ? <p>(Vous n'avez pas d'objet pour le moment...)</p> : inventoryVisibleItems.map((row) => <InventoryItem key={row.id} id={row.id} name={row.name} description={row.description} />)}
         </div>
     );
 }
