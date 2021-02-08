@@ -126,19 +126,23 @@ export default function useWalk(maxSteps) {
             let nexty = y + modifier[dir].y;
             while (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 78) {
                 nextx = nextx + modifier[dir].x;
-                console.log(nextx);
                 nexty = nexty + modifier[dir].y;
-                console.log(nexty);
-                console.log(collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE]);
             }
             // Si le personnage se retrouve dans le vide :
             if (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 69){
                 return ({
                     x: 2*SPRITE_SIZE,
-                    y: 4*SPRITE_SIZE
+                    y: 2*SPRITE_SIZE
                 })
             }
-            // "case d'après = sol en pierre" / "case d'après = vide"
+            // Si la case après la glace est le sol en pierre :
+            if (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 80){
+                return ({
+                    x: nextx,
+                    y: nexty,
+                })
+            }
+            // Sinon
             return ({
                 x: nextx - modifier[dir].x,
                 y: nexty - modifier[dir].y
