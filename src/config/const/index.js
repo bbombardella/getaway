@@ -178,7 +178,7 @@ export const INVENTORY_OBJECTS = {
 export const DOORS = {
     40: {
         id: '40',
-        nextWorld: '7',
+        nextWorld: '4',
         newPosition: {
             x: -(10*SPRITE_SIZE),
             y: 3*SPRITE_SIZE
