@@ -129,8 +129,15 @@ export default function useWalk(maxSteps) {
                 console.log(nextx);
                 nexty = nexty + modifier[dir].y;
                 console.log(nexty);
+                console.log(collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE]);
             }
-            // à faire : cas particuliers :
+            // Si le personnage se retrouve dans le vide :
+            if (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 69){
+                return ({
+                    x: 2*SPRITE_SIZE,
+                    y: 4*SPRITE_SIZE
+                })
+            }
             // "case d'après = sol en pierre" / "case d'après = vide"
             return ({
                 x: nextx - modifier[dir].x,
