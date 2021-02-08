@@ -1,6 +1,6 @@
 import { WORLD_SET_NUMBER } from '../../../config/const';
 
-const initialState = 1;
+const initialState = "3";
 
 export default function worldReducer(state=initialState, action) {
     switch(action.type) {

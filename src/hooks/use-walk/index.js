@@ -5,7 +5,7 @@ import * as collisions from '../../components/map/world/collision/';
 
 
 export default function useWalk(maxSteps) {
-    const [position, setPos] = useState({x: 6*SPRITE_SIZE, y: 4*SPRITE_SIZE});
+    const [position, setPos] = useState({x: 2*SPRITE_SIZE, y: 4*SPRITE_SIZE});
     const [dir, setDir] = useState(0);
     const [prevdir, setprevDir] = useState(0);
     const [step,setStep] = useState(0);
@@ -69,7 +69,8 @@ export default function useWalk(maxSteps) {
         const tempy = (y + modifier[dir].y)/SPRITE_SIZE
 
 
-        if (collisionArray[tempy][tempx] === 0 || collisionArray[tempy][tempx] === 1)
+        if (collisionArray[tempy][tempx] === 0 || collisionArray[tempy][tempx] === 1
+            || collisionArray[tempy][tempx] === 80 || collisionArray[tempy][tempx] === 87)
         {
             setInteract(false);
             if(INVENTORY_OBJECTS[collisionArray[tempy-1][tempx]]!=null) {
@@ -118,6 +119,23 @@ export default function useWalk(maxSteps) {
                     y
                 })
             }
+        }
+        // Si la case sur laquelle on veut se déplacer est de la glace :
+        else if (collisionArray[tempy][tempx] === 78) {
+            let nextx = x + modifier[dir].x;
+            let nexty = y + modifier[dir].y;
+            while (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 78) {
+                nextx = nextx + modifier[dir].x;
+                console.log(nextx);
+                nexty = nexty + modifier[dir].y;
+                console.log(nexty);
+            }
+            // à faire : cas particuliers :
+            // "case d'après = sol en pierre" / "case d'après = vide"
+            return ({
+                x: nextx - modifier[dir].x,
+                y: nexty - modifier[dir].y
+            })
         }
         else
         {
