@@ -82,6 +82,10 @@ export const MAP_TILES = {
     96: 'panneau_face.png',
     97: 'panneau_dos.png',
     98: 'escalier_bas.png',
+    99: 'barriere_coin_inf_gauche1.png',
+    100: 'barriere_coin_inf_droit1.png',
+    101: 'barriere_coin_sup_gauche1.png',
+    101: 'barriere_coin_sup_gauche2.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
