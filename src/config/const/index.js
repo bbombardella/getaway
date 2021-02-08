@@ -85,7 +85,7 @@ export const MAP_TILES = {
     99: 'barriere_coin_inf_gauche1.png',
     100: 'barriere_coin_inf_droit1.png',
     101: 'barriere_coin_sup_gauche1.png',
-    101: 'barriere_coin_sup_gauche2.png',
+    102: 'barriere_coin_sup_gauche2.png',
 }
 
 export const INVENTORY_ADD_ACTION = 'ADD';
@@ -178,7 +178,7 @@ export const INVENTORY_OBJECTS = {
 export const DOORS = {
     40: {
         id: '40',
-        nextWorld: '4',
+        nextWorld: '7',
         newPosition: {
             x: -(10*SPRITE_SIZE),
             y: 3*SPRITE_SIZE
