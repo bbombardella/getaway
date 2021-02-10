@@ -72,8 +72,12 @@ export default function useWalk(maxSteps) {
         const tempy = (y + modifier[dir].y) / SPRITE_SIZE;
         const tile = MAP_TILES[collisionArray[tempy][tempx]];
 
-
-        if (tile.type === 'sol') {
+        if(tile===undefined) {
+            return ({
+                x,
+                y,
+            });
+        } else if (tile.type === 'sol') {
             setInteract(false);
             if (INVENTORY_OBJECTS[collisionArray[tempy - 1][tempx]] != null) {
                 setInteract(true);
@@ -112,8 +116,8 @@ export default function useWalk(maxSteps) {
                     }
                 });
                 return ({
-                    x: x + door.newPosition.x,
-                    y: y + door.newPosition.y
+                    x: door.newPosition.x,
+                    y: door.newPosition.y
                 })
             } else {
                 return ({

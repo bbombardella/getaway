@@ -5,8 +5,8 @@ export const DOORS = {
         id: '40',
         nextWorld: '4',
         newPosition: {
-            x: -(10*SPRITE_SIZE),
-            y: 3*SPRITE_SIZE
+            x: SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
         },
         keyNeeded: 77,
     },
@@ -23,8 +23,8 @@ export const DOORS = {
         id: '88',
         nextWorld: '1',
         newPosition: {
-            x: 0,
-            y: -(8*SPRITE_SIZE)
+            x: 10*SPRITE_SIZE,
+            y: 3*SPRITE_SIZE
         },
         keyNeeded: 77,
     }

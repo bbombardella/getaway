@@ -1,4 +1,8 @@
 export const MAP_TILES = {
+    '-1': {
+        url: '',
+        type: 'vide'
+    },
     0: {
         url: 'sol_plancher.png',
         type: 'sol'
@@ -233,19 +237,19 @@ export const MAP_TILES = {
     },
     88: {
         url: 'chemin_gauche.png',
-        type: 'sol',
+        type: 'porte',
     },
     89: {
         url: 'chemin_droite.png',
-        type: 'sol',
+        type: 'porte',
     },
     90: {
         url: 'chemin_haut.png',
-        type: 'sol',
+        type: 'porte',
     },
     91: {
         url: 'chemin_bas.png',
-        type: 'sol',
+        type: 'porte',
     },
     92: {
         url: 'vide_vert.png',

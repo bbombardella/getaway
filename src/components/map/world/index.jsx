@@ -5,8 +5,9 @@ import { SPRITE_SIZE, MAP_DIMENSION } from '../../../config/const/settings';
 import { MAP_TILES } from '../../../config/const/tiles';
 import './World.css';
 
-function MapTile({value}) {
-    const background = MAP_TILES[value];
+function MapTile({ value }) {
+    const tile = MAP_TILES[value];
+    const background = tile.url;
     return (<div
         className='map-title'
         style={{
@@ -20,10 +21,10 @@ function MapTile({value}) {
 }
 
 function MapRow(props) {
-    return(
+    return (
         <div className='map-row'>
             {
-                props.tiles.map((tile, index) => <MapTile key={index+(props.id*MAP_DIMENSION.column)} value={tile} />)
+                props.tiles.map((tile, index) => <MapTile key={index + (props.id * MAP_DIMENSION.column)} value={tile} />)
             }
         </div>
     );
@@ -34,7 +35,7 @@ export default function World(props) {
 
     const tile = tiles[`collision${world}`];
 
-    return(
+    return (
         <div className='world'>
             {
                 tile.map((row, index) => <MapRow key={index} id={index} tiles={row} />)
