@@ -1,4 +1,4 @@
-import { WORLD_SET_NUMBER } from '../../../config/const';
+import { WORLD_SET_NUMBER } from '../../../config/const/settings';
 
 const initialState = 1;
 

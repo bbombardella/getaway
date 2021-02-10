@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS, INVENTORY_OBJECTS, INTERACTION_SET_TEXT } from '../../config/const';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, INTERACTION_SET_TEXT } from '../../config/const/settings';
+import { INVENTORY_OBJECTS } from '../../config/const/inventory';
+import { DOORS } from '../../config/const/doors';
 import * as collisions from '../../components/map/world/collision/';
 
 

@@ -1,0 +1,18 @@
+export const INTRO = [
+    "Vous vous relevez, titubant. Votre tête vous fait mal, un terrible sifflement résonne dans vos oreilles.",
+    "Votre vue est floue. Vous percevez une faible lueur. Vous vous asseyez à même le sol, et essayez de rassembler vos souvenirs...",
+    "Comment êtes-vous arrivé.e ici ?",
+    "Où étiez-vous avant ?",
+    "...Qui êtes-vous ?",
+    "Submergé.e par vos questions, vous n’avez pas remarqué que votre vue était revenue, que votre mal de tête s’était apaisé et que le sifflement s’était évanoui.",
+    "Vous regardez alors autour de vous : une pièce, sombre, éclairée par un filet de lumière traversant le mur. Vous vous approchez, observez l’extérieur.",
+    "Ce n’est pas le monde que vous connaissez, vous pensez reconnaître des arbres, mais ils sont différents : ils sont plus volumineux, leurs branches sont plus aventureuses et arborent des couleurs agréables, certains ont des feuilles d’un rose flamant, d’autres d’un jaune vif - rien d’un arbre dont les feuilles mourraient.",
+    "Ces couleurs atypiques forment une forêt des plus particulières, gouvernée par un immense arbre paré d’un incroyable feuillage violacé.",
+    "Il est si imposant, si grand que vous ne pouvez en voir le sommet par votre ouverture.",
+    "Cet arbre roi est entouré d’une vaste clairière dans laquelle vous distinguez une faune des plus étranges, empruntant des traits à des animaux que vous connaissez, sans être ces animaux. Vous apercevez ce qui semble être une biche à six pattes avancer tranquillement vers un point d’eau, accompagnée d’un lion ailé à la crinière imposante et rayonnante…",
+    "Un lion dans une clairière ? Pendant que vous vous demandez si vous n'avez pas perdu la tête, votre regard s'attarde sur autre chose. Par cette brèche, vous contemplez le ciel brillant et bercé par l’éclat de deux magnifiques astres : le premier plus rouge que les enfers, le second d’un bleu calme et paisible.",
+    "Un courant d’air frais, pur, vous effleure le visage. Vous frémissez.",
+    "À quand remonte la dernière fois que vous avez respiré un air de cette qualité ?",
+    "Vous ne savez plus, vous avez oublié.",
+    "La mémoire rafraichie, vous vous retournez et faites face à cette pièce sombre, déterminé.e à comprendre comment vous avez atterri ici.",
+]

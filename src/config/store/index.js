@@ -9,5 +9,6 @@ export default createStore(
         inventory: inventoryReducer,
         interaction: interactionReducer
     }),
+    // À enlever lors du build final, les users peuvent changer les states
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

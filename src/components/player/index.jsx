@@ -2,7 +2,7 @@ import React from 'react';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
-import { SPRITE_SIZE } from '../../config/const';
+import { SPRITE_SIZE } from '../../config/const/settings';
 
 export default function Player({ skin }) {
     const { dir, step, walk, position } = useWalk(4);

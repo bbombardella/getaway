@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import * as tiles from './collision/';
-import { SPRITE_SIZE, MAP_DIMENSION, MAP_TILES } from '../../../config/const';
+import { SPRITE_SIZE, MAP_DIMENSION } from '../../../config/const/settings';
+import { MAP_TILES } from '../../../config/const/tiles';
 import './World.css';
 
 function MapTile({value}) {

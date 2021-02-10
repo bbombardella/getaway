@@ -1,4 +1,4 @@
-import { INTERACTION_SET_TEXT } from '../../config/const';
+import { INTERACTION_SET_TEXT } from '../../config/const/settings';
 
 const initialState = [
     {

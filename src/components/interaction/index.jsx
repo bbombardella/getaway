@@ -1,6 +1,7 @@
-import React, {useState, Fragment} from 'react';
-import {useDispatch} from 'react-redux';
-import {INVENTORY_ADD_ACTION, INVENTORY_OBJECTS} from '../../config/const';
+import React, { useState, Fragment } from 'react';
+import { useDispatch } from 'react-redux';
+import { INVENTORY_ADD_ACTION } from '../../config/const/settings';
+import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 
 export default function PopUpInteraction({closeDialog, objectdata}) {
 
