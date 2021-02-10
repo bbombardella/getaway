@@ -28,6 +28,33 @@ export const DOORS = {
         },
         keyNeeded: 77,
     },
+    43: {
+        id: '43',
+        nextWorld: '8',
+        newPosition: {
+            x: SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
+    44: {
+        id: '44',
+        nextWorld: '6',
+        newPosition: {
+            x: 10*SPRITE_SIZE,
+            y: 11*SPRITE_SIZE
+        },
+        keyNeeded: 77,
+    },
+    45: {
+        id: '45',
+        nextWorld: '5',
+        newPosition: {
+            x: 10*SPRITE_SIZE,
+            y: SPRITE_SIZE
+        },
+        keyNeeded: 77,
+    },
     88: {
         id: '88',
         nextWorld: '1',
@@ -43,6 +70,15 @@ export const DOORS = {
         newPosition: {
             x: SPRITE_SIZE,
             y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
+    90: {
+        id: '90',
+        nextWorld: '5',
+        newPosition: {
+            x: 10*SPRITE_SIZE,
+            y: 11*SPRITE_SIZE
         },
         keyNeeded: 77,
     },
