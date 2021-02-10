@@ -5,7 +5,7 @@ import * as collisions from '../../components/map/world/collision/';
 
 
 export default function useWalk(maxSteps) {
-    const [position, setPos] = useState({x: 2*SPRITE_SIZE, y: 4*SPRITE_SIZE});
+    const [position, setPos] = useState({x: 2*SPRITE_SIZE, y: 2*SPRITE_SIZE});
     const [dir, setDir] = useState(0);
     const [prevdir, setprevDir] = useState(0);
     const [step,setStep] = useState(0);
@@ -146,6 +146,12 @@ export default function useWalk(maxSteps) {
             return ({
                 x: nextx - modifier[dir].x,
                 y: nexty - modifier[dir].y
+            })
+        }
+        else if (collisionArray[tempy][tempx] === 69) {
+            return ({
+                x: 2*SPRITE_SIZE,
+                y: 2*SPRITE_SIZE
             })
         }
         else
