@@ -8,6 +8,8 @@ import './World.css';
 function MapTile({ value }) {
     const tile = MAP_TILES[value];
     const background = tile.url;
+
+    console.log(value);
     return (<div
         className='map-title'
         style={{
