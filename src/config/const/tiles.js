@@ -175,6 +175,10 @@ export const MAP_TILES = {
         url: 'chemin_bas.png',
         type: 'porte',
     },
+    46: {
+        url: 'chemin_gauche.png',
+        type: 'porte',
+    },
     69: {
         url: 'vide_bleu.png',
         type: 'vide',
