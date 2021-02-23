@@ -64,6 +64,42 @@ export const DOORS = {
         },
         keyNeeded: 77,
     },
+    47: {
+        id: '47',
+        nextWorld: '10',
+        newPosition: {
+            x: 18*SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
+    48: {
+        id: '48',
+        nextWorld: '6',
+        newPosition: {
+            x: SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
+    49: {
+        id: '49',
+        nextWorld: '7',
+        newPosition: {
+            x: SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
+    50: {
+        id: '50',
+        nextWorld: '11',
+        newPosition: {
+            x: 19*SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
     88: {
         id: '88',
         nextWorld: '1',

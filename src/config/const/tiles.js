@@ -179,6 +179,22 @@ export const MAP_TILES = {
         url: 'chemin_gauche.png',
         type: 'porte',
     },
+    47: {
+        url: 'chemin_gauche.png',
+        type: 'porte',
+    },
+    48: {
+        url: 'gris.png',
+        type: 'porte',
+    },
+    49: {
+        url: 'violet.png',
+        type: 'porte',
+    },
+    50: {
+        url: 'chemin_gauche.png',
+        type: 'porte',
+    },
     69: {
         url: 'vide_bleu.png',
         type: 'vide',
@@ -382,5 +398,49 @@ export const MAP_TILES = {
     119: {
         url: 'porte_chateau_bas.png',
         type: 'porte',
+    },
+    600: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    601: {
+        url: 'vert.png',
+        type: 'sol',
+    },
+    602: {
+        url: 'bleu.png',
+        type: 'mur',
+    },
+    603: {
+        url: 'jaune.png',
+        type: 'PNJ',
+    },
+    604: {
+        url: 'gris.png',
+        type: 'porte',
+    },
+    605: {
+        url: 'blabla.png',
+        type: 'sol non marchable ?',
+    },
+    606: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    607: {
+        url: 'orange.png',
+        type: 'sol',
+    },
+    608: {
+        url: 'orange_foncé.png',
+        type: 'mur',
+    },
+    609: {
+        url: 'violet.png',
+        type: 'porte',
+    },
+    610: {
+        url: 'vert_foncé.png',
+        type: 'mur',
     },
 }
