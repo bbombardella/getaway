@@ -311,4 +311,72 @@ export const MAP_TILES = {
         url: 'barriere_coin_sup_gauche2.png',
         type: 'objet',
     },
+    103: {
+        url: 'cameleon.png',
+        type: 'PNJ',
+    },
+    104: {
+        url: 'pont_cassé_gauche.png',
+        type: 'sol non marchable ?',
+    },
+    105: {
+        url: 'pont_cassé_gauche.png',
+        type: 'sol non marchable ?',
+    },
+    106: {
+        url: 'pont_cassé_droit.png',
+        type: 'sol non marchable ?',
+    },
+    107: {
+        url: 'pont_cassé_droit.png',
+        type: 'sol non marchable ?',
+    },
+    108: {
+        url: 'vide_bleu.png',
+        type: 'vide',
+    },
+    109: {
+        url: 'eau.png',
+        type: 'vide ?',
+    },
+    110: {
+        url: 'eau_caillou.png',
+        type: 'mur ?',
+    },
+    111: {
+        url: 'eau_foncée.png',
+        type: 'vide ?',
+    },
+    112: {
+        url: 'pont_normal.png',
+        type: 'sol',
+    },
+    113: {
+        url: 'mur_pierre.png',
+        type: 'mur',
+    },
+    114: {
+        url: 'mur_pierre_haut.png',
+        type: 'mur',
+    },
+    115: {
+        url: 'mur_pierre_bas.png',
+        type: 'mur',
+    },
+    116: {
+        url: 'pont_cassé_droit.png',
+        type: 'sol non marchable ?',
+    },
+    117: {
+        url: 'porte_chateau_haut.png',
+        type: 'porte',
+    },
+    118: {
+        url: 'porte_chateau_milieu.png',
+        type: 'porte',
+    },
+    119: {
+        url: 'porte_chateau_bas.png',
+        type: 'porte',
+    },
 }
