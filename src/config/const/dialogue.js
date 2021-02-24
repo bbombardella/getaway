@@ -6,7 +6,10 @@ export const DIALOGUE = {
         description: [
             {
                 text: '↑ Colisée et Bibliothèque',
-                yes: null,
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
                 no: null
             }
         ],
@@ -18,7 +21,10 @@ export const DIALOGUE = {
         description: [
             {
                 text: '← Cabanon',
-                yes: null,
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
                 no: null
             }
         ],
@@ -30,7 +36,10 @@ export const DIALOGUE = {
         description: [
             {
                 text: '→ Château',
-                yes: null,
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
                 no: null
             }
         ],
@@ -42,7 +51,10 @@ export const DIALOGUE = {
         description: [
             {
                 text: '↓ Fontaine',
-                yes: null,
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
                 no: null
             }
         ],

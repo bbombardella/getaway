@@ -8,15 +8,18 @@ import { DIALOGUE } from '../../config/const/dialogue';
 export default function PopUpInteraction({closeDialog, objectdata}) {
 
     const dispatch = useDispatch();
+
     const [objectTaken, setObjectTaken] = useState(false);
+
     const typeObject = MAP_TILES[objectdata.id].type;
-    console.log(typeObject);
     var objectInfo;
+
     if(typeObject==='panneau') {
         objectInfo = DIALOGUE[objectdata.id];
     } else {
         objectInfo = INVENTORY_OBJECTS[objectdata.id];
     }
+
     const [indexDialogue, setIndexDialogue] = useState(0);
 
     function addObject() {
@@ -64,20 +67,26 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
             </div>
         );
     } else if(typeObject==='panneau') {
-        const dialogue = objectInfo.description;
-        const isLongDialogue = dialogue.length>1;
+
+        const dialogues = objectInfo.description;
+        const currentDialogue = dialogues[indexDialogue];
+        const isLastDialogue = currentDialogue.yes.next==null;
+        const noAvailable = currentDialogue.no!==null;
+
         return(
             <div className='tools-panel' id='interaction'>
                 <button className="panel-button" onClick={() => closeDialog()}>x</button>
-                <p>{dialogue[indexDialogue]}</p>
-                {isLongDialogue ? (
-                    <div>
-                        <button onClick={() => setIndexDialogue(indexDialogue+1)/*par exemple*/}>Oui</button>
-                        <button onClick={() => closeDialog()}>Non</button>
-                    </div>
-                ) : (
-                    <button onClick={() => closeDialog()}>OK</button>
-                )}
+                <p>{currentDialogue.text}</p>
+                <div>
+                    {isLastDialogue ? (
+                        <button onClick={() => closeDialog()}>{currentDialogue.yes.text}</button>
+                    ) : (
+                        <>
+                            <button onClick={() => setIndexDialogue(currentDialogue.yes.next)}>{currentDialogue.yes.text}</button>
+                            {noAvailable && <button onClick={() => setIndexDialogue(currentDialogue.no.next)}>{currentDialogue.no.text}</button>}
+                        </>
+                    )}
+                </div>
             </div>
         );
     } else {

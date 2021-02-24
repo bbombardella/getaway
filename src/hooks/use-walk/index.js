@@ -25,8 +25,9 @@ export default function useWalk(maxSteps) {
         up: { x: 0, y: -stepSize },
     }
 
-    const { world, inventory } = useSelector(state => ({
+    const { world, worldLoading, inventory } = useSelector(state => ({
         world: state.world,
+        worldLoading: state.worldLoading,
         inventory: state.inventory
     }));
     const dispatch = useDispatch();
@@ -69,7 +70,7 @@ export default function useWalk(maxSteps) {
                 x,
                 y,
             });
-        } else if (tile.type === 'sol') {
+        } else if (tile.type === 'sol' && !worldLoading) {
             setInteract(false);
             if (MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'coffre') {
                 setInteract(true);
