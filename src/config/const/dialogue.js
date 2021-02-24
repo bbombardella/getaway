@@ -3,28 +3,44 @@ export const DIALOGUE = {
         id: 67,
         name: 'Panneau Colisée et Bibliothèque',
         description: [
-            '↑ Colisée et Bibliothèque'
+            {
+                text: '↑ Colisée et Bibliothèque',
+                yes: null,
+                no: null
+            }
         ],
     },
     68: {
         id: 68,
         name: 'Panneau Cabanon',
         description: [
-            '← Cabanon'
+            {
+                text: '← Cabanon',
+                yes: null,
+                no: null
+            }
         ],
     },
     96: {
         id: 96,
         name: 'Panneau Château',
         description: [
-            '→ Château'
+            {
+                text: '→ Château',
+                yes: null,
+                no: null
+            }
         ],
     },
     97: {
         id: 97,
         name: 'Panneau Fontaine',
         description: [
-            '↓ Fontaine'
+            {
+                text: '↓ Fontaine',
+                yes: null,
+                no: null
+            }
         ],
     },
 }
