@@ -217,7 +217,7 @@ export const MAP_TILES = {
     },
     72: {
         url: 'fleurs.png',
-        type: 'objetPickable',
+        type: 'objet',
     },
     73: {
         url: 'table_hautgauche.png',
@@ -253,11 +253,11 @@ export const MAP_TILES = {
     },
     81: {
         url: 'socle_gauche.png',
-        type: 'objetPickable',
+        type: 'objet',
     },
     82: {
         url: 'socle_droite.png',
-        type: 'objetPickable',
+        type: 'objet',
     },
     83: {
         url: 'escalier_haut.png',

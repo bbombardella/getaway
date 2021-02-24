@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, INTERACTION_SET_TEXT, WORLD_SET_LOADING } from '../../config/const/settings';
-import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { DOORS } from '../../config/const/doors';
 import { MAP_TILES } from '../../config/const/tiles';
 import * as collisions from '../../components/map/world/collision/';
@@ -41,26 +40,19 @@ export default function useWalk(maxSteps) {
         }
         setStep((prev) => prev < maxSteps - 1 ? prev + 1 : 0);
         if (interact) {
-            const objectPayload = INVENTORY_OBJECTS[object];
-            if (objectPayload != null) {
-                if (objectPayload.descVisible) {
-                    dispatch({
-                        type: INTERACTION_SET_TEXT,
-                        payload: {
-                            interact: true,
-                            ...objectPayload
-                        }
-                    });
+            dispatch({
+                type: INTERACTION_SET_TEXT,
+                payload: {
+                    interact: true,
+                    id: object
                 }
-            }
+            });
         } else {
             dispatch({
                 type: INTERACTION_SET_TEXT,
                 payload: {
                     interact: false,
-                    id: 0,
-                    name: '',
-                    description: '',
+                    id: 0
                 }
             });
         }
@@ -79,25 +71,25 @@ export default function useWalk(maxSteps) {
             });
         } else if (tile.type === 'sol') {
             setInteract(false);
-            if (INVENTORY_OBJECTS[collisionArray[tempy - 1][tempx]] != null) {
+            if (MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'coffre') {
                 setInteract(true);
                 setObject(collisionArray[tempy - 1][tempx]);
-                console.log('true', collisionArray[tempy - 1][tempx]);
+                console.log(collisionArray[tempy - 1][tempx]);
             }
-            if (INVENTORY_OBJECTS[collisionArray[tempy + 1][tempx]] != null) {
+            if (MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'coffre') {
                 setInteract(true);
                 setObject(collisionArray[tempy + 1][tempx]);
-                console.log('true', collisionArray[tempy + 1][tempx]);
+                console.log(collisionArray[tempy + 1][tempx]);
             }
-            if (INVENTORY_OBJECTS[collisionArray[tempy][tempx - 1]] != null) {
+            if (MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'coffre') {
                 setInteract(true);
                 setObject(collisionArray[tempy][tempx - 1]);
-                console.log('true', collisionArray[tempy][tempx - 1]);
+                console.log(collisionArray[tempy][tempx - 1]);
             }
-            if (INVENTORY_OBJECTS[collisionArray[tempy][tempx + 1]] != null) {
+            if (MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'coffre') {
                 setInteract(true);
                 setObject(collisionArray[tempy][tempx + 1]);
-                console.log('true', collisionArray[tempy][tempx + 1]);
+                console.log(collisionArray[tempy][tempx + 1]);
             }
 
             return ({
@@ -121,14 +113,14 @@ export default function useWalk(maxSteps) {
                         number: door.nextWorld
                     }
                 });
-                setTimeout(() => { 
+                setTimeout(() => {
                     dispatch({
                         type: WORLD_SET_LOADING,
                         payload: {
                             isLoading: false
                         }
-                    }); 
-                }, 200);                
+                    });
+                }, 200);
                 return ({
                     x: door.newPosition.x,
                     y: door.newPosition.y

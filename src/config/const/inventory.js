@@ -80,5 +80,5 @@ export const INVENTORY_OBJECTS = {
         pickable: true,
         descVisible : true,
         visible: false,
-    }
+    },
 }

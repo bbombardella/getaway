@@ -3,9 +3,7 @@ import { INTERACTION_SET_TEXT } from '../../config/const/settings';
 const initialState = [
     {
         interact: false,
-        id: 0,
-        name: '',
-        description: '',
+        id: 0
     },
 
 ];
