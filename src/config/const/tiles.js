@@ -195,6 +195,14 @@ export const MAP_TILES = {
         url: 'chemin_gauche.png',
         type: 'porte',
     },
+    67: {
+        url: 'panneau_face.png',
+        type: 'panneau',
+    },
+    68: {
+        url: 'panneau_dos.png',
+        type: 'panneau',
+    },
     69: {
         url: 'vide_bleu.png',
         type: 'vide',
