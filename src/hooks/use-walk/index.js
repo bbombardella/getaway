@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, INTERACTION_SET_TEXT } from '../../config/const/settings';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, INTERACTION_SET_TEXT, WORLD_SET_LOADING } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { DOORS } from '../../config/const/doors';
 import { MAP_TILES } from '../../config/const/tiles';
@@ -72,7 +72,7 @@ export default function useWalk(maxSteps) {
         const tempy = (y + modifier[dir].y) / SPRITE_SIZE;
         const tile = MAP_TILES[collisionArray[tempy][tempx]];
 
-        if(tile===undefined) {
+        if (tile === undefined) {
             return ({
                 x,
                 y,
@@ -104,17 +104,31 @@ export default function useWalk(maxSteps) {
                 x: x + modifier[dir].x,
                 y: y + modifier[dir].y,
             })
-        } else if (tile.type==='porte') {
+        } else if (tile.type === 'porte') {
             const doorNumber = collisionArray[tempy][tempx];
             const door = DOORS[doorNumber];
             setHasKey(() => containKey(door.keyNeeded));
             if (hasKey) {
+                dispatch({
+                    type: WORLD_SET_LOADING,
+                    payload: {
+                        isLoading: true
+                    }
+                });
                 dispatch({
                     type: WORLD_SET_NUMBER,
                     payload: {
                         number: door.nextWorld
                     }
                 });
+                setTimeout(() => { 
+                    dispatch({
+                        type: WORLD_SET_LOADING,
+                        payload: {
+                            isLoading: false
+                        }
+                    }); 
+                }, 200);                
                 return ({
                     x: door.newPosition.x,
                     y: door.newPosition.y

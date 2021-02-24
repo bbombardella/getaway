@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
@@ -12,6 +13,10 @@ export default function Player({ skin }) {
         h: SPRITE_SIZE,
     };
 
+    const worldLoading = useSelector(state => ({
+        worldLoading: state.worldLoading
+    }));
+
     const [isPressed, setPressed] = useState(false);
 
     useKeyPress((e) => {
@@ -21,11 +26,11 @@ export default function Player({ skin }) {
                 setPressed(true);
                 setTimeout(function () {
                     setPressed(false);
-                }, 200);
+                }, 150);
             }
         }
         e.preventDefault();
     });
 
-    return <Actor sprite={`spritesheetHeros.png`} data={data} step={step} dir={dir} position={position} />
+    return <Actor sprite={`spritesheetHeros.png`} data={data} step={step} dir={dir} position={position} hidden={worldLoading.worldLoading} />
 }

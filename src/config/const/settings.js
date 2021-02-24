@@ -19,3 +19,5 @@ export const INTERACTION_SET_TEXT = 'SET';
 export const INTERACTION_DELETE_ALL = 'DELETE';
 
 export const WORLD_SET_NUMBER = 'SET_WORLD';
+
+export const WORLD_SET_LOADING = 'SET_WORLD_LOADING';
