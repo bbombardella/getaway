@@ -62,105 +62,110 @@ export default function useWalk(maxSteps) {
             });
         }
     }
+    
+    function testCollision({ x, y }, dir) {
+        const collisionArray = collisions[`collision${world}`];
+        const tempx = (x + modifier[dir].x) / SPRITE_SIZE;
+        const tempy = (y + modifier[dir].y) / SPRITE_SIZE;
+        const tile = MAP_TILES[collisionArray[tempy][tempx]];
 
-    function testCollision({x, y}, dir) {
-        const collisionArray = collisions[`collision${world}`]
-        const tempx = (x + modifier[dir].x)/SPRITE_SIZE
-        const tempy = (y + modifier[dir].y)/SPRITE_SIZE
-
-
-        if (collisionArray[tempy][tempx] === 0 || collisionArray[tempy][tempx] === 1
-            || collisionArray[tempy][tempx] === 80 || collisionArray[tempy][tempx] === 87)
-        {
+        if (tile === undefined) {
+            return ({
+                x,
+                y,
+            });
+        } else if (tile.type === 'sol' && !worldLoading) {
             setInteract(false);
-            if(INVENTORY_OBJECTS[collisionArray[tempy-1][tempx]]!=null) {
+            if (MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'coffre') {
                 setInteract(true);
-                setObject(collisionArray[tempy-1][tempx]);
-                console.log('true', collisionArray[tempy-1][tempx]);
+                setObject(collisionArray[tempy - 1][tempx]);
+                console.log(collisionArray[tempy - 1][tempx]);
             }
-            if(INVENTORY_OBJECTS[collisionArray[tempy+1][tempx]]!=null) {
+            if (MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'coffre') {
                 setInteract(true);
-                setObject(collisionArray[tempy+1][tempx]);
-                console.log('true', collisionArray[tempy+1][tempx]);
+                setObject(collisionArray[tempy + 1][tempx]);
+                console.log(collisionArray[tempy + 1][tempx]);
             }
-            if(INVENTORY_OBJECTS[collisionArray[tempy][tempx-1]]!=null) {
+            if (MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'coffre') {
                 setInteract(true);
-                setObject(collisionArray[tempy][tempx-1]);
-                console.log('true', collisionArray[tempy][tempx-1]);
+                setObject(collisionArray[tempy][tempx - 1]);
+                console.log(collisionArray[tempy][tempx - 1]);
             }
-            if(INVENTORY_OBJECTS[collisionArray[tempy][tempx+1]]!=null) {
+            if (MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'coffre') {
                 setInteract(true);
-                setObject(collisionArray[tempy][tempx+1]);
-                console.log('true', collisionArray[tempy][tempx+1]);
+                setObject(collisionArray[tempy][tempx + 1]);
+                console.log(collisionArray[tempy][tempx + 1]);
             }
 
-            return ({ 
+            return ({
                 x: x + modifier[dir].x,
                 y: y + modifier[dir].y,
             })
-        } else if(collisionArray[tempy][tempx]>=40 && collisionArray[tempy][tempx]<=60) {
+        } else if (tile.type === 'porte') {
             const doorNumber = collisionArray[tempy][tempx];
             const door = DOORS[doorNumber];
             setHasKey(() => containKey(door.keyNeeded));
-            if(hasKey) {
+            if (hasKey) {
+                dispatch({
+                    type: WORLD_SET_LOADING,
+                    payload: {
+                        isLoading: true
+                    }
+                });
                 dispatch({
                     type: WORLD_SET_NUMBER,
                     payload: {
                         number: door.nextWorld
                     }
                 });
-                return({
-                    x: x+door.newPosition.x,
-                    y: y+door.newPosition.y
+                setTimeout(() => {
+                    dispatch({
+                        type: WORLD_SET_LOADING,
+                        payload: {
+                            isLoading: false
+                        }
+                    });
+                }, 200);
+                return ({
+                    x: door.newPosition.x,
+                    y: door.newPosition.y
                 })
             } else {
-                return ({ 
+                return ({
                     x,
                     y
                 })
             }
-        }
-        // Si la case sur laquelle on veut se déplacer est de la glace :
-        else if (collisionArray[tempy][tempx] === 78) {
+        } else if (tile.type === 'glace') {
             let nextx = x + modifier[dir].x;
             let nexty = y + modifier[dir].y;
-            while (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 78) {
+            while (MAP_TILES[collisionArray[nexty][nextx]].type === 'glace') {
                 nextx = nextx + modifier[dir].x;
                 nexty = nexty + modifier[dir].y;
             }
-            // Si le personnage se retrouve dans le vide :
-            if (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 69){
+            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'vide'){
                 return ({
                     x: 2*SPRITE_SIZE,
                     y: 2*SPRITE_SIZE
                 })
             }
-            // Si la case après la glace est le sol en pierre :
-            if (collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE] === 80){
+            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'sol'){
                 return ({
                     x: nextx,
                     y: nexty,
                 })
             }
-            // Sinon
             return ({
                 x: nextx - modifier[dir].x,
                 y: nexty - modifier[dir].y
             })
         }
-        else if (collisionArray[tempy][tempx] === 69) {
-            return ({
-                x: 2*SPRITE_SIZE,
-                y: 2*SPRITE_SIZE
-            })
-        }
-        else
-        {
+        else {
             return ({
                 x,
-                y,
+                y
             })
-        }      
+        }
     }
 
     function move(dir){
