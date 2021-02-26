@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import ReactAudioPlayer from 'react-audio-player';
 
-export default function Music (url){
+export default function Music({ mute, volume }) {
+
+    const world = useSelector(state => ({
+        world: state.world
+    }));
+
     return (
-        <figure>
-        <figcaption>Écoutez de la musique :</figcaption>
-        <audio
-            controls
-            src="./assets/music/monplaisir.mp3">
-                Your browser does not support the
-                <code>audio</code> element.
-        </audio>
-        </figure>
+        <ReactAudioPlayer
+            src="./assets/music/monplaisir.mp3"
+            autoPlay
+            volume={parseFloat(volume)}
+            loop
+            muted={mute}
+        />
     )
 }
