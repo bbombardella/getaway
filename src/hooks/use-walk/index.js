@@ -58,7 +58,7 @@ export default function useWalk(maxSteps) {
             });
         }
     }
-
+    
     function testCollision({ x, y }, dir) {
         const collisionArray = collisions[`collision${world}`];
         const tempx = (x + modifier[dir].x) / SPRITE_SIZE;
@@ -132,11 +132,34 @@ export default function useWalk(maxSteps) {
                     y
                 })
             }
+        } else if (tile.type === 'glace') {
+            let nextx = x + modifier[dir].x;
+            let nexty = y + modifier[dir].y;
+            while (MAP_TILES[collisionArray[nexty][nextx]].type === 'glace') {
+                nextx = nextx + modifier[dir].x;
+                nexty = nexty + modifier[dir].y;
+            }
+            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'vide'){
+                return ({
+                    x: 2*SPRITE_SIZE,
+                    y: 2*SPRITE_SIZE
+                })
+            }
+            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'sol'){
+                return ({
+                    x: nextx,
+                    y: nexty,
+                })
+            }
+            return ({
+                x: nextx - modifier[dir].x,
+                y: nexty - modifier[dir].y
+            })
         }
         else {
             return ({
                 x,
-                y,
+                y
             })
         }
     }
