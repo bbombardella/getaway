@@ -253,7 +253,7 @@ export const MAP_TILES = {
     },
     79: {
         url: 'glace_roche.png',
-        type: 'glace',
+        type: 'roche',
     },
     80: {
         url: 'sol_pierre.png',

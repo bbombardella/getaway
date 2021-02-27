@@ -7,7 +7,7 @@ import * as collisions from '../../components/map/world/collision/';
 
 
 export default function useWalk(maxSteps) {
-    const [position, setPos] = useState({ x: 6 * SPRITE_SIZE, y: 4 * SPRITE_SIZE });
+    const [position, setPos] = useState({ x: 2 * SPRITE_SIZE, y: 2 * SPRITE_SIZE });
     const [dir, setDir] = useState(0);
     const [prevdir, setprevDir] = useState(0);
     const [step, setStep] = useState(0);
@@ -58,7 +58,7 @@ export default function useWalk(maxSteps) {
             });
         }
     }
-    
+
     function testCollision({ x, y }, dir) {
         const collisionArray = collisions[`collision${world}`];
         const tempx = (x + modifier[dir].x) / SPRITE_SIZE;
@@ -133,27 +133,48 @@ export default function useWalk(maxSteps) {
                 })
             }
         } else if (tile.type === 'glace') {
-            let nextx = x + modifier[dir].x;
-            let nexty = y + modifier[dir].y;
+            let nextx = tempx;
+            let nexty = tempy;
+            console.log("init : ", nextx, nexty, MAP_TILES[collisionArray[nexty][nextx]]);
             while (MAP_TILES[collisionArray[nexty][nextx]].type === 'glace') {
-                nextx = nextx + modifier[dir].x;
-                nexty = nexty + modifier[dir].y;
+                nextx = nextx + (modifier[dir].x / SPRITE_SIZE);
+                nexty = nexty + (modifier[dir].y / SPRITE_SIZE);
+                if (MAP_TILES[collisionArray[nexty][nextx]].type === 'roche') {
+                    nextx = nextx - (modifier[dir].x / SPRITE_SIZE);
+                    nexty = nexty - (modifier[dir].y / SPRITE_SIZE);
+                    break;
+                }  else if (MAP_TILES[collisionArray[nexty][nextx]].type === 'vide') {
+                    console.log("vide");
+                    return ({
+                        x: 2 * SPRITE_SIZE,
+                        y: 2 * SPRITE_SIZE
+                    })
+                } else if(MAP_TILES[collisionArray[nexty][nextx]].type === 'sol') {
+                    console.log("sol");
+                    return ({
+                        x: nextx * SPRITE_SIZE,
+                        y: nexty * SPRITE_SIZE,
+                    })
+                }
+                console.log("while : ", nextx, nexty, MAP_TILES[collisionArray[nexty][nextx]]);
             }
-            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'vide'){
+            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'vide') {
+                console.log("vide");
                 return ({
-                    x: 2*SPRITE_SIZE,
-                    y: 2*SPRITE_SIZE
+                    x: 2 * SPRITE_SIZE,
+                    y: 2 * SPRITE_SIZE
                 })
             }
-            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'sol'){
+            if (MAP_TILES[collisionArray[nexty][nextx]].type === 'sol') {
+                console.log("sol");
                 return ({
-                    x: nextx,
-                    y: nexty,
+                    x: nextx * SPRITE_SIZE,
+                    y: nexty * SPRITE_SIZE,
                 })
             }
             return ({
-                x: nextx - modifier[dir].x,
-                y: nexty - modifier[dir].y
+                x: nextx * SPRITE_SIZE,
+                y: nexty * SPRITE_SIZE
             })
         }
         else {
