@@ -89,6 +89,44 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                 </div>
             </div>
         );
+    } else if(typeObject==='fontaine') {
+        var contenu5L = 0;
+        var contenu3L = 0;
+        return(
+            // besoin d'utiliser sass pour modifier dynamiquement le CSS ?
+            <div className='tools-panel' id='interaction'>
+                <button className="panel-button" onClick={() => closeDialog()}>x</button>
+                <div id="mainContainer">
+                    <p>
+                    Vous disposez de 2 seaux, de contenance 3 et 5 litres. Avec pour seules
+                    possibilités de les remplir avec l'eau de la fontaine, de les vider, ou
+                    de transvaser le contenu de l'un dans l'autre, il vous faut obtenir un
+                    seau de 4 litres exactement. <br></br> Bonne chance.
+                    </p>
+                    <p>{contenu3L}L / 3L</p>
+                    <p>{contenu5L}L / 5L</p>
+                    <img src="../assets/seaux/s3c0.png"></img>
+                    <img src="../assets/seaux/s5c0.png"></img>
+                    <div>
+                        <button>Transvaser →</button>
+                        <button>Transvaser ←</button>
+                    </div>
+                    <div>
+                        <button>Remplir</button>
+                        <button>Remplir</button>
+                    </div>
+                    <div>
+                        <button>Vider</button>
+                        <button>Vider</button>
+                    </div>
+                    <div>
+                        <button style={{color: "green"}} /*onClick={fonction qui gère validation de l'énigme,
+                        c'est-à-dire l'obtention des bottes d'Hermès ssi un des deux seaux contient 4L}*/>Valider</button>
+                        <button style={{color: "red"}} onClick={() => closeDialog()}>Annuler</button>
+                    </div>
+                </div>
+            </div>
+        );
     } else {
         return(
             <div>
