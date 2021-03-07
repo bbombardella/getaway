@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, DOORS, INVENTORY_OBJECTS, INTERACTION_SET_TEXT } from '../../config/const';
+import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, INTERACTION_SET_TEXT, WORLD_SET_LOADING } from '../../config/const/settings';
+import { DOORS } from '../../config/const/doors';
+import { MAP_TILES } from '../../config/const/tiles';
 import * as collisions from '../../components/map/world/collision/';
 
 
 export default function useWalk(maxSteps) {
-    const [position, setPos] = useState({x: 2*SPRITE_SIZE, y: 2*SPRITE_SIZE});
+    const [position, setPos] = useState({ x: 6 * SPRITE_SIZE, y: 4 * SPRITE_SIZE });
     const [dir, setDir] = useState(0);
     const [prevdir, setprevDir] = useState(0);
-    const [step,setStep] = useState(0);
+    const [step, setStep] = useState(0);
     const [interact, setInteract] = useState(false);
     const [object, setObject] = useState(0);
     const [hasKey, setHasKey] = useState(false);
@@ -16,19 +18,19 @@ export default function useWalk(maxSteps) {
 
     const stepSize = SPRITE_SIZE;
 
-    const modifier ={
+    const modifier = {
         down: { x: 0, y: stepSize },
         left: { x: -stepSize, y: 0 },
         right: { x: stepSize, y: 0 },
         up: { x: 0, y: -stepSize },
     }
 
-    const { world, inventory } = useSelector(state => ({
+    const { world, worldLoading, inventory } = useSelector(state => ({
         world: state.world,
+        worldLoading: state.worldLoading,
         inventory: state.inventory
     }));
     const dispatch = useDispatch();
-    
 
     function walk(dir) {
         setprevDir(dir);
