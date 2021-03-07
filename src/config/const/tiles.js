@@ -570,5 +570,9 @@ export const MAP_TILES = {
     615: {
         url: 'violet_rayon1.png',
         type: 'miroir',
-    },    
+    },
+    700: {
+        url: 'bottes.png',
+        type: 'botte',
+    }  
 }

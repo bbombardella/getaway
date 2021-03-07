@@ -5,6 +5,8 @@ import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
 
+import './Interaction.css';
+
 export default function PopUpInteraction({closeDialog, objectdata}) {
 
     const dispatch = useDispatch();
@@ -99,72 +101,68 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
             // besoin d'utiliser sass pour modifier dynamiquement le CSS ?
             <div className='tools-panel' id='interaction'>
                 <button className="panel-button" onClick={() => closeDialog()}>x</button>
-                <div id="mainContainer">
-                    <p>
-                    Vous disposez de 2 seaux, de contenance 3 et 5 litres. Avec pour seules
+                <div id="mainContainer" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
+                    <p>Vous disposez de 2 seaux, de contenance 3 et 5 litres. Avec pour seules
                     possibilités de les remplir avec l'eau de la fontaine, de les vider, ou
                     de transvaser le contenu de l'un dans l'autre, il vous faut obtenir un
-                    seau de 4 litres exactement. <br></br> Bonne chance.
-                    </p>
-                    <p>{contenu3L}L / 3L</p>
-                    <p>{contenu5L}L / 5L</p>
-                    <img src={srcS3L} alt="Seau de 3 litres"></img>
-                    <img src={srcS5L} alt="Seau de 5 litres"></img>
-                    <div /*boutons pour transvaser*/>
-                        <button onClick={
-                            () => {
-                                if (contenu3L + contenu5L > 5) {
-                                    if (!(contenu5L == 5)) {
-                                        var tmp = 5 - contenu3L;
-                                        setContenu5L(contenu5L + tmp);
-                                        setContenu3L(contenu3L - tmp);
+                    seau de 4 litres exactement. <br></br> Bonne chance.</p>
+                    <div className="seaux">
+                        <div className="seau" id="3">
+                            <div className="seau-details">
+                                <p>{contenu3L}L / 3L</p>
+                                <img src={srcS3L} alt="Seau de 3 litres"></img>
+                            </div>
+                            <div className="seau-button">
+                                <button onClick={() => {
+                                    if (contenu3L + contenu5L > 5) {
+                                        if (!(contenu5L === 5)) {
+                                            var tmp = 5 - contenu3L;
+                                            setContenu5L(contenu5L + tmp);
+                                            setContenu3L(contenu3L - tmp);
+                                        }
                                     }
-                                }
-                                else {
-                                    setContenu5L(contenu3L + contenu5L);
-                                    setContenu3L(0);
-                                }
-                            }
-                        }>Transvaser →</button>
-                        <button onClick={
-                            () => {
-                                if (contenu3L + contenu5L > 3) {
-                                    if (!(contenu3L == 3)) {
-                                        var tmp = contenu5L - 3;
-                                        setContenu3L(contenu3L + tmp);
-                                        setContenu5L(contenu5L - tmp);
+                                    else {
+                                        setContenu5L(contenu3L + contenu5L);
+                                        setContenu3L(0);
                                     }
-                                }
-                                else {
-                                    setContenu3L(contenu3L + contenu5L);
-                                    setContenu5L(0);
-                                }
-                            }
-                        }>Transvaser ←</button>
-                    </div>
-                    <div /*boutons pour remplir*/>
-                        <button onClick={
-                            () => {
-                                setContenu3L(3);}
-                            }>Remplir</button>
-                        <button onClick={
-                            () => {
-                                setContenu5L(5);}
-                            }>Remplir</button>
-                    </div>
-                    <div /*boutons pour vider*/>
-                        <button onClick={
-                            () => {
-                                setContenu3L(0);}
-                        }>Vider</button>
-                        <button onClick={
-                            () => {
-                                setContenu5L(0);}
-                        }>Vider</button>
+                                }}>Transvaser →</button>
+                                <button onClick={() => setContenu3L(3) }>Remplir</button>
+                                <button onClick={() => setContenu3L(0)}>Vider</button>
+                            </div>                        
+                        </div>
+                        <div className="seau" id="5">
+                            <div className="seau-details">
+                                <p>{contenu5L}L / 5L</p>
+                                <img src={srcS5L} alt="Seau de 5 litres"></img>
+                            </div>
+                            <div className="seau-button">
+                                <button onClick={() => {
+                                        if (contenu3L + contenu5L > 3) {
+                                            if (!(contenu3L === 3)) {
+                                                var tmp = contenu5L - 3;
+                                                setContenu3L(contenu3L + tmp);
+                                                setContenu5L(contenu5L - tmp);
+                                            }
+                                        }
+                                        else {
+                                            setContenu3L(contenu3L + contenu5L);
+                                            setContenu5L(0);
+                                        }
+                                    }}>Transvaser ←</button>
+                                <button onClick={() => setContenu5L(5)}>Remplir</button>
+                                <button onClick={() => setContenu5L(0)}>Vider</button>
+                            </div>
+                        </div>
                     </div>
                     <div>
-                        <button style={{color: "green"}} /*onClick={fonction qui gère validation de l'énigme,
-                        c'est-à-dire l'obtention des bottes d'Hermès ssi un des deux seaux contient 4L}*/>Valider</button>
+                        <button style={{color: "green"}} onClick={() => {
+                            if(contenu3L===4 || contenu5L===4) {
+                                dispatch({
+                                    type: INVENTORY_ADD_ACTION,
+                                    payload: INVENTORY_OBJECTS[700]
+                                });
+                            }
+                        }}>Valider</button>
                         <button style={{color: "red"}} onClick={() => closeDialog()}>Annuler</button>
                     </div>
                 </div>
