@@ -22,6 +22,9 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
 
     const [indexDialogue, setIndexDialogue] = useState(0);
 
+    const [contenu3L, setContenu3L] = useState(0);
+    const [contenu5L, setContenu5L] = useState(0);
+
     function addObject() {
         if(typeObject==='coffre') {
             dispatch({
@@ -90,8 +93,6 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
             </div>
         );
     } else if(typeObject==='fontaine') {
-        var contenu5L = 0;
-        var contenu3L = 0;
         return(
             // besoin d'utiliser sass pour modifier dynamiquement le CSS ?
             <div className='tools-panel' id='interaction'>
@@ -105,19 +106,35 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                     </p>
                     <p>{contenu3L}L / 3L</p>
                     <p>{contenu5L}L / 5L</p>
-                    <img src="../assets/seaux/s3c0.png"></img>
-                    <img src="../assets/seaux/s5c0.png"></img>
+                    <img id="seau3L" src="../assets/seaux/s3c0.png"></img>
+                    <img id="seau5L" src="../assets/seaux/s5c0.png"></img>
                     <div>
-                        <button>Transvaser →</button>
-                        <button>Transvaser ←</button>
+                        <button onClick={() => {setContenu5L(contenu5L + contenu3L); setContenu3L(0)}}>Transvaser →</button>
+                        <button onClick={() => {setContenu3L(contenu3L + contenu5L); setContenu5L(0)}}>Transvaser ←</button>
                     </div>
                     <div>
-                        <button onClick={() => contenu3L = 3 /*lol non ça marche pas*/}>Remplir</button>
-                        <button>Remplir</button>
+                        <button onClick={
+                            () => {
+                                setContenu3L(3);
+                                document.getElementById("seau3L").setAttribute("src", "../assets/seaux/s3c3.png")}
+                            }>Remplir</button>
+                        <button onClick={
+                            () => {
+                                setContenu5L(5);
+                                document.getElementById("seau5L").setAttribute("src", "../assets/seaux/s5c5.png")}
+                            }>Remplir</button>
                     </div>
                     <div>
-                        <button>Vider</button>
-                        <button>Vider</button>
+                        <button onClick={
+                            () => {
+                                setContenu3L(0);
+                                document.getElementById("seau3L").setAttribute("src", "../assets/seaux/s3c0.png")}
+                        }>Vider</button>
+                        <button onClick={
+                            () => {
+                                setContenu5L(0);
+                                document.getElementById("seau3L").setAttribute("src", "../assets/seaux/s5c0.png")}
+                        }>Vider</button>
                     </div>
                     <div>
                         <button style={{color: "green"}} /*onClick={fonction qui gère validation de l'énigme,
