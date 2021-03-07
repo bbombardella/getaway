@@ -415,20 +415,116 @@ export const MAP_TILES = {
         url: 'porte_chateau_bas.png',
         type: 'porte',
     },
+    501: {
+        url: 'fontaine1.png',
+        type: 'fontaine'
+    },
+    502: {
+        url: 'fontaine2.png',
+        type: 'fontaine'
+    },
+    503: {
+        url: 'fontaine3.png',
+        type: 'fontaine'
+    },
+    504: {
+        url: 'fontaine4.png',
+        type: 'fontaine'
+    },
+    505: {
+        url: 'fontaine5.png',
+        type: 'fontaine'
+    },
+    506: {
+        url: 'fontaine6.png',
+        type: 'fontaine'
+    },
+    507: {
+        url: 'fontaine7.png',
+        type: 'fontaine'
+    },
+    508: {
+        url: 'fontaine8.png',
+        type: 'fontaine'
+    },
+    509: {
+        url: 'fontaine9.png',
+        type: 'fontaine'
+    },
+    510: {
+        url: 'fontaine10.png',
+        type: 'fontaine'
+    },
+    511: {
+        url: 'fontaine11.png',
+        type: 'fontaine'
+    },
+    512: {
+        url: 'fontaine12.png',
+        type: 'fontaine'
+    },
+    513: {
+        url: 'fontaine13.png',
+        type: 'fontaine'
+    },
+    514: {
+        url: 'fontaine14.png',
+        type: 'fontaine'
+    },
+    515: {
+        url: 'fontaine15.png',
+        type: 'fontaine'
+    },
+    516: {
+        url: 'fontaine16.png',
+        type: 'fontaine'
+    },
+    517: {
+        url: 'fontaine17.png',
+        type: 'fontaine'
+    },
+    518: {
+        url: 'fontaine18.png',
+        type: 'fontaine'
+    },
+    519: {
+        url: 'fontaine19.png',
+        type: 'fontaine'
+    },
+    520: {
+        url: 'fontaine20.png',
+        type: 'fontaine'
+    },
+    521: {
+        url: 'fontaine21.png',
+        type: 'fontaine'
+    },
+    522: {
+        url: 'fontaine22.png',
+        type: 'fontaine'
+    },
+    523: {
+        url: 'fontaine23.png',
+        type: 'fontaine'
+    },
+    524: {
+        url: 'fontaine24.png',
+        type: 'fontaine'
+    },
+    525: {
+        url: 'fontaine25.png',
+        type: 'fontaine'
+    },
     600: {
         url: 'rouge.png',
         type: 'mur',
     },
     601: {
-        url: 'vert.png',
+        url: 'herbe_enchantee.png',
         type: 'sol',
     },
-    602: {
-        url: 'bleu.png',
-        type: 'fontaine',
-    },
     603: {
-        url: 'jaune.png',
+        url: 'fee_abeille.png',
         type: 'PNJ',
     },
     604: {
@@ -443,12 +539,8 @@ export const MAP_TILES = {
         url: 'rouge.png',
         type: 'mur',
     },
-    607: {
-        url: 'orange.png',
-        type: 'sol',
-    },
     608: {
-        url: 'orange_foncé.png',
+        url: 'fleurs_font.png',
         type: 'mur',
     },
     609: {
@@ -456,7 +548,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     610: {
-        url: 'vert_foncé.png',
+        url: 'foret.png',
         type: 'mur',
     },
     611: {

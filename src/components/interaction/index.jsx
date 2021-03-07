@@ -112,7 +112,7 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                         <button>Transvaser ←</button>
                     </div>
                     <div>
-                        <button>Remplir</button>
+                        <button onClick={() => contenu3L = 3 /*lol non ça marche pas*/}>Remplir</button>
                         <button>Remplir</button>
                     </div>
                     <div>
