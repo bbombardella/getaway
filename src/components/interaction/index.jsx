@@ -93,6 +93,8 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
             </div>
         );
     } else if(typeObject==='fontaine') {
+        const srcS3L = `../assets/seaux/s3c${contenu3L}.png`;
+        const srcS5L = `../assets/seaux/s5c${contenu5L}.png`;
         return(
             // besoin d'utiliser sass pour modifier dynamiquement le CSS ?
             <div className='tools-panel' id='interaction'>
@@ -106,34 +108,58 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                     </p>
                     <p>{contenu3L}L / 3L</p>
                     <p>{contenu5L}L / 5L</p>
-                    <img id="seau3L" src="../assets/seaux/s3c0.png"></img>
-                    <img id="seau5L" src="../assets/seaux/s5c0.png"></img>
-                    <div>
-                        <button onClick={() => {setContenu5L(contenu5L + contenu3L); setContenu3L(0)}}>Transvaser →</button>
-                        <button onClick={() => {setContenu3L(contenu3L + contenu5L); setContenu5L(0)}}>Transvaser ←</button>
-                    </div>
-                    <div>
+                    <img src={srcS3L} alt="Seau de 3 litres"></img>
+                    <img src={srcS5L} alt="Seau de 5 litres"></img>
+                    <div /*boutons pour transvaser*/>
                         <button onClick={
                             () => {
-                                setContenu3L(3);
-                                document.getElementById("seau3L").setAttribute("src", "../assets/seaux/s3c3.png")}
+                                if (contenu3L + contenu5L > 5) {
+                                    if (!(contenu5L == 5)) {
+                                        var tmp = 5 - contenu3L;
+                                        setContenu5L(contenu5L + tmp);
+                                        setContenu3L(contenu3L - tmp);
+                                    }
+                                }
+                                else {
+                                    setContenu5L(contenu3L + contenu5L);
+                                    setContenu3L(0);
+                                }
+                            }
+                        }>Transvaser →</button>
+                        <button onClick={
+                            () => {
+                                if (contenu3L + contenu5L > 3) {
+                                    if (!(contenu3L == 3)) {
+                                        var tmp = contenu5L - 3;
+                                        setContenu3L(contenu3L + tmp);
+                                        setContenu5L(contenu5L - tmp);
+                                    }
+                                }
+                                else {
+                                    setContenu3L(contenu3L + contenu5L);
+                                    setContenu5L(0);
+                                }
+                            }
+                        }>Transvaser ←</button>
+                    </div>
+                    <div /*boutons pour remplir*/>
+                        <button onClick={
+                            () => {
+                                setContenu3L(3);}
                             }>Remplir</button>
                         <button onClick={
                             () => {
-                                setContenu5L(5);
-                                document.getElementById("seau5L").setAttribute("src", "../assets/seaux/s5c5.png")}
+                                setContenu5L(5);}
                             }>Remplir</button>
                     </div>
-                    <div>
+                    <div /*boutons pour vider*/>
                         <button onClick={
                             () => {
-                                setContenu3L(0);
-                                document.getElementById("seau3L").setAttribute("src", "../assets/seaux/s3c0.png")}
+                                setContenu3L(0);}
                         }>Vider</button>
                         <button onClick={
                             () => {
-                                setContenu5L(0);
-                                document.getElementById("seau3L").setAttribute("src", "../assets/seaux/s5c0.png")}
+                                setContenu5L(0);}
                         }>Vider</button>
                     </div>
                     <div>
