@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { INVENTORY_ADD_ACTION } from '../../config/const/settings';
+import { INTERACTION_SET_TEXT, INVENTORY_ADD_ACTION } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
@@ -27,6 +27,8 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
     const [contenu3L, setContenu3L] = useState(0);
     const [contenu5L, setContenu5L] = useState(0);
 
+    const [enigmeSuccess, setEnigmeSuccess] = useState(false)
+
     function addObject() {
         if(typeObject==='coffre') {
             dispatch({
@@ -42,7 +44,16 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
         setObjectTaken(true);
     }
 
-    if(typeObject==='objet' || typeObject==='coffre') {
+    if(enigmeSuccess) {
+        return(
+            <div className="tools-panel" id="interaction">
+                <button className="panel-button" onClick={() => closeDialog()}>x</button>
+                <hr></hr>
+                <p>Égnime validé</p>
+                <button onClick={() => closeDialog()}>OK</button>
+        </div>
+        )
+    } else if(typeObject==='objet' || typeObject==='coffre') {
         return(
             <div className='tools-panel' id='interaction'>
                 <button className="panel-button" onClick={() => closeDialog()}>x</button>
@@ -156,11 +167,12 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                     </div>
                     <div>
                         <button style={{color: "green"}} onClick={() => {
-                            if(contenu3L===4 || contenu5L===4) {
+                            if(contenu5L===4) {
                                 dispatch({
                                     type: INVENTORY_ADD_ACTION,
                                     payload: INVENTORY_OBJECTS[700]
                                 });
+                                setEnigmeSuccess(true);
                             }
                         }}>Valider</button>
                         <button style={{color: "red"}} onClick={() => closeDialog()}>Annuler</button>
