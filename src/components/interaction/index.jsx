@@ -116,7 +116,7 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                                 <button onClick={() => {
                                     if (contenu3L + contenu5L > 5) {
                                         if (!(contenu5L === 5)) {
-                                            var tmp = 5 - contenu3L;
+                                            var tmp = 5 - contenu5L;
                                             setContenu5L(contenu5L + tmp);
                                             setContenu3L(contenu3L - tmp);
                                         }
@@ -139,7 +139,7 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                                 <button onClick={() => {
                                         if (contenu3L + contenu5L > 3) {
                                             if (!(contenu3L === 3)) {
-                                                var tmp = contenu5L - 3;
+                                                var tmp = 3 - contenu3L;
                                                 setContenu3L(contenu3L + tmp);
                                                 setContenu5L(contenu5L - tmp);
                                             }
