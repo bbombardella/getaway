@@ -203,6 +203,10 @@ export const MAP_TILES = {
         url: 'chemin_droite.png',
         type: 'porte',
     },
+    53: {
+        url: 'bleu.png',
+        type: 'porte',
+    },
     67: {
         url: 'panneau_face.png',
         type: 'panneau',
@@ -415,6 +419,110 @@ export const MAP_TILES = {
         url: 'porte_chateau_bas.png',
         type: 'porte',
     },
+    120: {
+        url: 'blanc.png',
+        type: 'sol',
+    },
+    121: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    122: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    123: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    124: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    125: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    126: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    127: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    128: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    129: {
+        url: 'rouge.png',
+        type: 'mur',
+    },
+    130: {
+        url: 'jaune.png',
+        type: 'mur',
+    },
+    131: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    132: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    133: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    134: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    135: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    136: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    137: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    138: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    139: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    140: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    141: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    142: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    143: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    144: {
+        url: 'blanc.png',
+        type: 'mur',
+    },
+    145: {
+        url: 'blanc.png',
+        type: 'mur',
+    }?
     600: {
         url: 'rouge.png',
         type: 'mur',
