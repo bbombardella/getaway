@@ -14,7 +14,7 @@ export default function Map(props) {
         {
             x: 0,
             y: 0,
-            orientation: 'down'
+            orientation: 'right'
         },
     ]);
 
@@ -57,17 +57,17 @@ export default function Map(props) {
 
 function Miroir({ data }) {
 
-    let image="";
+    let image="./assets/tiles/";
 
     switch(data.orientation) {
         case 'right':
-            image="";
+            image+="miroir_droite.png";
             break;
         case 'left':
-            image="";
+            image+="miroir_gauche.png";
             break;
         default:
-            image="";
+            image+="miroir_droite.png";
             break;
     }
 
@@ -82,7 +82,6 @@ function Miroir({ data }) {
             backgroundRepeat: "no-repeat",
             transition: 'left 0.3s linear 0s, top 0.3s linear 0s',
         }}>
-            m
         </div>
     )
 }
