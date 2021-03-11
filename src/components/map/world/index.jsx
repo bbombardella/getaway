@@ -31,8 +31,7 @@ function MapRow(props) {
     );
 }
 
-export default function World(props) {
-    const world = useSelector(state => state.world);
+export default function World({ world }) {
 
     const tile = tiles[`collision${world}`];
 

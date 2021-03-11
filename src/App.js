@@ -20,7 +20,6 @@ export default function App() {
       return (
       <div className='game'>
         <Map>
-          <World />
           <Player skin={1} /> 
         </Map>
         <Tools />
