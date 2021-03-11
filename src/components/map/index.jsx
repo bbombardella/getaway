@@ -57,7 +57,7 @@ export default function Map(props) {
 
 function Miroir({ data }) {
 
-    const image="";
+    let image="";
 
     switch(data.orientation) {
         case 'right':
