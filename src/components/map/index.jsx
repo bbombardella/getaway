@@ -55,13 +55,13 @@ export default function Map(props) {
 
         {
             x: 4,
-            y: 8,
+            y: 9,
             orientation: 'right'
         },
 
         {
             x: 6,
-            y: 8,
+            y: 9,
             orientation: 'right'
         },
 
