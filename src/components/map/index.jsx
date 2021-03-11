@@ -12,8 +12,86 @@ export default function Map(props) {
 
     const [miroirs, setMiroirs] = useState([
         {
-            x: 0,
-            y: 0,
+            x: 17,
+            y: 2,
+            orientation: 'right'
+        },
+
+        {
+            x: 4,
+            y: 2,
+            orientation: 'right'
+        },
+
+        {
+            x: 8,
+            y: 2,
+            orientation: 'right'
+        },
+
+        {
+            x: 12,
+            y: 2,
+            orientation: 'right'
+        },
+
+        {
+            x: 8,
+            y: 5,
+            orientation: 'right'
+        },
+
+        {
+            x: 14,
+            y: 5,
+            orientation: 'right'
+        },
+
+        {
+            x: 16,
+            y: 5,
+            orientation: 'right'
+        },
+
+        {
+            x: 4,
+            y: 8,
+            orientation: 'right'
+        },
+
+        {
+            x: 6,
+            y: 8,
+            orientation: 'right'
+        },
+
+        {
+            x: 6,
+            y: 6,
+            orientation: 'right'
+        },
+
+        {
+            x: 12,
+            y: 8,
+            orientation: 'right'
+        },
+
+        {
+            x: 14,
+            y: 8,
+            orientation: 'right'
+        },
+
+        {
+            x: 17,
+            y: 10,
+            orientation: 'right'
+        },
+
+        {
+            x: 8,
+            y: 10,
             orientation: 'right'
         },
     ]);
@@ -74,8 +152,8 @@ function Miroir({ data }) {
     return (
         <div className="miroir" style={{
             position: 'absolute',
-            top: data.y,
-            left: data.x,
+            top: data.y*SPRITE_SIZE,
+            left: data.x*SPRITE_SIZE,
             height: `${SPRITE_SIZE}px`,
             width: `${SPRITE_SIZE}px`,
             backgroundImage: `url(${image})`,

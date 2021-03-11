@@ -464,59 +464,59 @@ export const MAP_TILES = {
         type: 'mur',
     },
     131: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     132: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     133: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     134: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     135: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     136: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     137: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     138: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     139: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     140: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     141: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     142: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     143: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     144: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     145: {
