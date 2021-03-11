@@ -420,11 +420,11 @@ export const MAP_TILES = {
         type: 'porte',
     },
     120: {
-        url: 'blanc.png',
+        url: 'sol_colisee.png',
         type: 'sol',
     },
     121: {
-        url: 'rouge.png',
+        url: 'solmur_colisee.png',
         type: 'mur',
     },
     122: {
