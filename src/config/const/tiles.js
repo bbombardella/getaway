@@ -204,7 +204,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     53: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'porte',
     },
     67: {
@@ -428,39 +428,39 @@ export const MAP_TILES = {
         type: 'mur',
     },
     122: {
-        url: 'rouge.png',
+        url: 'colonne_haut.png',
         type: 'mur',
     },
     123: {
-        url: 'rouge.png',
+        url: 'colonne_droite.png',
         type: 'mur',
     },
     124: {
-        url: 'rouge.png',
+        url: 'colonne_coin2.png',
         type: 'mur',
     },
     125: {
-        url: 'rouge.png',
+        url: 'colonne_coin1.png',
         type: 'mur',
     },
     126: {
-        url: 'rouge.png',
+        url: 'colonne_coin3.png',
         type: 'mur',
     },
     127: {
-        url: 'rouge.png',
+        url: 'colonne_coin4.png',
         type: 'mur',
     },
     128: {
-        url: 'rouge.png',
+        url: 'colonne_bas.png',
         type: 'mur',
     },
     129: {
-        url: 'rouge.png',
+        url: 'colonne_gauche.png',
         type: 'mur',
     },
     130: {
-        url: 'jaune.png',
+        url: 'entree_lumiere.png',
         type: 'mur',
     },
     131: {
