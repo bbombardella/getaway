@@ -464,43 +464,43 @@ export const MAP_TILES = {
         type: 'mur',
     },
     131: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     132: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     133: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     134: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     135: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     136: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     137: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     138: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     139: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     140: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     141: {
@@ -508,19 +508,19 @@ export const MAP_TILES = {
         type: 'mur',
     },
     142: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     143: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     144: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     },
     145: {
-        url: 'blanc.png',
+        url: 'bleu.png',
         type: 'mur',
     }?
     600: {
