@@ -1,4 +1,4 @@
-import { INVENTORY_ADD_ACTION } from '../../config/const';
+import { INVENTORY_ADD_ACTION } from '../../config/const/settings';
 
 const initialState = [ ];
 

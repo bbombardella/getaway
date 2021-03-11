@@ -22,7 +22,6 @@ export default function App() {
         <Map>
           <World />
           <Player skin={1} /> 
-          <Music />
         </Map>
         <Tools />
       </div>

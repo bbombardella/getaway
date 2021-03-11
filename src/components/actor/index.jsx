@@ -1,7 +1,7 @@
 import React from 'react';
 import Sprite from '../sprite';
 
-export default function Actor({sprite, data, step=0, dir=0, position=0}) {
+export default function Actor({sprite, data, step=0, dir=0, position=0, hidden=false}) {
     const { w, h } = data;
     return(
         <Sprite 
@@ -15,6 +15,7 @@ export default function Actor({sprite, data, step=0, dir=0, position=0}) {
             step={step}
             dir={dir}
             position={position}
+            hidden={hidden}
         />
     );
 }

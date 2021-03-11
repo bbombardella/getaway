@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { INTRO } from '../../config/const';
+import { INTRO } from '../../config/const/intro';
 import './Introduction.css';
 
 export default function Introduction({children}){

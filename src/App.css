@@ -20,12 +20,6 @@
   font-family: 'pixel';
 }
 
-.intro {
-  text-align: center;
-  margin-top: 50vh;
-  transform: translateY(-50%);
-}
-
 .game {
   font-family: 'hydrophiliaiced';
   letter-spacing: 1px;
