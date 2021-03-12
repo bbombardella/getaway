@@ -140,10 +140,25 @@ export default function useWalk(maxSteps) {
                 nexty = nexty + modifier[dir].y;
             }
             if (MAP_TILES[collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE]].type === 'vide') {
+                dispatch({
+                    type: WORLD_SET_LOADING,
+                    payload: {
+                        isLoading: true
+                    }
+                });
+                setTimeout(() => {
+                    dispatch({
+                        type: WORLD_SET_LOADING,
+                        payload: {
+                            isLoading: false
+                        }
+                    });
+                }, 200);
                 return ({
                     x: 2 * SPRITE_SIZE,
                     y: 2 * SPRITE_SIZE
                 })
+
             }
             if (MAP_TILES[collisionArray[nexty/SPRITE_SIZE][nextx/SPRITE_SIZE]].type === 'sol') {
                 return ({
