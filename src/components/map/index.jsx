@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import World from './world/';
 import Miroir from '../miroir';
+import Rayon from '../rayon';
 import './Map.css';
-import { SPRITE_SIZE } from '../../config/const/settings';
 
 export default function Map(props) {
 
@@ -25,9 +25,7 @@ export default function Map(props) {
         return (
             <div className='map'>
                 <World world={world} />
-                {
-                    props.children
-                }
+                {props.children}
                 <div className="miroirs">
                     blabla
                     {miroirs.map((miroir, index) => <Miroir key={index} data={miroir} />)}
@@ -41,28 +39,8 @@ export default function Map(props) {
         return (
             <div className='map'>
                 <World world={world} />
-                {
-                    props.children
-                }
+                {props.children}
             </div>
         );
     }
-}
-
-
-
-function Rayon({ data }) {
-    return (
-        <div className="rayon" style={{
-            height: `${SPRITE_SIZE}px`,
-            width: `${SPRITE_SIZE}px`,
-            /*backgroundImage: `url(${})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: `-${}px -${}px`,*/
-            transition: 'left 0.3s linear 0s, top 0.3s linear 0s',
-            opacity: 0
-        }}>
-            r
-        </div>
-    )
 }
