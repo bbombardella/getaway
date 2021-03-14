@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { INVENTORY_ADD_ACTION } from '../../config/const/settings';
+import { useDispatch, useSelector } from 'react-redux';
+import { INTERACTION_SET_TEXT, INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
+import { MIROIR } from '../../config/const/miroir';
 
-export default function PopUpInteraction({closeDialog, objectdata}) {
+export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
 
     const dispatch = useDispatch();
+
+    
 
     const [objectTaken, setObjectTaken] = useState(false);
 
@@ -16,6 +19,8 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
 
     if(typeObject==='panneau') {
         objectInfo = DIALOGUE[objectdata.id];
+    } else if(typeObject==='miroir') {
+        objectInfo = MIROIR[objectdata.id];
     } else {
         objectInfo = INVENTORY_OBJECTS[objectdata.id];
     }
@@ -89,6 +94,28 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                 </div>
             </div>
         );
+    } else if(typeObject==='miroir') {
+        console.log(miroirs, objectdata, objectInfo);
+        let actualOrientation = miroirs[objectInfo.ref].orientation;
+
+        if(actualOrientation==='right') {
+            actualOrientation='left';
+        } else if(actualOrientation==='left') {
+            actualOrientation='right';
+        }
+
+        closeDialog();
+        dispatch({
+            type: MIROIR_SET_ORIENTATION,
+            payload: {
+                id: objectInfo.ref,
+                orientation: actualOrientation
+            }
+        });        
+        
+        return(
+            <></>
+        )
     } else {
         return(
             <div>

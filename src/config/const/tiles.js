@@ -465,19 +465,19 @@ export const MAP_TILES = {
     },
     131: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     132: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     133: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     134: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     135: {
         url: 'sol_colisee.png',
@@ -485,39 +485,39 @@ export const MAP_TILES = {
     },
     136: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     137: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     138: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     139: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     140: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     141: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     142: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     143: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     144: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'miroir',
     },
     145: {
         url: 'bleu.png',

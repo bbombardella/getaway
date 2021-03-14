@@ -1,100 +1,16 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import World from './world/';
+import Miroir from '../miroir';
 import './Map.css';
 import { SPRITE_SIZE } from '../../config/const/settings';
 
 export default function Map(props) {
 
-    const { world } = useSelector(state => ({
-        world: state.world
+    const { world, miroirs } = useSelector(state => ({
+        world: state.world,
+        miroirs: state.miroirs
     }));
-
-    const [miroirs, setMiroirs] = useState([
-        {
-            x: 17,
-            y: 2,
-            orientation: 'right'
-        },
-
-        {
-            x: 4,
-            y: 2,
-            orientation: 'right'
-        },
-
-        {
-            x: 8,
-            y: 2,
-            orientation: 'right'
-        },
-
-        {
-            x: 12,
-            y: 2,
-            orientation: 'right'
-        },
-
-        {
-            x: 8,
-            y: 5,
-            orientation: 'right'
-        },
-
-        {
-            x: 14,
-            y: 5,
-            orientation: 'right'
-        },
-
-        {
-            x: 16,
-            y: 5,
-            orientation: 'right'
-        },
-
-        {
-            x: 4,
-            y: 9,
-            orientation: 'right'
-        },
-
-        {
-            x: 6,
-            y: 9,
-            orientation: 'right'
-        },
-
-        {
-            x: 6,
-            y: 6,
-            orientation: 'right'
-        },
-
-        {
-            x: 12,
-            y: 8,
-            orientation: 'right'
-        },
-
-        {
-            x: 14,
-            y: 8,
-            orientation: 'right'
-        },
-
-        {
-            x: 17,
-            y: 10,
-            orientation: 'right'
-        },
-
-        {
-            x: 8,
-            y: 10,
-            orientation: 'right'
-        },
-    ]);
 
     const [rayons, setRayons] = useState([
         {
@@ -133,36 +49,7 @@ export default function Map(props) {
     }
 }
 
-function Miroir({ data }) {
 
-    let image="./assets/tiles/";
-
-    switch(data.orientation) {
-        case 'right':
-            image+="miroir_droite.png";
-            break;
-        case 'left':
-            image+="miroir_gauche.png";
-            break;
-        default:
-            image+="miroir_droite.png";
-            break;
-    }
-
-    return (
-        <div className="miroir" style={{
-            position: 'absolute',
-            top: data.y*SPRITE_SIZE,
-            left: data.x*SPRITE_SIZE,
-            height: `${SPRITE_SIZE}px`,
-            width: `${SPRITE_SIZE}px`,
-            backgroundImage: `url(${image})`,
-            backgroundRepeat: "no-repeat",
-            transition: 'left 0.3s linear 0s, top 0.3s linear 0s',
-        }}>
-        </div>
-    )
-}
 
 function Rayon({ data }) {
     return (

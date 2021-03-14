@@ -30,7 +30,10 @@ export default function Tools(props) {
   const [mute, setMute] = useState(false);
   const [volume, setVolume] = useState("0.5");
 
-  const interaction = useSelector(state => state.interaction)
+  const { interaction, miroirs } = useSelector(state => ({
+    interaction: state.interaction,
+    miroirs: state.miroirs
+  }));
 
   const resetBoolean = () => {
     setHelpNeeded(false);
@@ -61,7 +64,7 @@ export default function Tools(props) {
     <div className='tools'>
       {helpNeeded && <Help closeDialog={() => setHelpNeeded(false)} />}
       {inventoryNeeded && <Inventory closeDialog={() => setInventoryNeeded(false)} />}
-      {(interactNeeded && interaction.interact) && <PopUpInteraction closeDialog={() => setInteractNeeded(false)} objectdata={interaction} />}
+      {(interactNeeded && interaction.interact) && <PopUpInteraction closeDialog={() => setInteractNeeded(false)} objectdata={interaction} miroirs={miroirs} />}
       <Music mute={mute} volume={volume} />
       {!mute &&
         <div style={{

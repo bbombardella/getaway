@@ -72,22 +72,22 @@ export default function useWalk(maxSteps) {
             });
         } else if (tile.type === 'sol' && !worldLoading) {
             setInteract(false);
-            if (MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'coffre') {
+            if (MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'coffre' || MAP_TILES[collisionArray[tempy - 1][tempx]].type === 'miroir') {
                 setInteract(true);
                 setObject(collisionArray[tempy - 1][tempx]);
                 console.log(collisionArray[tempy - 1][tempx]);
             }
-            if (MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'coffre') {
+            if (MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'object' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'panneau' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'coffre' || MAP_TILES[collisionArray[tempy + 1][tempx]].type === 'miroir') {
                 setInteract(true);
                 setObject(collisionArray[tempy + 1][tempx]);
                 console.log(collisionArray[tempy + 1][tempx]);
             }
-            if (MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'coffre') {
+            if (MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'coffre' || MAP_TILES[collisionArray[tempy][tempx - 1]].type === 'miroir') {
                 setInteract(true);
                 setObject(collisionArray[tempy][tempx - 1]);
                 console.log(collisionArray[tempy][tempx - 1]);
             }
-            if (MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'coffre') {
+            if (MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'object' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'panneau' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'coffre' || MAP_TILES[collisionArray[tempy][tempx + 1]].type === 'miroir') {
                 setInteract(true);
                 setObject(collisionArray[tempy][tempx + 1]);
                 console.log(collisionArray[tempy][tempx + 1]);
