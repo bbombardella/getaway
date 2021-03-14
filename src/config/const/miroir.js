@@ -39,10 +39,6 @@ export const MIROIR = {
         id: 140,
         ref: 1
     },
-    140: {
-        id: 140,
-        ref: 1
-    },
     141: {
         id: 141,
         ref: 7
