@@ -2,9 +2,19 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { SPRITE_SIZE, DIRECTIONS, WORLD_SET_NUMBER, INTERACTION_SET_TEXT, WORLD_SET_LOADING } from '../../config/const/settings';
 import { DOORS } from '../../config/const/doors';
+import {inventory} from '../../components/inventory/index.jsx';
 import { MAP_TILES } from '../../config/const/tiles';
 import * as collisions from '../../components/map/world/collision/';
 
+
+function checkAlreadyExist(array, id) {
+    for(var i=0;i<array.length;i++) {
+        if(array[i].id === id) {
+            return true;
+        }
+    }
+    return false;
+}
 
 export default function useWalk(maxSteps) {
     const [position, setPos] = useState({ x: 10 * SPRITE_SIZE, y: 6 * SPRITE_SIZE });
@@ -132,6 +142,11 @@ export default function useWalk(maxSteps) {
                     y
                 })
             }
+        } else if (tile.type === 'eau' && checkAlreadyExist(inventory, 700)) {
+            return ({
+                x: x + modifier[dir].x,
+                y: y + modifier[dir].y,
+            })
         } else if (tile.type === 'glace') {
             let nextx = x + modifier[dir].x;
             let nexty = y + modifier[dir].y;

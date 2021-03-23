@@ -353,19 +353,19 @@ export const MAP_TILES = {
     },
     104: {
         url: 'pont_cassé_gauche.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     105: {
         url: 'pont_cassé_gauche.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     106: {
         url: 'pont_cassé_droit.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     107: {
         url: 'pont_cassé_droit.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     108: {
         url: 'vide_bleu.png',
@@ -373,15 +373,15 @@ export const MAP_TILES = {
     },
     109: {
         url: 'eau.png',
-        type: 'vide ?',
+        type: 'eau',
     },
     110: {
         url: 'eau_caillou.png',
-        type: 'mur ?',
+        type: 'mur',
     },
     111: {
         url: 'eau_foncée.png',
-        type: 'vide ?',
+        type: 'vide',
     },
     112: {
         url: 'pont_normal.png',

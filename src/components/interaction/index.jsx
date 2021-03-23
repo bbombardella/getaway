@@ -49,7 +49,7 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
             <div className="tools-panel" id="interaction">
                 <button className="panel-button" onClick={() => closeDialog()}>x</button>
                 <hr></hr>
-                <p>Égnime validé</p>
+                <p>Égnime validée</p>
                 <button onClick={() => closeDialog()}>OK</button>
         </div>
         )
