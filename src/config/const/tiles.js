@@ -188,7 +188,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     49: {
-        url: 'violet.png',
+        url: 'chemin_droite.png',
         type: 'porte',
     },
     50: {
