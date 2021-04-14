@@ -1,6 +1,7 @@
 import { WORLD_SET_LOADING, WORLD_SET_NUMBER } from '../../../config/const/settings';
 
-const initialState = 0;
+// id du monde de départ
+const initialState = 1;
 
 export default function worldReducer(state = initialState, action) {
     switch (action.type) {

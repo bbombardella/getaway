@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { INVENTORY_ADD_ACTION } from '../../config/const/settings';
+import { INTERACTION_SET_TEXT, INVENTORY_ADD_ACTION } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
+
+import './Interaction.css';
 
 export default function PopUpInteraction({closeDialog, objectdata}) {
 
@@ -22,6 +24,11 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
 
     const [indexDialogue, setIndexDialogue] = useState(0);
 
+    const [contenu3L, setContenu3L] = useState(0);
+    const [contenu5L, setContenu5L] = useState(0);
+
+    const [enigmeSuccess, setEnigmeSuccess] = useState(false)
+
     function addObject() {
         if(typeObject==='coffre') {
             dispatch({
@@ -37,7 +44,16 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
         setObjectTaken(true);
     }
 
-    if(typeObject==='objet' || typeObject==='coffre') {
+    if(enigmeSuccess) {
+        return(
+            <div className="tools-panel" id="interaction">
+                <button className="panel-button" onClick={() => closeDialog()}>x</button>
+                <hr></hr>
+                <p>Égnime validée</p>
+                <button onClick={() => closeDialog()}>OK</button>
+        </div>
+        )
+    } else if(typeObject==='objet' || typeObject==='coffre') {
         return(
             <div className='tools-panel' id='interaction'>
                 <button className="panel-button" onClick={() => closeDialog()}>x</button>
@@ -86,6 +102,81 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                             {noAvailable && <button onClick={() => setIndexDialogue(currentDialogue.no.next)}>{currentDialogue.no.text}</button>}
                         </>
                     )}
+                </div>
+            </div>
+        );
+    } else if(typeObject==='fontaine') {
+        const srcS3L = `../assets/seaux/s3c${contenu3L}.png`;
+        const srcS5L = `../assets/seaux/s5c${contenu5L}.png`;
+        return(
+            // besoin d'utiliser sass pour modifier dynamiquement le CSS ?
+            <div className='tools-panel' id='interaction'>
+                <button className="panel-button" onClick={() => closeDialog()}>x</button>
+                <div id="mainContainer" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
+                    <p>Vous disposez de 2 seaux, de contenance 3 et 5 litres. Avec pour seules
+                    possibilités de les remplir avec l'eau de la fontaine, de les vider, ou
+                    de transvaser le contenu de l'un dans l'autre, il vous faut obtenir un
+                    seau de 4 litres exactement. <br></br> Bonne chance.</p>
+                    <div className="seaux">
+                        <div className="seau" id="3">
+                            <div className="seau-details">
+                                <p>{contenu3L}L / 3L</p>
+                                <img src={srcS3L} alt="Seau de 3 litres"></img>
+                            </div>
+                            <div className="seau-button">
+                                <button onClick={() => {
+                                    if (contenu3L + contenu5L > 5) {
+                                        if (!(contenu5L === 5)) {
+                                            var tmp = 5 - contenu5L;
+                                            setContenu5L(contenu5L + tmp);
+                                            setContenu3L(contenu3L - tmp);
+                                        }
+                                    }
+                                    else {
+                                        setContenu5L(contenu3L + contenu5L);
+                                        setContenu3L(0);
+                                    }
+                                }}>Transvaser →</button>
+                                <button onClick={() => setContenu3L(3) }>Remplir</button>
+                                <button onClick={() => setContenu3L(0)}>Vider</button>
+                            </div>                        
+                        </div>
+                        <div className="seau" id="5">
+                            <div className="seau-details">
+                                <p>{contenu5L}L / 5L</p>
+                                <img src={srcS5L} alt="Seau de 5 litres"></img>
+                            </div>
+                            <div className="seau-button">
+                                <button onClick={() => {
+                                        if (contenu3L + contenu5L > 3) {
+                                            if (!(contenu3L === 3)) {
+                                                var tmp = 3 - contenu3L;
+                                                setContenu3L(contenu3L + tmp);
+                                                setContenu5L(contenu5L - tmp);
+                                            }
+                                        }
+                                        else {
+                                            setContenu3L(contenu3L + contenu5L);
+                                            setContenu5L(0);
+                                        }
+                                    }}>Transvaser ←</button>
+                                <button onClick={() => setContenu5L(5)}>Remplir</button>
+                                <button onClick={() => setContenu5L(0)}>Vider</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button style={{color: "green"}} onClick={() => {
+                            if(contenu5L===4) {
+                                dispatch({
+                                    type: INVENTORY_ADD_ACTION,
+                                    payload: INVENTORY_OBJECTS[700]
+                                });
+                                setEnigmeSuccess(true);
+                            }
+                        }}>Valider</button>
+                        <button style={{color: "red"}} onClick={() => closeDialog()}>Annuler</button>
+                    </div>
                 </div>
             </div>
         );

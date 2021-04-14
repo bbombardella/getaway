@@ -81,4 +81,12 @@ export const INVENTORY_OBJECTS = {
         descVisible : true,
         visible: false,
     },
+    700: {
+        id: 700,
+        name: 'Bottes',
+        description: 'Bottes........',
+        pickable: true,
+        descVisible: true,
+        visible: true,
+    }
 }

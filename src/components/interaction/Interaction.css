@@ -1,0 +1,29 @@
+.seaux {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1em;
+}
+
+.seaux button {
+    display: block;
+}
+
+.seaux .seau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seaux .seau .seau-details {
+    text-align: center;
+}
+
+.seaux .seau .seau-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

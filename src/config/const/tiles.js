@@ -188,7 +188,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     49: {
-        url: 'violet.png',
+        url: 'chemin_droite.png',
         type: 'porte',
     },
     50: {
@@ -353,19 +353,19 @@ export const MAP_TILES = {
     },
     104: {
         url: 'pont_cassé_gauche.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     105: {
         url: 'pont_cassé_gauche.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     106: {
         url: 'pont_cassé_droit.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     107: {
         url: 'pont_cassé_droit.png',
-        type: 'sol non marchable ?',
+        type: 'eau',
     },
     108: {
         url: 'vide_bleu.png',
@@ -373,15 +373,15 @@ export const MAP_TILES = {
     },
     109: {
         url: 'eau.png',
-        type: 'vide ?',
+        type: 'eau',
     },
     110: {
         url: 'eau_caillou.png',
-        type: 'mur ?',
+        type: 'mur',
     },
     111: {
         url: 'eau_foncée.png',
-        type: 'vide ?',
+        type: 'vide',
     },
     112: {
         url: 'pont_normal.png',
@@ -415,21 +415,163 @@ export const MAP_TILES = {
         url: 'porte_chateau_bas.png',
         type: 'porte',
     },
+    // Tuiles fontaine
+    500: {
+        url: 'herbe_enchantee.png',
+        type: 'sol'
+    },
+    501: {
+        url: 'fontaine1.png',
+        type: 'fontaine'
+    },
+    502: {
+        url: 'fontaine2.png',
+        type: 'fontaine'
+    },
+    503: {
+        url: 'fontaine3.png',
+        type: 'fontaine'
+    },
+    504: {
+        url: 'fontaine4.png',
+        type: 'fontaine'
+    },
+    505: {
+        url: 'fontaine5.png',
+        type: 'fontaine'
+    },
+    506: {
+        url: 'fontaine6.png',
+        type: 'fontaine'
+    },
+    507: {
+        url: 'fontaine7.png',
+        type: 'fontaine'
+    },
+    508: {
+        url: 'fontaine8.png',
+        type: 'fontaine'
+    },
+    509: {
+        url: 'fontaine9.png',
+        type: 'fontaine'
+    },
+    510: {
+        url: 'fontaine10.png',
+        type: 'fontaine'
+    },
+    511: {
+        url: 'fontaine11.png',
+        type: 'fontaine'
+    },
+    512: {
+        url: 'fontaine12.png',
+        type: 'fontaine'
+    },
+    513: {
+        url: 'fontaine13.png',
+        type: 'fontaine'
+    },
+    514: {
+        url: 'fontaine14.png',
+        type: 'fontaine'
+    },
+    515: {
+        url: 'fontaine15.png',
+        type: 'fontaine'
+    },
+    516: {
+        url: 'fontaine16.png',
+        type: 'fontaine'
+    },
+    517: {
+        url: 'fontaine17.png',
+        type: 'fontaine'
+    },
+    518: {
+        url: 'fontaine18.png',
+        type: 'fontaine'
+    },
+    519: {
+        url: 'fontaine19.png',
+        type: 'fontaine'
+    },
+    520: {
+        url: 'fontaine20.png',
+        type: 'fontaine'
+    },
+    521: {
+        url: 'fontaine21.png',
+        type: 'fontaine'
+    },
+    522: {
+        url: 'fontaine22.png',
+        type: 'fontaine'
+    },
+    523: {
+        url: 'fontaine23.png',
+        type: 'fontaine'
+    },
+    524: {
+        url: 'fontaine24.png',
+        type: 'fontaine'
+    },
+    525: {
+        url: 'fontaine25.png',
+        type: 'fontaine'
+    },
+    526: {
+        url: 'fee_abeille.png',
+        type: 'PNJ'
+    },
+    527: {
+        url: 'fleurs_font.png',
+        type: 'mur',
+    },
+    528: {
+        url: 'chemin_font1.png',
+        type: 'sol',
+    },
+    529: {
+        url: 'chemin_font2.png',
+        type: 'sol',
+    },
+    530: {
+        url: 'fleurs_font_arbre.png',
+        type: 'mur',
+    },
+    531: {
+        url: 'herbe_enchantee_arbre.png',
+        type: 'mur',
+    },
+    532: {
+        url: 'arbres.png',
+        type: 'mur',
+    },
+    533: {
+        url: 'arbre_haut.png',
+        type: 'mur',
+    },
+    534: {
+        url: 'arbre_bas.png',
+        type: 'mur',
+    },
+    535: {
+        url: 'arbre_gauche.png',
+        type: 'mur',
+    },
+    536: {
+        url: 'arbre_droite.png',
+        type: 'mur',
+    },
+    537: {
+        url: 'arbre_droitehaut.png',
+        type: 'mur',
+    },
+    // Tuiles temporaires
     600: {
         url: 'rouge.png',
         type: 'mur',
-    },
-    601: {
-        url: 'vert.png',
-        type: 'sol',
-    },
-    602: {
-        url: 'bleu.png',
-        type: 'mur',
-    },
-    603: {
-        url: 'jaune.png',
-        type: 'PNJ',
     },
     604: {
         url: 'gris.png',
@@ -443,21 +585,9 @@ export const MAP_TILES = {
         url: 'rouge.png',
         type: 'mur',
     },
-    607: {
-        url: 'orange.png',
-        type: 'sol',
-    },
-    608: {
-        url: 'orange_foncé.png',
-        type: 'mur',
-    },
     609: {
         url: 'violet.png',
         type: 'porte',
-    },
-    610: {
-        url: 'vert_foncé.png',
-        type: 'mur',
     },
     611: {
         url: 'jaune.png',
@@ -478,5 +608,9 @@ export const MAP_TILES = {
     615: {
         url: 'violet_rayon1.png',
         type: 'miroir',
-    },    
+    },
+    700: {
+        url: 'bottes.png',
+        type: 'botte',
+    }  
 }
