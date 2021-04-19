@@ -59,4 +59,27 @@ export const DIALOGUE = {
             }
         ],
     },
+    103: {
+        id: 103,
+        name: 'Cameleon',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Hey yo seigneur, y’a un p’tit problème avec le pont, t’as vu il semblerait qu’il soit cassé, mais t’inquiète pô, j’ai vu la fée partir vers La Fontaine en disant qu’elle avait une solution.',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null
+            },
+            {
+                text: 'P’t’être qu’tu devrais aller taper la causette avec elle !',
+                yes: {
+                    text: 'Ok',
+                    next: null
+                },
+                no: null
+            }
+        ],
+    },
 }

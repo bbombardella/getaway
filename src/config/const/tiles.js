@@ -350,7 +350,7 @@ export const MAP_TILES = {
     //Tuile pont cassé/
     103: {
         url: 'cameleon.png',
-        type: 'PNJ',
+        type: 'panneau',
     },
     104: {
         url: 'pont_casse.png',
