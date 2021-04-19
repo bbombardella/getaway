@@ -347,16 +347,17 @@ export const MAP_TILES = {
         url: 'barriere_coin_sup_gauche2.png',
         type: 'objet',
     },
+    //Tuile pont cassé/
     103: {
         url: 'cameleon.png',
         type: 'PNJ',
     },
     104: {
-        url: 'pont_cassé_gauche.png',
+        url: 'pont_casse.png',
         type: 'eau',
     },
     105: {
-        url: 'pont_cassé_gauche.png',
+        url: 'pontepais.png',
         type: 'eau',
     },
     106: {
@@ -364,7 +365,7 @@ export const MAP_TILES = {
         type: 'eau',
     },
     107: {
-        url: 'pont_cassé_droit.png',
+        url: 'pontepais.png',
         type: 'eau',
     },
     108: {
@@ -573,6 +574,18 @@ export const MAP_TILES = {
         url: 'rouge.png',
         type: 'mur',
     },
+    601: {
+        url: 'vert.png',
+        type: 'sol',
+    },
+    602: {
+        url: 'bleu.png',
+        type: 'mur',
+    },
+    603: {
+        url: 'jaune.png',
+        type: 'PNJ',
+    },
     604: {
         url: 'gris.png',
         type: 'porte',
@@ -612,5 +625,5 @@ export const MAP_TILES = {
     700: {
         url: 'bottes.png',
         type: 'botte',
-    }  
+    }
 }
