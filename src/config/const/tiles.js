@@ -361,7 +361,7 @@ export const MAP_TILES = {
         type: 'eau',
     },
     106: {
-        url: 'pont_cassé_droit.png',
+        url: 'pont_casse2.png',
         type: 'eau',
     },
     107: {
@@ -377,11 +377,11 @@ export const MAP_TILES = {
         type: 'eau',
     },
     110: {
-        url: 'eau_caillou.png',
+        url: 'eauroche.png',
         type: 'mur',
     },
     111: {
-        url: 'eau_foncée.png',
+        url: 'eaubas.png',
         type: 'vide',
     },
     112: {
