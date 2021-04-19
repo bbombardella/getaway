@@ -584,7 +584,7 @@ export const MAP_TILES = {
     },
     603: {
         url: 'jaune.png',
-        type: 'PNJ',
+        type: 'panneau',
     },
     604: {
         url: 'gris.png',

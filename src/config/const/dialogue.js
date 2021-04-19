@@ -146,4 +146,41 @@ export const DIALOGUE = {
             },
         ],
     },
+    603: {
+        id: 603,
+        name: 'Bibliothéquaire',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Bonjour, que puis-je faire pour vous ?',
+                yes: {
+                    text: 'Rien, merci',
+                    next: 1
+                },
+                no: {
+                    text: 'Je ne comprends pas ce qu’il se passe',
+                    next: 2
+                },
+                other:null
+            },
+            {
+                text: 'Bonne journée',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Peut-être que nos livres pourraient vous aider, vous devriez jeter un coup d’œil aux rangés 3 et 4 du bas, et a la cinquième du haut.',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
 }
