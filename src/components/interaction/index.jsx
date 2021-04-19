@@ -16,7 +16,7 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
     const typeObject = MAP_TILES[objectdata.id].type;
     var objectInfo;
 
-    if(typeObject==='panneau' || typeObject==='perso') {
+    if(typeObject==='panneau') {
         objectInfo = DIALOGUE[objectdata.id];
     } else {
         objectInfo = INVENTORY_OBJECTS[objectdata.id];
@@ -88,6 +88,7 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
         const currentDialogue = dialogues[indexDialogue];
         const isLastDialogue = currentDialogue.yes.next==null;
         const noAvailable = currentDialogue.no!==null;
+        const otherAvailable = currentDialogue.other!==null;
 
         return(
             <div className='tools-panel' id='interaction'>
@@ -100,34 +101,12 @@ export default function PopUpInteraction({closeDialog, objectdata}) {
                         <>
                             <button onClick={() => setIndexDialogue(currentDialogue.yes.next)}>{currentDialogue.yes.text}</button>
                             {noAvailable && <button onClick={() => setIndexDialogue(currentDialogue.no.next)}>{currentDialogue.no.text}</button>}
+                            {otherAvailable && <button onClick={() => setIndexDialogue(currentDialogue.other.next)}>{currentDialogue.other.text}</button>}
                         </>
                     )}
                 </div>
             </div>
         );
-    }   else if(typeObject==='perso') {
-
-            const dialogues = objectInfo.description;
-            const currentDialogue = dialogues[indexDialogue];
-            const isLastDialogue = currentDialogue.yes.next==null;
-            const noAvailable = currentDialogue.no!==null;
-    
-            return(
-                <div className='tools-panel' id='interaction'>
-                    <button className="panel-button" onClick={() => closeDialog()}>x</button>
-                    <p>{currentDialogue.text}</p>
-                    <div>
-                        {isLastDialogue ? (
-                            <button onClick={() => closeDialog()}>{currentDialogue.yes.text}</button>
-                        ) : (
-                            <>
-                                <button onClick={() => setIndexDialogue(currentDialogue.yes.next)}>{currentDialogue.yes.text}</button>
-                                {noAvailable && <button onClick={() => setIndexDialogue(currentDialogue.no.next)}>{currentDialogue.no.text}</button>}
-                            </>
-                        )}
-                    </div>
-                </div>
-            );
     } else if(typeObject==='fontaine') {
         const srcS3L = `../assets/seaux/s3c${contenu3L}.png`;
         const srcS5L = `../assets/seaux/s5c${contenu5L}.png`;

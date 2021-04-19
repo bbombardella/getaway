@@ -523,7 +523,7 @@ export const MAP_TILES = {
     },
     526: {
         url: 'fee_abeille.png',
-        type: 'PNJ'
+        type: 'panneau'
     },
     527: {
         url: 'fleurs_font.png',
