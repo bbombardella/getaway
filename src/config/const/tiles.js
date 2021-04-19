@@ -203,6 +203,14 @@ export const MAP_TILES = {
         url: 'chemin_droite.png',
         type: 'porte',
     },
+    53: {
+        url: 'chemin_droite.png',
+        type: 'porte',
+    },
+    54: {
+        url: 'chemin_gauche.png',
+        type: 'porte',
+    },
     67: {
         url: 'panneau_face.png',
         type: 'panneau',
@@ -354,7 +362,7 @@ export const MAP_TILES = {
     },
     104: {
         url: 'pont_casse.png',
-        type: 'eau',
+        type: 'sol',
     },
     105: {
         url: 'pontepais.png',
@@ -362,7 +370,7 @@ export const MAP_TILES = {
     },
     106: {
         url: 'pont_casse2.png',
-        type: 'eau',
+        type: 'sol',
     },
     107: {
         url: 'pontepais.png',
@@ -384,37 +392,34 @@ export const MAP_TILES = {
         url: 'eaubas.png',
         type: 'vide',
     },
+    //Tuiles entrée château/
     112: {
-        url: 'pont_normal.png',
+        url: 'pont.png',
         type: 'sol',
     },
     113: {
-        url: 'mur_pierre.png',
+        url: 'murchateau.png',
         type: 'mur',
     },
     114: {
-        url: 'mur_pierre_haut.png',
+        url: 'coinportechateau1.png', //haut/
         type: 'mur',
     },
     115: {
-        url: 'mur_pierre_bas.png',
+        url: 'coinportechateau2.png', //bas/
         type: 'mur',
     },
     116: {
-        url: 'pont_cassé_droit.png',
-        type: 'sol non marchable ?',
+        url: 'portechateauhaut.png',
+        type: 'mur',
     },
     117: {
-        url: 'porte_chateau_haut.png',
+        url: 'portechateaucentre.png',
         type: 'porte',
     },
     118: {
-        url: 'porte_chateau_milieu.png',
-        type: 'porte',
-    },
-    119: {
-        url: 'porte_chateau_bas.png',
-        type: 'porte',
+        url: 'portechateaubas.png',
+        type: 'mur',
     },
     // Tuiles fontaine
     500: {
