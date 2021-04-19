@@ -88,6 +88,180 @@ export const DIALOGUE = {
             }
         ],
     },
+    200: {
+        id: 200,
+        name: 'Le roi ',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Un livre d’une couverture bleue vous interpelle, vous l’ouvrez, une image vous ressemblant étonnement y est dessinée',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: '« En l’an 1326, un jour sombre arriva, les bois de Rivelia furent menacés par le chaos, les trolls, des créatures de nature violente, se retrouvèrent évincés de leur terre natale par les neiges éternelles.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Sans habitat, ils n’eurent d’autres choix que de partir à la recherche d’une nouvelle terre fertile pour s’installer, Rivelia était sur leur passage, et leur dévolu se jeta sur ce havre de paix.',
+                yes: {
+                    text: 'Suite',
+                    next: 3
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Le Roi de Rivelia, dans sa grande clémence, compris assez vite les besoins des trolls, voulant éviter une guerre meurtrière pour son peuple, il leur offra une partie de ses terres au sud, fraiche, fertile, d’une grande puissance magique et inutilisée, elle semblait parfaite pour ces créatures difformes.',
+                yes: {
+                    text: 'Suite',
+                    next: 4
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Cependant, elles étaient résolues à se battre pour récupérer cette forêt, la guerre était inévitable. »',
+                yes: {
+                    text: 'Fermer le livre',
+                    next: null
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
+    201: {
+        id: 201,
+        name: 'Le frère du roi',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Ce livre s’intitule « Au héros d’une guerre oubliée »',
+                yes: {
+                    text: 'Ouvrir le livre',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: '« Le héros de la guerre de 1326, est sans conteste le frère du Roi, qui aurait pensé qu’un loup solitaire, discret, vivant dans l’ombre de son frère, se révèlerait être la clé d’une victoire écrasante contre un peuple d’une violence inouïe et d’une force de loin supérieur au peuple de Rivelia.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Le frère du roi, DarkSasoupex de Konoha, est en réalité un stratège sans pareil, ainsi qu’un guerrier d’une qualité rare pour ce monde, et d’une loyauté sans faille envers son frère qu’il admire en tout point.',
+                yes: {
+                    text: 'Suite',
+                    next: 3
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Il remporta la guerre avec son frère, les trolls, vaincus, n’eurent d’autres choix que d’accepter les terres que leur proposait le roi.',
+                yes: {
+                    text: 'Suite',
+                    next: 4
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'La condition était d’y rester sous la surveillance de son frère, ses prouesses martiales durant cette guerre le rendaient parfaitement qualifié pour tenir ces bêtes en respect, mission qu’il accepta sans hésiter en l’honneur de son frère. »',
+                yes: {
+                    text: 'Fermer le livre',
+                    next: null
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
+    202: {
+        id: 202,
+        name: ' L’histoire du monde',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Une forte essence magique se dégage d’un livre, vous le saisissez, sans avoir à l’ouvrir, vous connaissez son contenu...',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: '« En ce monde, des zones méconnues telle que le bois de Rivelia, concentrent de forte quantité de magie, perturbant la flore qui s’y développe tant elle est puissante, mais la rendant idéale pour les créatures empreintes de magie tel que les fées, les homme lézards, ou encore les mandragores.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'La magie influence les créatures qui la côtoient, cependant l’inverse est tout aussi vrai, c’est ainsi que naquirent les Terres Désolées d’Anter’Hia.',
+                yes: {
+                    text: 'Suite',
+                    next: 3
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Autrefois un bosquet paisible aux vents magiques puissants se retrouva corrompu lorsqu’un groupe de dryades s’installe.',
+                yes: {
+                    text: 'Suite',
+                    next: 4
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Ces dryades, marginalisées par leurs congénères car leur esprit était empli de haine et de rancœur, souillèrent la magie présente en ces lieux par leurs pensées viles et noires, le mal était fait. ',
+                yes: {
+                    text: 'Suite',
+                    next: 5
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'La magie se transforma en malédiction, aspirant l’énergie vital des êtres peuplant l’endroit, pétrifiant les plus faibles, manipulant les plus forts pour les pousser à la destruction, calcinant les cœurs, brisant les esprits, asséchant les sols, se propageant à tous ceux qui s’approchaient trop près des terre, étendant son influence toujours plus loin, jusqu’à ce que l’esprits corrompue des dryades ne puissent plus alimenté suffisamment la malédiction.',
+                yes: {
+                    text: 'Suite',
+                    next: 6
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Depuis ce jour, Les Terres Désolées sont condamnées et interdites à tous. »',
+                yes: {
+                    text: 'Reposer le livre',
+                    next: null
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
     526: {
         id: 526,
         name: 'Fée fontaine',

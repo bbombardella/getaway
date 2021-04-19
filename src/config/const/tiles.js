@@ -390,7 +390,7 @@ export const MAP_TILES = {
     },
     111: {
         url: 'eaubas.png',
-        type: 'vide',
+        type: 'eau',
     },
     //Tuiles entrée château/
     112: {
@@ -420,6 +420,19 @@ export const MAP_TILES = {
     118: {
         url: 'portechateaubas.png',
         type: 'mur',
+    },
+    //Livres/
+    200: {
+        url: 'violet.png',
+        type: 'panneau',
+    },
+    201: {
+        url: 'violet.png',
+        type: 'panneau',
+    },
+    202: {
+        url: 'violet.png',
+        type: 'panneau',
     },
     // Tuiles fontaine
     500: {
