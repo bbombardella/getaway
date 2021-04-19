@@ -340,19 +340,19 @@ export const MAP_TILES = {
         type: 'porte',
     },
     99: {
-        url: 'barriere_coin_inf_gauche1.png',
+        url: 'herbebarcoin2.png',
         type: 'objet',
     },
     100: {
-        url: 'barriere_coin_inf_droit1.png',
+        url: 'herbebarcoin1.png',
         type: 'objet',
     },
     101: {
-        url: 'barriere_coin_sup_gauche1.png',
+        url: 'herbebarcoin4.png',
         type: 'objet',
     },
     102: {
-        url: 'barriere_coin_sup_gauche2.png',
+        url: 'herbebarcoin3.png',
         type: 'objet',
     },
     //Tuile pont cassé/

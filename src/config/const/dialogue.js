@@ -243,10 +243,37 @@ export const DIALOGUE = {
                 other : null
             },
             {
-                text: 'La magie se transforma en malédiction, aspirant l’énergie vital des êtres peuplant l’endroit, pétrifiant les plus faibles, manipulant les plus forts pour les pousser à la destruction, calcinant les cœurs, brisant les esprits, asséchant les sols, se propageant à tous ceux qui s’approchaient trop près des terre, étendant son influence toujours plus loin, jusqu’à ce que l’esprits corrompue des dryades ne puissent plus alimenté suffisamment la malédiction.',
+                text: 'La magie se transforme en malédiction, aspirant l\'énergie vitale des êtres peuplant l\'endroit.',
                 yes: {
                     text: 'Suite',
                     next: 6
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Elle pétrifie les plus faibles et manipule les plus forts pour les pousser à la destruction. ',
+                yes: {
+                    text: 'Suite',
+                    next: 7
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Elle calcine les cœurs et brise les esprits.',
+                yes: {
+                    text: 'Suite',
+                    next: 8
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Elle assèche les sols, se propage à tous ceux qui s\'approchent trop près des terres, et étend son influence toujours plus loin - jusqu\'à ce que l\'esprit corrompu des dryades ne puisse plus alimenter suffisamment la malédiction...',
+                yes: {
+                    text: 'Suite',
+                    next: 9
                 },
                 no: null,
                 other : null
