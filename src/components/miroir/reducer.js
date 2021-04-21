@@ -6,7 +6,7 @@ const initialState = [
         id: 0,//
         x: 17,
         y: 2,
-        orientation: 'left',
+        orientation: 'right',
         nextMirrorUp: -1,
         nextMirrorDown:12,
         nextMirrorLeft:3,

@@ -12,7 +12,7 @@ export default function Rayon({ data }) {
     }));
  
     
-    var pts=/*[{x:0, y:0}, {x:3*SPRITE_SIZE, y: 0}, {x:125, y:125}, {x:250, y:125}]//*/createRayon(miroirs);
+    var pts=createRayon(miroirs);
     console.log(pts);
     return (
         <svg style={{
@@ -33,7 +33,7 @@ export default function Rayon({ data }) {
 
 function createRayon(miroirs){
     
-    var pts=[{x:20* SPRITE_SIZE+0.5* SPRITE_SIZE, y:10* SPRITE_SIZE+0.5* SPRITE_SIZE}];
+    var pts=[{x:20* SPRITE_SIZE+ SPRITE_SIZE, y:10* SPRITE_SIZE+0.5* SPRITE_SIZE}];
     var orientationRayon='Left';
     var start;
     var tmp;
@@ -93,12 +93,6 @@ function createRayon(miroirs){
             return pts;
             
         }
-        if(nextMirrorId===-10){//la c'est xD si ça sort
-            return pts;
-        }
-        console.log(orientationRayon);
-        console.log(start);
-        console.log(nextMirrorId);  
 
     }
     console.log(pts);
