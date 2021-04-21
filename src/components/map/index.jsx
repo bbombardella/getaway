@@ -21,13 +21,12 @@ export default function Map(props) {
 
     console.log(world);
 
-    if (world === 12) {
+    if (parseInt(world) === 12) {
         return (
             <div className='map'>
                 <World world={world} />
                 {props.children}
                 <div className="miroirs">
-                    blabla
                     {miroirs.map((miroir, index) => <Miroir key={index} data={miroir} />)}
                 </div>
                 <div className="rayons">
