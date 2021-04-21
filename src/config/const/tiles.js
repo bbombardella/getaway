@@ -691,7 +691,7 @@ export const MAP_TILES = {
     145: {
         url: 'bleu.png',
         type: 'mur',
-    }?
+    },
     600: {
         url: 'rouge.png',
         type: 'mur',
