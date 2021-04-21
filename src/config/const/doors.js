@@ -129,7 +129,7 @@ export const DOORS = {
     },
     54: {
         id: '54',
-        nextWorld: '8',
+        nextWorld: '6',
         newPosition: {
             x: 19*SPRITE_SIZE,
             y: (6*SPRITE_SIZE)

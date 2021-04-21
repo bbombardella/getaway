@@ -1,7 +1,11 @@
 import { WORLD_SET_LOADING, WORLD_SET_NUMBER } from '../../../config/const/settings';
 
+<<<<<<< HEAD
 // id du monde de départ
 const initialState = 1;
+=======
+const initialState = 12;
+>>>>>>> enigme-miroir
 
 export default function worldReducer(state = initialState, action) {
     switch (action.type) {

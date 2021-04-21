@@ -588,6 +588,110 @@ export const MAP_TILES = {
         type: 'mur',
     },
     // Tuiles temporaires
+    120: {
+        url: 'sol_colisee.png',
+        type: 'sol',
+    },
+    121: {
+        url: 'solmur_colisee.png',
+        type: 'mur',
+    },
+    122: {
+        url: 'colonne_haut.png',
+        type: 'mur',
+    },
+    123: {
+        url: 'colonne_droite.png',
+        type: 'mur',
+    },
+    124: {
+        url: 'colonne_coin2.png',
+        type: 'mur',
+    },
+    125: {
+        url: 'colonne_coin1.png',
+        type: 'mur',
+    },
+    126: {
+        url: 'colonne_coin3.png',
+        type: 'mur',
+    },
+    127: {
+        url: 'colonne_coin4.png',
+        type: 'mur',
+    },
+    128: {
+        url: 'colonne_bas.png',
+        type: 'mur',
+    },
+    129: {
+        url: 'colonne_gauche.png',
+        type: 'mur',
+    },
+    130: {
+        url: 'entree_lumiere.png',
+        type: 'mur',
+    },
+    131: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    132: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    133: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    134: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    135: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    136: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    137: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    138: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    139: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    140: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    141: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    142: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    143: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    144: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    145: {
+        url: 'bleu.png',
+        type: 'mur',
+    }?
     600: {
         url: 'rouge.png',
         type: 'mur',
