@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { INTERACTION_SET_TEXT, INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION } from '../../config/const/settings';
+import { useDispatch } from 'react-redux';
+import { INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
