@@ -35,19 +35,23 @@ function createRayon(miroirs){
     
     var pts=[{x:20* SPRITE_SIZE+0.5* SPRITE_SIZE, y:10* SPRITE_SIZE+0.5* SPRITE_SIZE}];
     var orientationRayon='Left';
-    var start= miroirs[12];;
+    var start;
     var tmp;
     var posx, posy;
-    var nextMirrorId=0;
+    var nextMirrorId=12;
 
 
-    do{
-        console.log(start);
+    while(nextMirrorId!=null){
 
+        start=miroirs[nextMirrorId]
         tmp = defineNext(orientationRayon, start.orientation);
         orientationRayon = tmp;
 
-        console.log(orientationRayon);
+        posx= start.x* SPRITE_SIZE+0.5* SPRITE_SIZE;
+        posy= start.y* SPRITE_SIZE+0.5* SPRITE_SIZE;
+
+        pts.push({x:posx ,y: posy});
+
 
         switch (orientationRayon){
             case 'Up':
@@ -63,28 +67,25 @@ function createRayon(miroirs){
                 nextMirrorId = start.nextMirrorRight;
                 break;
             default:
-                nextMirrorId=-3;
                 break;
 
         }
-        console.log(nextMirrorId);
 
-        posx= start.x* SPRITE_SIZE+0.5* SPRITE_SIZE;
-        posy= start.y* SPRITE_SIZE+0.5* SPRITE_SIZE;
 
-        if(nextMirrorId===-1){
+        
+        if(nextMirrorId===-1){//les prochaines coordonnées sont celles d'un mur
             switch (orientationRayon){
             case 'Up':
-                pts.push({x:0+0.5* SPRITE_SIZE ,y: posy});
+                pts.push({x:posx ,y: 0});
                 break;
             case 'Left':
-                pts.push({x:posx ,y: 0+0.5* SPRITE_SIZE});
+                pts.push({x:0 ,y: posy});
                 break;
             case 'Down':
-                pts.push({x:15* SPRITE_SIZE+0.5* SPRITE_SIZE ,y: posy});
+                pts.push({x:posx ,y: 12* SPRITE_SIZE+ SPRITE_SIZE});
                 break;
             case 'Right':
-                pts.push({x:posx ,y: 19* SPRITE_SIZE+0.5* SPRITE_SIZE});
+                pts.push({x:20*SPRITE_SIZE+SPRITE_SIZE ,y: posy});
                 break;
             default:
                 break;
@@ -92,18 +93,14 @@ function createRayon(miroirs){
             return pts;
             
         }
-        if(nextMirrorId===-10){
+        if(nextMirrorId===-10){//la c'est xD si ça sort
             return pts;
         }
-        if(nextMirrorId===null){
-            return pts;
-        }
-        
-        pts.push({x:posx ,y: posy});
-        start=miroirs[nextMirrorId]
-        console.log(pts);
+        console.log(orientationRayon);
+        console.log(start);
+        console.log(nextMirrorId);  
 
-    }while(nextMirrorId!=null)
+    }
     console.log(pts);
     return pts;
 }
@@ -124,17 +121,19 @@ function defineNext(rayonOrientation, mirrorOrientation){
         }
     }
     else{
-        if(rayonOrientation==='Left'){
-            return  'Down';
-        }
-        if(rayonOrientation==='Right'){
-            return 'Up';
-        }
-        if(rayonOrientation==='Up'){
-            return  'Right';
-        }
-        if(rayonOrientation==='Down'){
-            return  'Left';
+        if(mirrorOrientation==='right'){
+            if(rayonOrientation==='Left'){
+                return  'Down';
+            }
+            if(rayonOrientation==='Right'){
+                return 'Up';
+            }
+            if(rayonOrientation==='Up'){
+                return  'Right';
+            }
+            if(rayonOrientation==='Down'){
+                return  'Left';
+            }
         }
 
     }
