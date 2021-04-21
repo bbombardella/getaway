@@ -90,8 +90,12 @@ function createRayon(miroirs){
             default:
                 break;
             }
+            return pts;   
+        }
+
+        if(nextMirrorId==='end'){
+            pts.push({x: 2* SPRITE_SIZE, y: 6.5 *SPRITE_SIZE});
             return pts;
-            
         }
 
     }

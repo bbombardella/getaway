@@ -116,7 +116,7 @@ const initialState = [
         orientation: 'right',
         nextMirrorUp: -1,
         nextMirrorDown:8,
-        nextMirrorLeft:-1,
+        nextMirrorLeft:'end',
         nextMirrorRight:-1,
 
     },
