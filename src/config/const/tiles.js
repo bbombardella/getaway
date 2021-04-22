@@ -215,6 +215,18 @@ export const MAP_TILES = {
         url: 'sol_colisee.png',
         type: 'porte',
     },
+    56: {
+        url: 'bleu.png', //sous-sol
+        type: 'porte',
+    },
+    57: {
+        url: 'jaune.png', //salle trone
+        type: 'porte',
+    },
+    58: {
+        url: 'bleu.png', //chambre roi
+        type: 'porte',
+    },
     67: {
         url: 'panneau_face.png',
         type: 'panneau',
@@ -425,6 +437,113 @@ export const MAP_TILES = {
         url: 'portechateaubas.png',
         type: 'mur',
     },
+    // Tuiles colisée
+    120: {
+        url: 'sol_colisee.png',
+        type: 'sol',
+    },
+    121: {
+        url: 'solmur_colisee.png',
+        type: 'mur',
+    },
+    122: {
+        url: 'colonne_haut.png',
+        type: 'mur',
+    },
+    123: {
+        url: 'colonne_droite.png',
+        type: 'mur',
+    },
+    124: {
+        url: 'colonne_coin2.png',
+        type: 'mur',
+    },
+    125: {
+        url: 'colonne_coin1.png',
+        type: 'mur',
+    },
+    126: {
+        url: 'colonne_coin3.png',
+        type: 'mur',
+    },
+    127: {
+        url: 'colonne_coin4.png',
+        type: 'mur',
+    },
+    128: {
+        url: 'colonne_bas.png',
+        type: 'mur',
+    },
+    129: {
+        url: 'colonne_gauche.png',
+        type: 'mur',
+    },
+    130: {
+        url: 'entree_lumiere.png',
+        type: 'mur',
+    },
+    131: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    132: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    133: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    134: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    135: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    136: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    137: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    138: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    139: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    140: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    141: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    142: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    143: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    144: {
+        url: 'sol_colisee.png',
+        type: 'miroir',
+    },
+    145: {
+        url: 'sol_colisee.png',
+        type: 'panneau',
+    },
+    //Tuiles entrée château
+
     //Livres/
     200: {
         url: 'violet.png',
@@ -591,111 +710,7 @@ export const MAP_TILES = {
         url: 'arbre_droitehaut.png',
         type: 'mur',
     },
-    // Tuiles colisée
-    120: {
-        url: 'sol_colisee.png',
-        type: 'sol',
-    },
-    121: {
-        url: 'solmur_colisee.png',
-        type: 'mur',
-    },
-    122: {
-        url: 'colonne_haut.png',
-        type: 'mur',
-    },
-    123: {
-        url: 'colonne_droite.png',
-        type: 'mur',
-    },
-    124: {
-        url: 'colonne_coin2.png',
-        type: 'mur',
-    },
-    125: {
-        url: 'colonne_coin1.png',
-        type: 'mur',
-    },
-    126: {
-        url: 'colonne_coin3.png',
-        type: 'mur',
-    },
-    127: {
-        url: 'colonne_coin4.png',
-        type: 'mur',
-    },
-    128: {
-        url: 'colonne_bas.png',
-        type: 'mur',
-    },
-    129: {
-        url: 'colonne_gauche.png',
-        type: 'mur',
-    },
-    130: {
-        url: 'entree_lumiere.png',
-        type: 'mur',
-    },
-    131: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    132: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    133: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    134: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    135: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    136: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    137: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    138: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    139: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    140: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    141: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    142: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    143: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    144: {
-        url: 'sol_colisee.png',
-        type: 'miroir',
-    },
-    145: {
-        url: 'sol_colisee.png',
-        type: 'panneau',
-    },
+    //Tuiles temporaires
     600: {
         url: 'rouge.png',
         type: 'mur',
@@ -717,37 +732,26 @@ export const MAP_TILES = {
         type: 'porte',
     },
     605: {
-        url: 'blabla.png',
-        type: 'sol non marchable ?',
+        url: 'jaune.png',
+        type: 'sol',
     },
     606: {
         url: 'rouge.png',
         type: 'mur',
     },
-    609: {
+    607: {
         url: 'violet.png',
-        type: 'porte',
+        type: 'objet',
     },
-    611: {
-        url: 'jaune.png',
-        type: 'pnj',
+    608: {
+        url: 'violet.png',
+        type: 'objet',
     },
-    612: {
-        url: 'blanc.png',
-        type: 'sol',
+    610: {
+        url: 'violet.png',
+        type: 'objet',
     },
-    613: {
-        url: 'vert.png',
-        type: 'rayon',
-    },
-    614: {
-        url: 'violet_rayon2.png',
-        type: 'miroir',
-    },
-    615: {
-        url: 'violet_rayon1.png',
-        type: 'miroir',
-    },
+    //bottes
     700: {
         url: 'bottes.png',
         type: 'botte',
