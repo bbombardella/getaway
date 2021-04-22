@@ -11,16 +11,16 @@ export default function Rayon({ data }) {
         pnj_colise: state.pnj_colise,
     }));
 
-    var verif=false;
+    var success = false;
     var pts = createRayon(miroirs);
-    var test = { x: 2 * SPRITE_SIZE, y: 6.5 * SPRITE_SIZE };
-    var test2 = pts[pts.length - 1];
+    var last_ray = { x: 2 * SPRITE_SIZE, y: 6.5 * SPRITE_SIZE };
+    var current_ray = pts[pts.length - 1];
 
-    if(test.x===test2.x && test.y===test2.y){
-        verif=true;
+    if (current_ray.x === last_ray.x && current_ray.y === last_ray.y) {
+        success = true;
     }
 
-    if(pnj_colise.petrified===true && verif===true){
+    if (pnj_colise.petrified && success) {
         dispatch({
             type: PNJ_CHANGE_STATE,
             payload: {
@@ -28,7 +28,7 @@ export default function Rayon({ data }) {
             }
         });
     }
-        
+
     console.log(pts);
     return (
         <svg style={{
