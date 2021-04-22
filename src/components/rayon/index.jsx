@@ -4,31 +4,33 @@ import { SPRITE_SIZE, PNJ_CHANGE_STATE } from '../../config/const/settings';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function Rayon({ data }) {
-
-    const { miroirs } = useSelector(state => ({
-        miroirs: state.miroirs
-    }));
     const dispatch = useDispatch();
+    const { miroirs, pnj_colise } = useSelector(state => ({
+        miroirs: state.miroirs,
+        pnj_colise: state.pnj_colise,
+    }));
+    var verif=false;
+
 
     var pts = createRayon(miroirs);
-    console.log(pts[pts.length - 1]);
-    ////le probleme commence ici
+
     var test = { x: 2 * SPRITE_SIZE, y: 6.5 * SPRITE_SIZE };
     var test2 = pts[pts.length - 1];
 
-    console.log(test)
-    console.log(test2)
-    console.log(pts.length - 1)
-    if (test === test2) {//*pts.length===14*//*){//cette condition semble etre toujours fausse
-        console.log('la');
+    if(test.x===test2.x && test.y===test2.y){
+        verif=true;
+    }
+    console.log(pnj_colise.changed)
+    if(pnj_colise.changed===false && verif===true){
         dispatch({
             type: PNJ_CHANGE_STATE,
             payload: {
-                petrified: false
+                petrified: false,
+                changed: true,
             }
         });
-        console.log('ici')
-    }////s'arrête la
+    }
+        
     console.log(pts);
     return (
         <svg style={{
@@ -39,7 +41,7 @@ export default function Rayon({ data }) {
         }}>
             <PathLine
                 points={pts}
-                stroke="red"
+                stroke="yellow"
                 strokeWidth="3"
                 fill="none"
                 r={10}
@@ -153,3 +155,4 @@ function defineNext(rayonOrientation, mirrorOrientation) {
 
     }
 }
+
