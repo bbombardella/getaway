@@ -211,6 +211,10 @@ export const MAP_TILES = {
         url: 'chemin_gauche.png',
         type: 'porte',
     },
+    55: {
+        url: 'sol_colisee.png',
+        type: 'porte',
+    },
     67: {
         url: 'panneau_face.png',
         type: 'panneau',
@@ -587,7 +591,7 @@ export const MAP_TILES = {
         url: 'arbre_droitehaut.png',
         type: 'mur',
     },
-    // Tuiles temporaires
+    // Tuiles colisée
     120: {
         url: 'sol_colisee.png',
         type: 'sol',
@@ -689,7 +693,7 @@ export const MAP_TILES = {
         type: 'miroir',
     },
     145: {
-        url: 'bleu.png',
+        url: 'sol_colisee.png',
         type: 'mur',
     },
     600: {

@@ -136,6 +136,15 @@ export const DOORS = {
         },
         keyNeeded: 77,
     },
+    55: {
+        id: '55',
+        nextWorld: '6',
+        newPosition: {
+            x: 19*SPRITE_SIZE,
+            y: (6*SPRITE_SIZE)
+        },
+        keyNeeded: 77,
+    },
     88: {
         id: '88',
         nextWorld: '1',

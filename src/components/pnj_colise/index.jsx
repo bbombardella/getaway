@@ -6,11 +6,11 @@ export default function PnjColise({ petrified }) {
     let image = "./assets/tiles/";
 
     if (petrified) {
-        image += "vide_vert.png";
+        image += "TobyRoche.png";
     } else if (!petrified) {
-        image += "herbe.png";
+        image += "Toby_C.png";
     } else {
-        image += "vide_vert.png";
+        image += "sol_colisee.png";
     }
 
     return (
