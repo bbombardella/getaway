@@ -138,6 +138,22 @@ export const DIALOGUE = {
             }
         ],
     },
+    147: {
+        id: 147,
+        name: 'Le méchant',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Blabla le texte du méchant',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
     200: {
         id: 200,
         name: 'Le roi ',

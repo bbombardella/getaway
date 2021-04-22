@@ -546,8 +546,11 @@ export const MAP_TILES = {
         url: 'sol_colisee.png',
         type: 'panneau',
     },
-    //Tuiles entrée château
-
+    //Tuiles trône
+    147: {
+        url: 'vide_bleu.png',
+        type: 'panneau',
+    },
     //Livres/
     200: {
         url: 'violet.png',
@@ -757,6 +760,14 @@ export const MAP_TILES = {
     },
     610: {
         url: 'violet.png',
+        type: 'objet',
+    },
+    611: {
+        url: 'violet.png',
+        type: 'sol',
+    },
+    612: {
+        url: 'blanc.png',
         type: 'objet',
     },
     //bottes
