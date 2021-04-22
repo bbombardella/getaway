@@ -3,13 +3,16 @@ import { useSelector } from 'react-redux';
 import World from './world/';
 import Miroir from '../miroir';
 import Rayon from '../rayon';
+import PnjColise from '../pnj_colise'
 import './Map.css';
+
 
 export default function Map(props) {
 
-    const { world, miroirs } = useSelector(state => ({
+    const { world, miroirs, pnj_colise } = useSelector(state => ({
         world: state.world,
-        miroirs: state.miroirs
+        miroirs: state.miroirs,
+        pnj_colise: state.pnj_colise,
     }));
 
     const [rayons, setRayons] = useState([
@@ -31,6 +34,9 @@ export default function Map(props) {
                 </div>
                 <div className="rayons">
                     {rayons.map((rayon, index) => <Rayon key={index} data={rayon} />)}
+                </div>
+                <div classname ="pnj">
+                    {pnj_colise.map((pnj) => <PnjColise key={0} data={pnj} />)}
                 </div>
             </div>
         );
