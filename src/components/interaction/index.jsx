@@ -5,14 +5,18 @@ import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
 import { MIROIR } from '../../config/const/miroir';
+import { useSelector } from 'react-redux';
 
 import './Interaction.css';
+
 
 export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
 
     const dispatch = useDispatch();
 
-    
+    const { pnj_colise } = useSelector(state => ({
+        pnj_colise: state.pnj_colise,
+    }));
 
     const [objectTaken, setObjectTaken] = useState(false);
 
@@ -88,6 +92,15 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             </div>
         );
     } else if(typeObject==='panneau') {
+
+        //Ici je vérifie juste si on est dans le cas de Toby
+        //comme ça je peux lui attribuer un id du tableau différents
+        //selon s'il est pétrifié ou non !
+        if (objectInfo == DIALOGUE[145]){
+            if (!pnj_colise.petrified){
+               objectInfo = DIALOGUE[146] 
+            }
+        }
 
         const dialogues = objectInfo.description;
         const currentDialogue = dialogues[indexDialogue];

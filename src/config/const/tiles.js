@@ -694,7 +694,7 @@ export const MAP_TILES = {
     },
     145: {
         url: 'sol_colisee.png',
-        type: 'mur',
+        type: 'panneau',
     },
     600: {
         url: 'rouge.png',

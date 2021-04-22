@@ -88,6 +88,56 @@ export const DIALOGUE = {
             }
         ],
     },
+    145: {
+        id: 145,
+        name: 'Toby The Fox pétrifié',
+        complexChoices: false,
+        description: [
+            {
+                text: 'La pierre de cette statue est étrange, peu classique, de plus son visage traduit une horreur indicible. Une imposante clé se trouve dans sa main… La porte doit être démesurément grande…  Ce n’est décidément pas une statue ordinaire…',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'La lumière du faisceau est chaleureuse, vous vous sentez bien sous cette lumière. Elle pourrait peut-être aider cette statue maudite.',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
+    146: {
+        id: 146,
+        name: 'Toby The Fox libéré',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Ô seigneur ! Merci de m’avoir délivré du mal qui ronge cette demeure, il semblerait que la malédiction ai pris possession de ce temple.',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Hmmm, vous devez vouloir accéder à votre château, j’ai pris soin de conserver les clés après l’arrivée du chevalier sombre dans votre résidence.',
+                yes: {
+                    text: 'Merci',
+                    next: null
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
     200: {
         id: 200,
         name: 'Le roi ',
