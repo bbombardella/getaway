@@ -227,6 +227,10 @@ export const MAP_TILES = {
         url: 'bleu.png', //chambre roi
         type: 'porte',
     },
+    59: {
+        url: 'jaune.png', //chambre roi
+        type: 'porte',
+    },
     67: {
         url: 'panneau_face.png',
         type: 'panneau',
@@ -746,6 +750,10 @@ export const MAP_TILES = {
     608: {
         url: 'violet.png',
         type: 'objet',
+    },
+    609: {
+        url: 'blanc.png',
+        type: 'vide',
     },
     610: {
         url: 'violet.png',
