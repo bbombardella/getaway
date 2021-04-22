@@ -1,9 +1,7 @@
 import React from 'react';
 import { PathLine } from 'react-svg-pathline';
-import { SPRITE_SIZE } from '../../config/const/settings';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { PNJ_CHANGE_STATE } from '../../config/const/settings'
+import { SPRITE_SIZE, PNJ_CHANGE_STATE } from '../../config/const/settings';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default function Rayon({ data }) {
 
@@ -13,27 +11,24 @@ export default function Rayon({ data }) {
     const dispatch = useDispatch();
 
     var pts = createRayon(miroirs);
-    console.log(pts[pts.length-1]);
-/*
+    console.log(pts[pts.length - 1]);
     ////le probleme commence ici
-    var test={ x: 2 * SPRITE_SIZE, y: 6.5 * SPRITE_SIZE };
-    var test2=pts[pts.length-1];
+    var test = { x: 2 * SPRITE_SIZE, y: 6.5 * SPRITE_SIZE };
+    var test2 = pts[pts.length - 1];
 
     console.log(test)
     console.log(test2)
-    console.log(pts.length-1)
-    if(test===test2*//*pts.length===14*//*){//cette condition semble etre toujours fausse
-        console.log('la')
+    console.log(pts.length - 1)
+    if (test === test2) {//*pts.length===14*//*){//cette condition semble etre toujours fausse
+        console.log('la');
         dispatch({
             type: PNJ_CHANGE_STATE,
             payload: {
-                id: 0,
-                state: "not petrified",
+                petrified: false
             }
-        }); 
+        });
         console.log('ici')
     }////s'arrête la
-*/
     console.log(pts);
     return (
         <svg style={{

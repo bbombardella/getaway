@@ -36,7 +36,7 @@ export default function Map(props) {
                     {rayons.map((rayon, index) => <Rayon key={index} data={rayon} />)}
                 </div>
                 <div classname ="pnj">
-                    {pnj_colise.map((pnj) => <PnjColise key={0} data={pnj} />)}
+                    <PnjColise key={0} petrified={pnj_colise.petrified} />
                 </div>
             </div>
         );
