@@ -99,6 +99,8 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
         if (objectInfo == DIALOGUE[145]){
             if (!pnj_colise.petrified){
                objectInfo = DIALOGUE[146] 
+               //Donc s'il a été libéré on lui attribue l'indice 146 qui correspond
+               //au dialogue du personnage après avoir été libéré !
             }
         }
 
