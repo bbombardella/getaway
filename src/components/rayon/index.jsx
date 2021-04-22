@@ -4,29 +4,27 @@ import { SPRITE_SIZE, PNJ_CHANGE_STATE } from '../../config/const/settings';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function Rayon({ data }) {
+
     const dispatch = useDispatch();
     const { miroirs, pnj_colise } = useSelector(state => ({
         miroirs: state.miroirs,
         pnj_colise: state.pnj_colise,
     }));
+
     var verif=false;
-
-
     var pts = createRayon(miroirs);
-
     var test = { x: 2 * SPRITE_SIZE, y: 6.5 * SPRITE_SIZE };
     var test2 = pts[pts.length - 1];
 
     if(test.x===test2.x && test.y===test2.y){
         verif=true;
     }
-    console.log(pnj_colise.changed)
-    if(pnj_colise.changed===false && verif===true){
+
+    if(pnj_colise.petrified===true && verif===true){
         dispatch({
             type: PNJ_CHANGE_STATE,
             payload: {
                 petrified: false,
-                changed: true,
             }
         });
     }
@@ -118,7 +116,6 @@ function createRayon(miroirs) {
         }
 
     }
-    console.log(pts);
     return pts;
 }
 
