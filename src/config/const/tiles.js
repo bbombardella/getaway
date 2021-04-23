@@ -231,6 +231,18 @@ export const MAP_TILES = {
         url: 'jaune.png', //chambre roi
         type: 'porte',
     },
+    60: {
+        url: 'blanc.png', //pour entrée château
+        type: 'porte',
+    },
+    61: {
+        url: 'bleu.png', //pour entrée château
+        type: 'porte',
+    },
+    62: {
+        url: 'bleu.png', //pour entrée château
+        type: 'porte',
+    },
     67: {
         url: 'panneau_face.png',
         type: 'panneau',
@@ -564,6 +576,59 @@ export const MAP_TILES = {
         url: 'violet.png',
         type: 'panneau',
     },
+    //Tuiles chambre héro
+    203: {
+        url: 'blanc.png',
+        type: 'panneau',
+    },
+    205: {
+        url: 'blanc.png', //miroir bas gauche
+        type: 'panneau',
+    },
+    206: {
+        url: 'blanc.png', //miroir bas milieu
+        type: 'panneau',
+    },
+    207: {
+        url: 'blanc.png', //miroir bas droite
+        type: 'panneau',
+    },
+    208: {
+        url: 'blanc.png', //baignoire *6 donc jusqu'à 213 à mettre en place
+        type: 'panneau',
+    },
+    214: {
+        url: 'jaune.png', //pot de chambre
+        type: 'panneau',
+    },
+    215: {
+        url: 'bleu.png', //fauteuil *4 donc jusqu'à 218
+        type: 'panneau',
+    },
+    216: {
+        url: 'jaune.png', //tapis, garder 30 cases au cas où donc jusqu'à 247
+        type: 'sol',
+    },
+    248: {
+        url: 'violet.png', //commode *2
+        type: 'mur',
+    },
+    250: {
+        url: 'gris.png', //lit *15 mais *9 panneau
+        type: 'panneau',
+    },
+    276: {
+        url: 'blanc.png', //couronne
+        type: 'panneau',
+    },
+    277: {
+        url: 'gris.png', //paravent *12
+        type: 'panneau',
+    },
+    290: {
+        url: 'jaune.png', //escalier*2
+        type: 'sol',
+    },
     // Tuiles fontaine
     500: {
         url: 'herbe_enchantee.png',
@@ -770,6 +835,7 @@ export const MAP_TILES = {
         url: 'blanc.png',
         type: 'objet',
     },
+
     //bottes
     700: {
         url: 'bottes.png',
