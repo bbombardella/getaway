@@ -3,7 +3,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import { CHANGE_SETTING } from '../../config/const/settings';
 import './settings.css'
 import useKeyPress from '../../hooks/use-key-pressed/';
-import { DIALOGUE } from '../../config/const/dialogue';
+
 
 export default function Settings({ closeDialog }){
     const [test, setTest] = useState(false);
