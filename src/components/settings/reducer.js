@@ -15,16 +15,16 @@ const initialState = {
 
 export const settingsReducer = createReducer(initialState, builder => {
     builder.addCase(CHANGE_SETTING, (state, action) => {
-            state.up = action.payload.up
+            /*state.up = action.payload.up
             state.down = action.payload.down
             state.left = action.payload.left
             state.right = action.payload.right
             state.music = action.payload.music
             state.interaction = action.payload.interaction
             state.help = action.payload.help
-            state.inventory = action.payload.inventory
-            /*const setting = action.playload.setting;
-            const newKey = action.payload.orientation;
+            state.inventory = action.payload.inventory*/
+            const setting = action.payload.setting;
+            const newKey = action.payload.newkey;
             switch (setting){
                 case 'up':
                     state.up = newKey;
@@ -52,7 +52,7 @@ export const settingsReducer = createReducer(initialState, builder => {
                     break;
                 default:
                     break;
-            }*/
+            }
     })
 })
 
