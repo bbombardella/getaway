@@ -13,16 +13,39 @@ export default function Player({ skin }) {
         h: SPRITE_SIZE,
     };
 
-    const worldLoading = useSelector(state => ({
-        worldLoading: state.worldLoading
+    const {worldLoading, settings} = useSelector(state => ({
+        worldLoading: state.worldLoading,
+        settings: state.settings,
     }));
 
     const [isPressed, setPressed] = useState(false);
 
     useKeyPress((e) => {
         if (!isPressed) {
-            if (e.key.includes("Arrow")) {
-                walk(e.key.replace("Arrow", "").toLowerCase());
+            var press=false;
+            switch (e.key){
+                case settings.up:
+                    walk('up');
+                    press=true;
+                    break;
+                case settings.down:
+                    walk('down');
+                    press=true;
+                    break;
+                case settings.right:
+                    walk('right');
+                    press=true;
+                    break;
+                case settings.left: 
+                    walk('left')
+                    press=true;
+                    break;
+                default:
+                    press=false;
+                    break;
+            }
+ 
+            if (press) {
                 setPressed(true);
                 setTimeout(function () {
                     setPressed(false);
