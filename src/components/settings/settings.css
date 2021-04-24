@@ -1,6 +1,5 @@
 .button-settings {
-    display: inline-block;
-    /*flex-direction: row;*/
+
     background-color: #3b3b3b;
     border: 2px solid grey;
     color: white;

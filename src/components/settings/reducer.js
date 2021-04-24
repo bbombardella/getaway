@@ -15,7 +15,10 @@ const initialState = {
 
 export const settingsReducer = createReducer(initialState, builder => {
     builder.addCase(CHANGE_SETTING, (state, action) => {
-            /*state.up = action.payload.up
+        /*
+        const newKey = action.payload.newKey;
+        if(typeof(action.payload.setting)==='undefined'){
+            state.up = action.payload.up
             state.down = action.payload.down
             state.left = action.payload.left
             state.right = action.payload.right

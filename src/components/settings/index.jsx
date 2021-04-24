@@ -45,7 +45,6 @@ export default function Settings({ closeDialog }){
         setSet(set);
     }
 
-
     return (
         <div className='tools-panel' id= 'settings'>
             <button classeName='panel-button' onClick={() => closeDialog()}>x</button>
