@@ -30,9 +30,10 @@ export default function Tools(props) {
   const [mute, setMute] = useState(false);
   const [volume, setVolume] = useState("0.5");
 
-  const { interaction, miroirs } = useSelector(state => ({
+  const { interaction, miroirs, settings } = useSelector(state => ({
     interaction: state.interaction,
-    miroirs: state.miroirs
+    miroirs: state.miroirs,
+    settings : state.settings
   }));
 
   const resetBoolean = () => {
@@ -40,21 +41,21 @@ export default function Tools(props) {
     setInventoryNeeded(false);
     setInteractNeeded(false);
   };
-
+  
   useKeyPress((e) => {
-    if (e.key === 'h') {
+    if (e.key === settings.help) {
       resetBoolean();
       setHelpNeeded(!helpNeeded)
     }
-    if (e.key === 'i') {
+    if (e.key === settings.inventory) {
       resetBoolean();
       setInventoryNeeded(!inventoryNeeded)
     }
-    if (e.key === 'a') {
+    if (e.key === settings.interaction) {
       resetBoolean();
       setInteractNeeded(!interactNeeded)
     }
-    if (e.key === 'm') {
+    if (e.key === settings.music) {
       setMute(!mute);
     }
     e.preventDefault();
