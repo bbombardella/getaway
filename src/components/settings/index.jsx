@@ -17,8 +17,6 @@ export default function Settings({ closeDialog }){
     const dispatch = useDispatch();
 
     useKeyPress((e) => {
-        console.log(e.key);
-        console.log(test);
         var key=e.key
         if (test===true){
             dispatch({
@@ -33,7 +31,6 @@ export default function Settings({ closeDialog }){
     });
 
     function SetKey(set) {
-        console.log('hello world')
             dispatch({
                 type:CHANGE_SETTING,
                 payload: {
@@ -51,8 +48,40 @@ export default function Settings({ closeDialog }){
             <h1>Réglages</h1>
             <hr></hr>
             <h2>Contrôles</h2>
-            <p>up</p>
-            <button className='button-settings' onClick={() =>{SetKey('up'); }}>{settings.up}</button>
+            <div className='Global'>
+                <div className='row'>
+                    <p className='SettingsText'>up</p>
+                    <button className='button-settings' onClick={() =>{SetKey('up'); }}>{settings.up}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>down</p>
+                    <button className='button-settings' onClick={() =>{SetKey('down'); }}>{settings.down}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>left</p>
+                    <button className='button-settings' onClick={() =>{SetKey('left'); }}>{settings.left}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>right</p>
+                    <button className='button-settings' onClick={() =>{SetKey('right'); }}>{settings.right}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>Interaction</p>
+                    <button className='button-settings' onClick={() =>{SetKey('interaction'); }}>{settings.interaction}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>Musique</p>
+                    <button className='button-settings' onClick={() =>{SetKey('music'); }}>{settings.music}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>Aide</p>
+                    <button className='button-settings' onClick={() =>{SetKey('help'); }}>{settings.help}</button>
+                </div>
+                <div className='row'>
+                    <p className='SettingsText'>Inventaire</p>
+                    <button className='button-settings' onClick={() =>{SetKey('inventory'); }}>{settings.inventory}</button>
+                </div>
+            </div>
         </div>
         );   
     }
