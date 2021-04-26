@@ -13,6 +13,7 @@ export default function App() {
     luminosity : state.luminosity,
 }));
 var lum = luminosity.luminosity;
+console.log(lum);
   if (isIntro) {
     return (
       <div className='game' >
@@ -20,13 +21,70 @@ var lum = luminosity.luminosity;
       </div>
     );
   } else {
-    return (
-      <div className='game' style = {{opacity: {lum}}}>
-        <Map>
-          <Player skin={1} />
-        </Map>
-        <Tools />
-      </div>
-    );
+    switch(lum){
+      case("0.5"):
+        return (
+          <div className='game' id="lum_1">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+      case("0.4"):
+        return (
+          <div className='game' id="lum_09">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+      case("0.3"):
+        return (
+          <div className='game' id="lum_08">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+      case("0.2"):
+        return (
+          <div className='game' id="lum_07">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+      case("0.1"):
+        return (
+          <div className='game' id="lum_06">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+        case("0"):
+      return (
+          <div className='game' id="lum_05">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+      default:
+        return (
+          <div className='game'  id="lum_1">
+            <Map>
+              <Player skin={1} />
+            </Map>
+            <Tools />
+          </div>
+        );
+    }
   }
 }

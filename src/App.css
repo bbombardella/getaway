@@ -27,3 +27,27 @@
   align-items: center;
   justify-content: center;
 }
+
+#lum_1{
+  opacity: 1;
+}
+
+#lum_09{
+  opacity: 0.9;
+}
+
+#lum_08{
+  opacity: 0.8;
+}
+
+#lum_07{
+  opacity: 0.7;
+}
+
+#lum_06{
+  opacity: 0.6;
+}
+
+#lum_05{
+  opacity: 0.5;
+}
