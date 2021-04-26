@@ -2,7 +2,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import { CHANGE_LUMINOSITY } from '../../config/const/settings';
 
 const initialState = {
-    luminosity : '0.5',
+    luminosity : '5',
 }
 
 export const luminosityReducer = createReducer(initialState, builder => {

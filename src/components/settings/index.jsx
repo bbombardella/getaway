@@ -101,7 +101,7 @@ export default function Settings({ closeDialog }){
                 </div>
 
                 <label for="Luminosité">Luminosité</label>
-                <input type="range" id="luminosité" name="luminosité" min="0" max="0.5" step="0.1" defaultValue={getLuminosity()} onChange={(e) => setLuminosite(e.target.value)} />
+                <input type="range" id="luminosité" name="luminosité" min="1" max="5" step="1" defaultValue={getLuminosity()} onChange={(e) => setLuminosite(e.target.value)} />
                 
             </div>
         </div>
