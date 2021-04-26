@@ -10,7 +10,7 @@ export default function Introduction({children}){
         <div className='introduction'>
             {
             idPhrase >= INTRO.length ? 
-            <p>(Fin de l'introduction...)</p> 
+            <p><img src="./assets/logo_accueil/get_away_blanc.png" id="logo"></img></p> 
             : 
             <div><p>{INTRO[idPhrase]}</p><button onClick={() => setIdPhrase(idPhrase+1)}>Suivant</button></div>
             }

@@ -4,3 +4,8 @@
     transform: translateY(-50%);
     padding: 60px;
   }
+
+#logo {
+  max-width: 50%;
+  padding: 0px;
+}
