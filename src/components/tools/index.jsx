@@ -50,16 +50,25 @@ export default function Tools(props) {
       resetBoolean();
       setHelpNeeded(!helpNeeded)
     }
-    if (e.key === settings.inventory) {
-      resetBoolean();
-      setInventoryNeeded(!inventoryNeeded)
-    }
-    if (e.key === settings.interaction) {
-      resetBoolean();
-      setInteractNeeded(!interactNeeded)
-    }
-    if (e.key === settings.music) {
-      setMute(!mute);
+    else{
+      if (e.key === settings.inventory) {
+        resetBoolean();
+        setInventoryNeeded(!inventoryNeeded)
+      }
+      else{
+        if (e.key === settings.interaction) {
+          resetBoolean();
+          setInteractNeeded(!interactNeeded)
+        }
+        else{
+          if (e.key === settings.music) {
+            setMute(!mute);
+          }
+          else{
+            resetBoolean();
+          }
+        }
+      }
     }
     e.preventDefault();
   });
