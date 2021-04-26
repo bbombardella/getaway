@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { CHANGE_SETTING } from '../../config/const/settings';
+import { CHANGE_SETTING, CHANGE_LUMINOSITY } from '../../config/const/settings';
 
 const initialState = {
     up : 'ArrowUp',
@@ -48,5 +48,17 @@ export const settingsReducer = createReducer(initialState, builder => {
             }
     })
 })
+
+const initialStateLum = "5";
+
+
+export function luminosityReducer(state = initialStateLum, action) {
+    switch (action.type) {
+        case CHANGE_LUMINOSITY:
+            return action.payload.lum;
+        default:
+            return state;
+    }
+}
 
             

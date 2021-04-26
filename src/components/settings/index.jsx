@@ -47,18 +47,11 @@ export default function Settings({ closeDialog }){
     function setLuminosite( value ){
         dispatch({
             type: CHANGE_LUMINOSITY,
-            payload: {
-                luminosity: value,
+            payload:{
+                lum: value
             }
         });
     }
-
-    function getLuminosity(){
-        var lum = luminosity.luminosity;
-        console.log(lum);
-        return lum;
-    }
-
 
     return (
         <div className='tools-panel' id= 'settings'>
@@ -67,6 +60,8 @@ export default function Settings({ closeDialog }){
             <hr></hr>
             <h2>Contrôles</h2>
             <div className='Global'>
+            <label for="Luminosité">Luminosité</label>
+                <input type="range" id="luminosité" name="luminosité" min="0" max="5" step="1" defaultValue={luminosity} onChange={(e) => setLuminosite(e.target.value)} />
                 <div className='row'>
                     <p className='SettingsText'>up</p>
                     <button className='button-settings' onClick={() =>{SetKey('up'); }}>{settings.up.toUpperCase()}</button>
@@ -99,9 +94,6 @@ export default function Settings({ closeDialog }){
                     <p className='SettingsText'>Inventaire</p>
                     <button className='button-settings' onClick={() =>{SetKey('inventory'); }}>{settings.inventory.toUpperCase()}</button>
                 </div>
-
-                <label for="Luminosité">Luminosité</label>
-                <input type="range" id="luminosité" name="luminosité" min="0" max="5" step="1" defaultValue={getLuminosity()} onChange={(e) => setLuminosite(e.target.value)} />
                 
             </div>
         </div>

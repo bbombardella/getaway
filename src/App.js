@@ -12,7 +12,7 @@ export default function App() {
   const { luminosity } = useSelector(state => ({
     luminosity : state.luminosity,
 }));
-var lum = "lum_"+luminosity.luminosity;
+var lum = "lum_"+luminosity;
 console.log(lum);
   if (isIntro) {
     return (

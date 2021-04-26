@@ -4,8 +4,7 @@ import interactionReducer from '../../components/interaction/reducer';
 import worldReducer, { worldLoadingReducer } from '../../components/map/world/reducer';
 import { miroirsReducer } from '../../components/miroir/reducer';
 import { pnj_coliseReducer } from '../../components/pnj_colise/reducer';
-import { settingsReducer } from '../../components/settings/reducer';
-import { luminosityReducer } from '../../components/luminosity/reducer';
+import { settingsReducer, luminosityReducer} from '../../components/settings/reducer';
 
 export default createStore(
     combineReducers({
