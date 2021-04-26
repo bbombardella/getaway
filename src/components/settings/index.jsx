@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {useSelector, useDispatch } from 'react-redux';
-import { CHANGE_SETTING } from '../../config/const/settings';
+import { CHANGE_LUMINOSITY, CHANGE_SETTING } from '../../config/const/settings';
 import './settings.css'
 import useKeyPress from '../../hooks/use-key-pressed/';
+
 
 
 export default function Settings({ closeDialog }){
@@ -10,8 +11,9 @@ export default function Settings({ closeDialog }){
     const [set, setSet] = useState(false);
 
 
-    const { settings } = useSelector(state => ({
+    const { settings, luminosity } = useSelector(state => ({
         settings : state.settings,
+        luminosity : state.luminosity,
     }));
 
     const dispatch = useDispatch();
@@ -42,9 +44,19 @@ export default function Settings({ closeDialog }){
         setSet(set);
     }
 
+    function setLuminosite( value ){
+        dispatch({
+            type: CHANGE_LUMINOSITY,
+            payload: {
+                luminosity: value,
+            }
+        });
+    }
+
+
     return (
         <div className='tools-panel' id= 'settings'>
-            <button classeName='panel-button' onClick={() => closeDialog()}>x</button>
+            <button classeName='panel-button' id='close-settings' onClick={() => closeDialog()}>x</button>
             <h1>Réglages</h1>
             <hr></hr>
             <h2>Contrôles</h2>
@@ -81,6 +93,10 @@ export default function Settings({ closeDialog }){
                     <p className='SettingsText'>Inventaire</p>
                     <button className='button-settings' onClick={() =>{SetKey('inventory'); }}>{settings.inventory}</button>
                 </div>
+
+                <label for="Luminosité">Luminosité</label>
+                <input type="range" id="luminosité" name="luminosité" min="0" max="0.5" step="0.05" value={luminosity} onChange={(e) => setLuminosite(e.target.value)} />
+                
             </div>
         </div>
         );   

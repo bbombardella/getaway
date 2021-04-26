@@ -24,3 +24,13 @@
     width:75%;
     position:relative;
 }
+
+#settings{  
+    overflow-y: scroll;
+    max-height: 50%;
+}
+
+#close-settings{
+    position: sticky;
+    top: 10px;
+}
