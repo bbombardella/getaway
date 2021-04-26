@@ -15,7 +15,7 @@ export default function Settings({ closeDialog }){
         settings : state.settings,
         luminosity : state.luminosity,
     }));
-
+    
     const dispatch = useDispatch();
 
     useKeyPress((e) => {
@@ -51,6 +51,12 @@ export default function Settings({ closeDialog }){
                 luminosity: value,
             }
         });
+    }
+
+    function getLuminosity(){
+        var lum = luminosity.luminosity;
+        console.log(lum);
+        return lum;
     }
 
 
@@ -95,7 +101,7 @@ export default function Settings({ closeDialog }){
                 </div>
 
                 <label for="Luminosité">Luminosité</label>
-                <input type="range" id="luminosité" name="luminosité" min="0" max="0.5" step="0.05" value={luminosity} onChange={(e) => setLuminosite(e.target.value)} />
+                <input type="range" id="luminosité" name="luminosité" min="0" max="0.5" step="0.05" defaultValue={getLuminosity()} onChange={(e) => setLuminosite(e.target.value)} />
                 
             </div>
         </div>

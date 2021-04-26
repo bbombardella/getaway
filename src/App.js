@@ -12,6 +12,7 @@ export default function App() {
   const { luminosity } = useSelector(state => ({
     luminosity : state.luminosity,
 }));
+var lum = luminosity.luminosity;
   if (isIntro) {
     return (
       <div className='game' >
@@ -20,7 +21,7 @@ export default function App() {
     );
   } else {
     return (
-      <div className='game' style = {{opacity: {luminosity}}}>
+      <div className='game' style = {{opacity: {lum}}}>
         <Map>
           <Player skin={1} />
         </Map>
