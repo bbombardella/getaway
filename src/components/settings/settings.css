@@ -24,3 +24,8 @@
     width:75%;
     position:relative;
 }
+
+#settings{
+    overflow-y: scroll;
+    max-height: 70%;
+}

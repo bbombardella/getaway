@@ -82,10 +82,10 @@ export default function Tools(props) {
           <label for="volume">Volume</label>
         </div>
       }
-      <button className="tools-button" onClick={() => setMute(!mute)}>Musique [M]</button>
-      <button className="tools-button" onClick={() => setInteractNeeded(!interactNeeded)}>Interagir [A]</button>
-      <button className="tools-button" onClick={() => setHelpNeeded(true)}>Aide [H]</button>
-      <button className="tools-button" onClick={() => setInventoryNeeded(true)}>Inventaire [I]</button>
+      <button className="tools-button" onClick={() => setMute(!mute)}>Musique [{settings.music.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setInteractNeeded(!interactNeeded)}>Interagir [{settings.interaction.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setHelpNeeded(true)}>Aide [{settings.help.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setInventoryNeeded(true)}>Inventaire [{settings.inventory.toUpperCase()}]</button>
       <button className="tools-button" onClick={() => setSettingsNeeded(true)}>Règlages</button>
       {(settingsNeeded || helpNeeded || inventoryNeeded) && <Overlay />}
     </div>

@@ -8,10 +8,11 @@ export default function Help({closeDialog}) {
     return(
         <div className='tools-panel' id='help'>
             <button className="panel-button" onClick={() => closeDialog()}>x</button>
-            <h1>Panneau Help</h1>
+            <h1>Panneau d'aide</h1>
             <hr></hr>
-            <p>Ajouter un objet à l'inventaire : touche <kbd>{settings.inventory}</kbd></p>
-            <p>Pour couper ou remettre la musique : touche <kbd>{settings.music}</kbd></p>
+            <p>Pour ouvrir l'inventaire : touche <kbd>{settings.inventory.toUpperCase()}</kbd></p>
+            <p>Pour couper ou remettre la musique : touche <kbd>{settings.music.toUpperCase()}</kbd></p>
+            <p>Pour intéragir avec quelque chose : touche <kbd>{settings.interaction.toUpperCase()}</kbd></p>
         </div>
     );
 }

@@ -51,35 +51,35 @@ export default function Settings({ closeDialog }){
             <div className='Global'>
                 <div className='row'>
                     <p className='SettingsText'>up</p>
-                    <button className='button-settings' onClick={() =>{SetKey('up'); }}>{settings.up}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('up'); }}>{settings.up.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>down</p>
-                    <button className='button-settings' onClick={() =>{SetKey('down'); }}>{settings.down}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('down'); }}>{settings.down.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>left</p>
-                    <button className='button-settings' onClick={() =>{SetKey('left'); }}>{settings.left}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('left'); }}>{settings.left.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>right</p>
-                    <button className='button-settings' onClick={() =>{SetKey('right'); }}>{settings.right}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('right'); }}>{settings.right.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>Interaction</p>
-                    <button className='button-settings' onClick={() =>{SetKey('interaction'); }}>{settings.interaction}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('interaction'); }}>{settings.interaction.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>Musique</p>
-                    <button className='button-settings' onClick={() =>{SetKey('music'); }}>{settings.music}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('music'); }}>{settings.music.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>Aide</p>
-                    <button className='button-settings' onClick={() =>{SetKey('help'); }}>{settings.help}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('help'); }}>{settings.help.toUpperCase()}</button>
                 </div>
                 <div className='row'>
                     <p className='SettingsText'>Inventaire</p>
-                    <button className='button-settings' onClick={() =>{SetKey('inventory'); }}>{settings.inventory}</button>
+                    <button className='button-settings' onClick={() =>{SetKey('inventory'); }}>{settings.inventory.toUpperCase()}</button>
                 </div>
             </div>
         </div>
