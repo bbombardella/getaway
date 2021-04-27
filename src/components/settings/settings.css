@@ -1,0 +1,36 @@
+.button-settings {
+    background-color: #3b3b3b;
+    border: 2px solid grey;
+    color: white;
+    width:25%;
+    height: auto;
+    margin:3%;
+    position:relative;
+
+}
+
+.row{
+    object-position: right;
+    display: flex;
+    flex-direction: row;
+}
+
+.Global{
+    width:100%;
+
+}
+
+.SettingsText{
+    width:75%;
+    position:relative;
+}
+
+#settings{  
+    overflow-y: scroll;
+    max-height: 50%;
+}
+
+#close-settings{
+    position: sticky;
+    top: 10px;
+}
