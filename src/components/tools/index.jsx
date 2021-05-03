@@ -6,6 +6,7 @@ import Help from '../help/';
 import useKeyPress from '../../hooks/use-key-pressed/';
 import PopUpInteraction from '../interaction/';
 import Music from '../music';
+import Settings from '../settings/index.jsx'
 
 function Overlay(props) {
   return (
@@ -27,35 +28,47 @@ export default function Tools(props) {
   const [helpNeeded, setHelpNeeded] = useState(false);
   const [inventoryNeeded, setInventoryNeeded] = useState(false);
   const [interactNeeded, setInteractNeeded] = useState(false);
+  const [settingsNeeded, setSettingsNeeded] = useState(false);
   const [mute, setMute] = useState(false);
   const [volume, setVolume] = useState("0.5");
 
-  const { interaction, miroirs } = useSelector(state => ({
+  const { interaction, miroirs, settings } = useSelector(state => ({
     interaction: state.interaction,
-    miroirs: state.miroirs
+    miroirs: state.miroirs,
+    settings : state.settings
   }));
 
   const resetBoolean = () => {
     setHelpNeeded(false);
     setInventoryNeeded(false);
     setInteractNeeded(false);
+    setSettingsNeeded(false);
   };
-
+  
   useKeyPress((e) => {
-    if (e.key === 'h') {
+    if (e.key === settings.help) {
       resetBoolean();
       setHelpNeeded(!helpNeeded)
     }
-    if (e.key === 'i') {
-      resetBoolean();
-      setInventoryNeeded(!inventoryNeeded)
-    }
-    if (e.key === 'a') {
-      resetBoolean();
-      setInteractNeeded(!interactNeeded)
-    }
-    if (e.key === 'm') {
-      setMute(!mute);
+    else{
+      if (e.key === settings.inventory) {
+        resetBoolean();
+        setInventoryNeeded(!inventoryNeeded)
+      }
+      else{
+        if (e.key === settings.interaction) {
+          resetBoolean();
+          setInteractNeeded(!interactNeeded)
+        }
+        else{
+          if (e.key === settings.music) {
+            setMute(!mute);
+          }
+          else{
+            resetBoolean();
+          }
+        }
+      }
     }
     e.preventDefault();
   });
@@ -65,6 +78,7 @@ export default function Tools(props) {
       {helpNeeded && <Help closeDialog={() => setHelpNeeded(false)} />}
       {inventoryNeeded && <Inventory closeDialog={() => setInventoryNeeded(false)} />}
       {(interactNeeded && interaction.interact) && <PopUpInteraction closeDialog={() => setInteractNeeded(false)} objectdata={interaction} miroirs={miroirs} />}
+      {settingsNeeded && <Settings closeDialog={() => setSettingsNeeded(false)} />}
       <Music mute={mute} volume={volume} />
       {!mute &&
         <div style={{
@@ -77,11 +91,12 @@ export default function Tools(props) {
           <label for="volume">Volume</label>
         </div>
       }
-      <button className="tools-button" onClick={() => setMute(!mute)}>Musique [M]</button>
-      <button className="tools-button" onClick={() => setInteractNeeded(!interactNeeded)}>Interagir [A]</button>
-      <button className="tools-button" onClick={() => setHelpNeeded(true)}>Aide [H]</button>
-      <button className="tools-button" onClick={() => setInventoryNeeded(true)}>Inventaire [I]</button>
-      {(helpNeeded || inventoryNeeded) && <Overlay />}
+      <button className="tools-button" onClick={() => setMute(!mute)}>Musique [{settings.music.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setInteractNeeded(!interactNeeded)}>Interagir [{settings.interaction.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setHelpNeeded(true)}>Aide [{settings.help.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setInventoryNeeded(true)}>Inventaire [{settings.inventory.toUpperCase()}]</button>
+      <button className="tools-button" onClick={() => setSettingsNeeded(true)}>Règlages</button>
+      {(settingsNeeded || helpNeeded || inventoryNeeded) && <Overlay />}
     </div>
   )
 }
