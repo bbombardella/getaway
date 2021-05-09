@@ -184,7 +184,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     48: {
-        url: 'gris.png',
+        url: 'porte_droite.png',
         type: 'porte',
     },
     49: {
@@ -563,17 +563,77 @@ export const MAP_TILES = {
         url: 'vide_bleu.png',
         type: 'panneau',
     },
-    //Livres/
+    //Bibliothèque/
+    185: {
+        url: 'bibilio_1.png',
+        type: 'mur',
+    },
+    186: {
+        url: 'bibilio_2.png',
+        type: 'mur',
+    },
+    187: {
+        url: 'bibilio_3.png',
+        type: 'mur',
+    },
+    188: {
+        url: 'bibilio_4.png',
+        type: 'mur',
+    },
+    189: {
+        url: 'mur_porte_bord_droitebas.png',
+        type: 'mur',
+    },
+    190: {
+        url: 'mur_porte_bord_droitehaut.png',
+        type: 'mur',
+    },
+    191: {
+        url: 'mur_porte_bord_droitecentre.png',
+        type: 'mur',
+    },
+    192: {
+        url: 'mur_porte_droitebas.png',
+        type: 'mur',
+    },
+    193: {
+        url: 'mur_porte_droitehaut.png',
+        type: 'mur',
+    },
+    194: {
+        url: 'sol_biblio.png',
+        type: 'sol',
+    },
+    195: {
+        url: 'cptoir_milbas.png',
+        type: 'mur',
+    },
+    196: {
+        url: 'cptoir_bas.png',
+        type: 'mur',
+    },
+    197: {
+        url: 'cptoir_angle.png',
+        type: 'mur',
+    },
+    198: {
+        url: 'cptoir_mildroite.png',
+        type: 'mur',
+    },
+    199: {
+        url: 'cptoir_droite.png',
+        type: 'mur',
+    },
     200: {
-        url: 'violet.png',
+        url: 'bibilio_3.png',
         type: 'panneau',
     },
     201: {
-        url: 'violet.png',
+        url: 'bibilio_2.png',
         type: 'panneau',
     },
     202: {
-        url: 'violet.png',
+        url: 'bibilio_1.png',
         type: 'panneau',
     },
     //Tuiles chambre héro
@@ -796,7 +856,7 @@ export const MAP_TILES = {
         type: 'mur',
     },
     603: {
-        url: 'jaune.png',
+        url: 'tortue.png',
         type: 'panneau',
     },
     604: {
