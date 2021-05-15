@@ -9,13 +9,22 @@ import { useSelector } from 'react-redux';
 
 import './Interaction.css';
 
+function checkAlreadyExist(array, id) {
+    for(var i=0;i<array.length;i++) {
+        if(array[i].id === id) {
+            return true;
+        }
+    }
+    return false;
+}
 
 export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
 
     const dispatch = useDispatch();
 
-    const { pnj_colise } = useSelector(state => ({
+    const { pnj_colise, inventory } = useSelector(state => ({
         pnj_colise: state.pnj_colise,
+        inventory: state.inventory
     }));
 
     const [objectTaken, setObjectTaken] = useState(false);
@@ -104,24 +113,27 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             }
         }
         
-        if (objectInfo == DIALOGUE[200]){
+        if (objectInfo == DIALOGUE[200] && !checkAlreadyExist(inventory, 200)){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[200]
             });
-            setEnigmeSuccess(true);
-        } else if (objectInfo == DIALOGUE[201]){
+        } else if (objectInfo == DIALOGUE[201] && !checkAlreadyExist(inventory, 201)){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[201]
             });
-            setEnigmeSuccess(true);
-        } else if (objectInfo == DIALOGUE[202]){
+        } else if (objectInfo == DIALOGUE[202] && !checkAlreadyExist(inventory, 202)){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[202]
             });
-            setEnigmeSuccess(true);
+        }
+
+        //Ici on vérifie si le slivres ont été lus ou non
+        if(objectInfo == DIALOGUE[203] && checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
+            //S'ils ont été lus, le dialogue du tableau change
+            objectInfo = DIALOGUE[204]
         }
 
         const dialogues = objectInfo.description;
