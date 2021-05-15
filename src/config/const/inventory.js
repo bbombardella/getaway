@@ -136,5 +136,13 @@ export const INVENTORY_OBJECTS = {
         pickable: true,
         descVisible: true,
         visible: false,
+    },
+    703: {
+        id: 703,
+        name: "Sale merde",
+        description: 'vous avez perdu, ta mère a honte de toi, tu devrais te suicider, personne ne t\'aime',
+        pickable: true,
+        descVisible: true,
+        visible: false,
     }
 }
