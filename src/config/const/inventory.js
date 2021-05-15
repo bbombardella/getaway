@@ -128,5 +128,13 @@ export const INVENTORY_OBJECTS = {
         pickable: true,
         descVisible: true,
         visible: false,
+    },
+    702: {
+        id: 702,
+        name: "victoire",
+        description: 'vous avez gagné, mais osef tu vois pas',
+        pickable: true,
+        descVisible: true,
+        visible: false,
     }
 }
