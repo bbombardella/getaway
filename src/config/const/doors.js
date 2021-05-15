@@ -278,6 +278,6 @@ export const DOORS = {
             x: SPRITE_SIZE,
             y: (6*SPRITE_SIZE)
         },
-        keyNeeded: 77,
+        keyNeeded: 701,
     }
 }
