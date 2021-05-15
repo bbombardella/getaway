@@ -531,6 +531,22 @@ export const DIALOGUE = {
             },
         ],
     },
+    241: {
+        id: 241,
+        name: 'Débris de la statue',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Il serait peut-être temps de passer un coup de balais… ',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
     526: {
         id: 526,
         name: 'Fée fontaine',

@@ -681,6 +681,43 @@ export const MAP_TILES = {
         url: 'arbres.png', //a voir avec les visu ><
         type: 'mur',
     },
+    215: {
+        url: 'eau.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    216: {
+        url: 'fontaine22.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    217: {
+        url: 'fleurs_font.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    218: {
+        url: 'miroir_gauche.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    219: {
+        url: 'panneau_dos.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    220: {
+        url: 'rayon_angle4.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    221: {
+        url: 'porte_bas.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    222: {
+        url: 'portechateaubas.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    //Prévoir assez donc 240 au cas où pour les murs etou portes
+    241: {
+        url: 'eauroche.png', //débris
+        type: 'panneau',
+    },
     // Tuiles fontaine
     500: {
         url: 'herbe_enchantee.png',
