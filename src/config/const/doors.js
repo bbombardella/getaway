@@ -275,7 +275,7 @@ export const DOORS = {
         id: '117',
         nextWorld: '13',
         newPosition: {
-            x: SPRITE_SIZE,
+            x: 2*SPRITE_SIZE,
             y: (6*SPRITE_SIZE)
         },
         keyNeeded: 701,
