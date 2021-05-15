@@ -37,10 +37,28 @@ export const DIALOGUE = {
         complexChoices: false,
         description: [
             {
-                text: 'Votre épée... Vraisemblablement. Aussi terrifiante qu’imposante',
+                text: 'Une épée au premier abord simple, cependant elle dégage une force incommensurable, vous vous sentez inspiré.e en la saisissant.',
                 yes: {
-                    text: 'OK',
-                    next: null
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'L’envie irrépressible de vous lancez dans la bataille vous submerge. Des souvenirs vous reviennent : vous brandissez votre imposante épée devant un scène effroyable, une mer de corps inerte se tient à vos pieds… Vous revenez à vous.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Des souvenirs vous reviennent : vous brandissez votre imposante épée devant un scène effroyable, une mer de corps inerte se tient à vos pieds… Vous revenez à vous.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
                 },
                 no: null,
                 other : null
