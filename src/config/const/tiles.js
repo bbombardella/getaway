@@ -305,7 +305,7 @@ export const MAP_TILES = {
     },
     82: {
         url: 'socle_droite.png',
-        type: 'objet',
+        type: 'panneau',
     },
     83: {
         url: 'escalier_haut.png',

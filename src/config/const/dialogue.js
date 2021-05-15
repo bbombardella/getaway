@@ -31,6 +31,22 @@ export const DIALOGUE = {
             }
         ],
     },
+    82: {
+        id: 82,
+        name: 'Epee',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Votre épée... Vraisemblablement. Aussi terrifiante qu’imposante',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
     96: {
         id: 96,
         name: 'Panneau Château',

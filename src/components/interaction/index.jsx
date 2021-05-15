@@ -118,6 +118,18 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                 }
             }
         }
+
+        if (objectInfo == DIALOGUE[82]){
+            //Si l'objet n'a pas été ajouté on l'ajoute
+               if (!checkAlreadyExist(inventory, 82)){
+                   dispatch({
+                    type: INVENTORY_ADD_ACTION,
+                    payload: INVENTORY_OBJECTS[82]
+                    });
+                }
+        }
+
+        
         
         if (objectInfo == DIALOGUE[200] && !checkAlreadyExist(inventory, 200)){
             dispatch({
