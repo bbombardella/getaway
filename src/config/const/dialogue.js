@@ -178,7 +178,72 @@ export const DIALOGUE = {
         complexChoices: false,
         description: [
             {
-                text: 'Blabla le texte du méchant',
+                text: 'Votre adversaire est bien trop fort, et vous n’avez pas d’arme, vous n’essayez pas de le combattre et fuyez',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+    148: {
+        id: 148,
+        name: 'Le méchant avec épée mais sans biblio',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Te voilà! Je t’attendais, ce petit coup que tu as reçu à la tête ne t’aura pas retenu longtemps. Tu viens pour te battre ? Tu penses vraiment pouvoir me vaincre ? Haha ! Ignorant ! En garde',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+
+    151: {
+        id: 151,
+        name: 'Victoire nulle',
+        complexChoices: false,
+        description: [
+            {
+                text: 'vous tuez le chevalier noir. Il a causé de gros dégâts dans votre petit royaume, mais vos habitants et vous reconstruirez ensemble, dans la paix. ',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+    152: {
+        id: 152,
+        name: 'Victoire bien',
+        complexChoices: false,
+        description: [
+            {
+                text: 'vous triomphez de votre frère maudit, vous le neutralisez et l’enchainez dans votre salle du trône le temps de trouver un moyen de lever l’emprise de la malédiction ',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+    153: {
+        id: 153,
+        name: 'Looser',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Votre épée vole après un coup d’estoc de votre adversaire, désarmé vous êtes incapable de vous défendre, il touche votre épaule, soudainement, votre vue se trouble, vos sens s’engourdissent... Vous avez été maudit, vous n’êtes plus maître de votre corps, il déambule, vous êtes prisonnier de votre propre corps, impuissant.',
                 yes: {
                     text: 'OK',
                     next: null
