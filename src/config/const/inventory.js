@@ -81,6 +81,14 @@ export const INVENTORY_OBJECTS = {
         descVisible : true,
         visible: false,
     },
+    82: {
+        id: 82,
+        name: 'Votre épée',
+        description: "Votre épée... Vraisemblablement. Aussi terrifiante qu’imposante",
+        pickable: true,
+        descVisible : true,
+        visible: true,
+    },
     200: {
         id: 200,
         name: 'Livre I',
@@ -112,5 +120,13 @@ export const INVENTORY_OBJECTS = {
         pickable: true,
         descVisible: true,
         visible: true,
+    },
+    701: {
+        id: 701,
+        name: "clé dorée",
+        description: 'Une imposante clé en or',
+        pickable: true,
+        descVisible: true,
+        visible: false,
     }
 }

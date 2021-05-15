@@ -101,6 +101,10 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                objectInfo = DIALOGUE[146] 
                //Donc s'il a été libéré on lui attribue l'indice 146 qui correspond
                //au dialogue du personnage après avoir été libéré !
+               dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[701]
+            });
             }
         }
         
