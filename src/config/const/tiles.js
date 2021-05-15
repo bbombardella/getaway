@@ -900,5 +900,10 @@ export const MAP_TILES = {
     700: {
         url: 'bottes.png',
         type: 'botte',
-    }
+    },
+    //clé du château
+    701: {
+        url: 'cleroyale.png',
+        type: 'cle',
+    },
 }
