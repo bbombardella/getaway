@@ -105,7 +105,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
         //Ici je vérifie juste si on est dans le cas de Toby
         //comme ça je peux lui attribuer un id du tableau différents
         //selon s'il est pétrifié ou non !
-        if (objectInfo == DIALOGUE[145]){
+        if (objectInfo === DIALOGUE[145]){
             if (!pnj_colise.petrified){
                objectInfo = DIALOGUE[146] 
                //Donc s'il a été libéré on lui attribue l'indice 146 qui correspond
@@ -119,7 +119,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             }
         }
 
-        if (objectInfo == DIALOGUE[82]){
+        if (objectInfo === DIALOGUE[82]){
             //Si l'objet n'a pas été ajouté on l'ajoute
                if (!checkAlreadyExist(inventory, 82)){
                    dispatch({
@@ -148,12 +148,12 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[200]
             });
-        } else if (objectInfo == DIALOGUE[201] && !checkAlreadyExist(inventory, 201)){
+        } else if (objectInfo === DIALOGUE[201] && !checkAlreadyExist(inventory, 201)){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[201]
             });
-        } else if (objectInfo == DIALOGUE[202] && !checkAlreadyExist(inventory, 202)){
+        } else if (objectInfo === DIALOGUE[202] && !checkAlreadyExist(inventory, 202)){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[202]
@@ -161,7 +161,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
         }
 
         //Ici on vérifie si le slivres ont été lus ou non
-        if(objectInfo == DIALOGUE[203] && checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
+        if(objectInfo === DIALOGUE[203] && checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
             //S'ils ont été lus, le dialogue du tableau change
             objectInfo = DIALOGUE[204]
         }
