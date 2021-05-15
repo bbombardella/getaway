@@ -481,6 +481,56 @@ export const DIALOGUE = {
             }
         ],
     },
+    203: {
+        id: 203,
+        name: 'Tableau si livres non lus',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Une scène d’une rare violence.',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
+    204: {
+        id: 204,
+        name: 'Tableau si livres lus',
+        complexChoices: false,
+        description: [
+            {
+                text: 'C’est vous, votre épée, et... votre frère, DarkSasoupex.',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other: null
+            },
+            {
+                text: 'C’est la bataille de 1326 contre les trolls, vous frissonnez, ces souvenirs vous sont fortement désagréables, vous auriez voulu éviter cette guerre inutile...',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other: null
+            },
+            {
+                text: 'Si seulement vous aviez été plus persuasifs...',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
     526: {
         id: 526,
         name: 'Fée fontaine',
@@ -536,200 +586,6 @@ export const DIALOGUE = {
                 },
                 no: null,
                 other : null
-            },
-        ],
-    },
-    203: {
-        id: 203,
-        name: 'Tableau si livres non lus',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Une scène d’une rare violence.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    204: {
-        id: 204,
-        name: 'Tableau si livres lus',
-        complexChoices: false,
-        description: [
-            {
-                text: 'C’est vous, votre épée, et... votre frère, DarkSasoupex.',
-                yes: {
-                    text: 'Suite',
-                    next: 1
-                },
-                no: null,
-                other: null
-            },
-            {
-                text: 'C’est la bataille de 1326 contre les trolls, vous frissonnez, ces souvenirs vous sont fortement désagréables, vous auriez voulu éviter cette guerre inutile...',
-                yes: {
-                    text: 'Suite',
-                    next: 2
-                },
-                no: null,
-                other: null
-            },
-            {
-                text: 'Si seulement vous aviez été plus persuasifs...',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    205: {
-        id: 205,
-        name: 'Miroir',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est trop poussiéreux pour refléter quoi que ce soit.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    206: {
-        id: 206,
-        name: 'Miroir',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est trop poussiéreux pour refléter quoi que ce soit.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    207: {
-        id: 207,
-        name: 'Miroir',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est trop poussiéreux pour refléter quoi que ce soit.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    208: {
-        id: 208,
-        name: 'Baignoire',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Elle commence à bien prendre à poussière.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    214: {
-        id: 214,
-        name: 'Pot de chambre',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il serait peut-être temps de le vider...',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    215: {
-        id: 215,
-        name: 'Fauteuil',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est tellement grand qu’il serait facile de s’assoir à deux dedans.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    250: {
-        id: 250,
-        name: 'Lit',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il a l’air très confortable.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    276: {
-        id: 276,
-        name: 'Couronne',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Une couronne délicate se trouve devant vous, voulez-vous l’équiper ?',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    277: {
-        id: 277,
-        name: 'Paravent',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Oh, un trou.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
             },
         ],
     },
