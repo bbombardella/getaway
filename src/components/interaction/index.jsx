@@ -103,6 +103,26 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                //au dialogue du personnage après avoir été libéré !
             }
         }
+        
+        if (objectInfo == DIALOGUE[200]){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[200]
+            });
+            setEnigmeSuccess(true);
+        } else if (objectInfo == DIALOGUE[201]){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[201]
+            });
+            setEnigmeSuccess(true);
+        } else if (objectInfo == DIALOGUE[202]){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[202]
+            });
+            setEnigmeSuccess(true);
+        }
 
         const dialogues = objectInfo.description;
         const currentDialogue = dialogues[indexDialogue];
