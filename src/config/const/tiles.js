@@ -216,7 +216,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     56: {
-        url: 'bleu.png', //sous-sol
+        url: 'bleu.png', //sous-sol escalier haut
         type: 'porte',
     },
     57: {
@@ -224,7 +224,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     58: {
-        url: 'bleu.png', //chambre roi
+        url: 'bleu.png', //sous-sol escalier bas
         type: 'porte',
     },
     59: {
@@ -640,6 +640,46 @@ export const MAP_TILES = {
     203: {
         url: 'blanc.png',
         type: 'panneau',
+    },
+    205: {
+        url: 'jaune.png', //tapis horizontal
+        type: 'sol',
+    },
+    206: {
+        url: 'jaune.png', //tapis coin
+        type: 'sol',
+    },
+    207: {
+        url: 'jaune.png', //tapis vertical
+        type: 'sol',
+    },
+    208: {
+        url: 'tortue.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    209: {
+        url: 'herbe_enchantee.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    210: {
+        url: 'fee_abeille.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    211: {
+        url: 'Toby_C.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    212: {
+        url: 'pontepais.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    213: {
+        url: 'cleroyale.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    214: {
+        url: 'arbres.png', //a voir avec les visu ><
+        type: 'mur',
     },
     // Tuiles fontaine
     500: {
