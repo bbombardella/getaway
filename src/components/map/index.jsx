@@ -4,6 +4,7 @@ import World from './world/';
 import Miroir from '../miroir';
 import Rayon from '../rayon';
 import PnjColise from '../pnj_colise'
+import Boss from '../boss'
 import './Map.css';
 
 
@@ -16,6 +17,13 @@ export default function Map(props) {
     }));
 
     const [rayons, setRayons] = useState([
+        {
+            debut: { x: 0, y: 0 },
+            fin: { x: 0, y: 0 },
+        }
+    ]);
+
+    const [boss, setBoss] = useState([
         {
             debut: { x: 0, y: 0 },
             fin: { x: 0, y: 0 },
@@ -40,7 +48,22 @@ export default function Map(props) {
                 </div>
             </div>
         );
-    } else {
+    } else if(parseInt(world) === 1){ // ajouter une autre condition objet? store?
+        return (
+            <div className='map'>
+                <World world={world} />
+                {props.children}
+                <div className="boss">
+                    {boss.map((boss, index) => <Boss key={index} data={boss} />)}
+                </div>
+            </div>
+        );
+        
+    /*<div className="boss">
+        {boss.map((boss, index) => <Boss key={index} data={boss} />)}
+    </div>*/
+    }else{
+
         return (
             <div className='map'>
                 <World world={world} />
