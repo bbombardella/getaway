@@ -216,15 +216,15 @@ export const MAP_TILES = {
         type: 'porte',
     },
     56: {
-        url: 'bleu.png', //sous-sol escalier haut
+        url: 'hall_escalierhaut.png', //sous-sol escalier haut
         type: 'porte',
     },
     57: {
-        url: 'jaune.png', //salle trone
+        url: 'hall_tapisvertical.png', //salle trone
         type: 'porte',
     },
     58: {
-        url: 'bleu.png', //sous-sol escalier bas
+        url: 'hall_escalierbas.png', //sous-sol escalier bas
         type: 'porte',
     },
     59: {
@@ -232,7 +232,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     60: {
-        url: 'blanc.png', //pour entrée château
+        url: 'hall_porte7.png', //pour entrée château
         type: 'porte',
     },
     61: {
@@ -638,84 +638,188 @@ export const MAP_TILES = {
     },
     //Tuiles hall château
     203: {
-        url: 'blanc.png',
+        url: 'hall_murpanneau.png',
         type: 'panneau',
     },
     205: {
-        url: 'jaune.png', //tapis horizontal
+        url: 'hall_tapishoziz.png',
         type: 'sol',
     },
     206: {
-        url: 'jaune.png', //tapis coin
+        url: 'hall_tapiscoin.png',
         type: 'sol',
     },
     207: {
-        url: 'jaune.png', //tapis vertical
+        url: 'hall_tapisvertical.png',
         type: 'sol',
     },
     208: {
-        url: 'tortue.png', //a voir avec les visu ><
+        url: 'hall_murhautbas.png',
         type: 'mur',
     },
     209: {
-        url: 'herbe_enchantee.png', //a voir avec les visu ><
+        url: 'hall_murdroitebas.png',
         type: 'mur',
     },
     210: {
-        url: 'fee_abeille.png', //a voir avec les visu ><
+        url: 'hall_murbasbas.png',
         type: 'mur',
     },
     211: {
-        url: 'Toby_C.png', //a voir avec les visu ><
+        url: 'hall_murgauchebas.png',
         type: 'mur',
     },
     212: {
-        url: 'pontepais.png', //a voir avec les visu ><
+        url: 'hall_murbashaut.png',
         type: 'mur',
     },
     213: {
-        url: 'cleroyale.png', //a voir avec les visu ><
+        url: 'hall_murhauthaut.png',
         type: 'mur',
     },
     214: {
-        url: 'arbres.png', //a voir avec les visu ><
+        url: 'hall_murdroitehaut.png',
         type: 'mur',
     },
     215: {
-        url: 'eau.png', //a voir avec les visu ><
+        url: 'hall_coinHDbas.png', 
         type: 'mur',
     },
     216: {
-        url: 'fontaine22.png', //a voir avec les visu ><
+        url: 'hall_coinHDhaut.png', 
         type: 'mur',
     },
     217: {
-        url: 'fleurs_font.png', //a voir avec les visu ><
+        url: 'hall_coinBDbas.png',
         type: 'mur',
     },
     218: {
-        url: 'miroir_gauche.png', //a voir avec les visu ><
+        url: 'hall_coinBDhaut.png',
         type: 'mur',
     },
     219: {
-        url: 'panneau_dos.png', //a voir avec les visu ><
+        url: 'hall_coinHGbas.png',
         type: 'mur',
     },
     220: {
-        url: 'rayon_angle4.png', //a voir avec les visu ><
+        url: 'hall_coinHGhaut.png',
         type: 'mur',
     },
     221: {
-        url: 'porte_bas.png', //a voir avec les visu ><
+        url: 'hall_coinBGbas.png',
         type: 'mur',
     },
     222: {
-        url: 'portechateaubas.png', //a voir avec les visu ><
+        url: 'hall_coinBGhaut.png',
         type: 'mur',
+    },
+    223: {
+        url: 'hall_murgauchehaut.png',
+        type: 'mur',
+    },
+    224: {
+        url: 'hall_porte6.png',
+        type: 'mur',
+    },
+    225: {
+        url: 'hall_porte9.png',
+        type: 'mur',
+    },
+    226: {
+        url: 'hall_porte5.png',
+        type: 'mur',
+    },
+    227: {
+        url: 'hall_porte3.png',
+        type: 'mur',
+    },
+    228: {
+        url: 'hall_porte1.png',
+        type: 'mur',
+    },
+    229: {
+        url: 'hall_porte2.png',
+        type: 'mur',
+    },
+    230: {
+        url: 'hall_porte4.png',
+        type: 'mur',
+    },
+    231: {
+        url: 'hall_porte11.png',
+        type: 'mur',
+    },
+    232: {
+        url: 'hall_porte8.png',
+        type: 'mur',
+    },
+    233: {
+        url: 'hall_porte10.png',
+        type: 'mur',
+    },
+    234: {
+        url: 'hall_porte12.png',
+        type: 'mur',
+    },
+    235: {
+        url: 'hall_pilierbas.png',
+        type: 'mur',
+    },
+    236: {
+        url: 'hall_piliermilieu.png',
+        type: 'mur',
+    },
+    237: {
+        url: 'hall_pilierhaut.png',
+        type: 'mur',
+    },
+    238: {
+        url: 'hall_escaliertrone.png',
+        type: 'mur',
+    },
+    239: {
+        url: 'hall_tapisescalier.png',
+        type: 'sol',
     },
     //Prévoir assez donc 240 au cas où pour les murs etou portes
     241: {
-        url: 'eauroche.png', //débris
+        url: 'hall_soldebris.png',
+        type: 'panneau',
+    },
+    242: {
+        url: 'hall_socle1.png',
+        type: 'panneau',
+    },
+    243: {
+        url: 'hall_socle2.png',
+        type: 'panneau',
+    },
+    244: {
+        url: 'hall_socle3.png',
+        type: 'panneau',
+    },
+    245: {
+        url: 'hall_socle4.png', 
+        type: 'panneau',
+    },
+    246: {
+        url: 'hall_socle5.png', 
+        type: 'panneau',
+    },
+    247: {
+        url: 'hall_socle6.png', 
+        type: 'panneau',
+    },
+    248: {
+        url: 'hall_socle7.png',
+        type: 'panneau',
+    },
+    249: {
+        url: 'hall_socle8.png',
+        type: 'panneau',
+    },
+    250: {
+        url: 'hall_socle9.png', 
         type: 'panneau',
     },
     // Tuiles fontaine
