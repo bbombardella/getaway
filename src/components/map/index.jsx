@@ -43,12 +43,19 @@ export default function Map(props) {
                 <div className="rayons">
                     {rayons.map((rayon, index) => <Rayon key={index} data={rayon} />)}
                 </div>
-                <div classname ="pnj">
+                <div classname="pnj">
                     <PnjColise key={0} petrified={pnj_colise.petrified} />
                 </div>
             </div>
         );
-    } else if(parseInt(world) === 1){ // ajouter une autre condition objet? store?
+    } else if (parseInt(world) === 1) { // ajouter une autre condition objet? store?
+        return (
+            <div className='map'>
+                <World world={world} />
+                {props.children}
+            </div>
+        );
+    } else if (parseInt(world) === 14) { // ajouter une autre condition objet? store?
         return (
             <div className='map'>
                 <World world={world} />
@@ -58,11 +65,7 @@ export default function Map(props) {
                 </div>
             </div>
         );
-        
-    /*<div className="boss">
-        {boss.map((boss, index) => <Boss key={index} data={boss} />)}
-    </div>*/
-    }else{
+    } else {
 
         return (
             <div className='map'>
