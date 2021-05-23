@@ -119,6 +119,10 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             }
         }
 
+        if (objectInfo === DIALOGUE[243] || objectInfo === DIALOGUE[244] || objectInfo === DIALOGUE[245] || objectInfo === DIALOGUE[246] || objectInfo === DIALOGUE[247] || objectInfo === DIALOGUE[248] || objectInfo === DIALOGUE[249] || objectInfo === DIALOGUE[250] ){
+            objectInfo = DIALOGUE[242] 
+        }
+
         if (objectInfo === DIALOGUE[82]){
             //Si l'objet n'a pas été ajouté on l'ajoute
                if (!checkAlreadyExist(inventory, 82)){

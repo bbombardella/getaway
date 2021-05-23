@@ -988,10 +988,12 @@ export const MAP_TILES = {
         url: 'bleu.png',
         type: 'mur',
     },
+    //ATTENTION NE PAS SUPPRIMER CEST LA TORTUE
     603: {
         url: 'tortue.png',
         type: 'panneau',
     },
+    //on peut supprimer à partir de là
     604: {
         url: 'gris.png',
         type: 'porte',

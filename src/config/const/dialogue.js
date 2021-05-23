@@ -547,6 +547,22 @@ export const DIALOGUE = {
             },
         ],
     },
+    242: {
+        id: 242,
+        name: 'Socle',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Il devait y avoir une statue ici ?',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
     526: {
         id: 526,
         name: 'Fée fontaine',
