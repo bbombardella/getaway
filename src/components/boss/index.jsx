@@ -1,12 +1,43 @@
 import React from 'react';
+import { useState } from 'react';
+import {useSelector, useDispatch } from 'react-redux';
+import { CHANGE_LUMINOSITY, CHANGE_SETTING } from '../../config/const/settings';
 import { PathLine } from 'react-svg-pathline';
-import "./boss.css";
+//import "./boss.css";
+import { useStopwatch } from 'react-timer-hook';
 
 
 export default function Boss({ data }) {
-    var rand = random();
-    var rand2 = random();
-    var rand3 = random();
+
+    const { boss} = useSelector(state => ({
+        boss : state.boss,
+    }));
+    
+    const {
+        seconds,
+        minutes,
+        hours,
+        days,
+        isRunning,
+        start,
+        pause,
+        reset,
+    } = useStopwatch({ autoStart: true});
+    
+    console.log(seconds);
+    console.log(boss)
+    let num = seconds/4|0
+    let d=0
+
+    if (seconds%4==0){
+        d=40;
+    }else if(seconds%4==1){
+        d=30;
+    }else if(seconds%4==2){
+        d=20;
+    }else{
+        console.log("ty")
+    }
 
     return (
         <svg style={{
@@ -15,14 +46,8 @@ export default function Boss({ data }) {
             width: '840',
             height: '524'
         }}>
-            <circle cx={rand.x} cy={rand.y} r="20" class="circ1"/>
-            <circle cx={rand2.x} cy={rand2.y} r="15" class="circ2"/>
-            <circle cx={rand3.x} cy={rand3.y} r="5" class="circ3"/>
+            <circle cx={boss[num].x} cy={boss[num].y} r={d} fill="white"/>
+            <circle cx={boss[num].x} cy={boss[num].y} r="15" fill="red"/>
         </svg>
 )}
 
-function random() {
-    var x = Math.floor(Math.random() * 750) + 100 ;
-    var y = Math.floor(Math.random() * 450) + 100 ;
-    return ({x,y});
-}
