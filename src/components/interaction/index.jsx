@@ -9,13 +9,22 @@ import { useSelector } from 'react-redux';
 
 import './Interaction.css';
 
+function checkAlreadyExist(array, id) {
+    for(var i=0;i<array.length;i++) {
+        if(array[i].id === id) {
+            return true;
+        }
+    }
+    return false;
+}
 
 export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
 
     const dispatch = useDispatch();
 
-    const { pnj_colise } = useSelector(state => ({
+    const { pnj_colise, inventory } = useSelector(state => ({
         pnj_colise: state.pnj_colise,
+        inventory: state.inventory
     }));
 
     const [objectTaken, setObjectTaken] = useState(false);
@@ -96,12 +105,65 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
         //Ici je vérifie juste si on est dans le cas de Toby
         //comme ça je peux lui attribuer un id du tableau différents
         //selon s'il est pétrifié ou non !
-        if (objectInfo == DIALOGUE[145]){
+        if (objectInfo === DIALOGUE[145]){
             if (!pnj_colise.petrified){
                objectInfo = DIALOGUE[146] 
                //Donc s'il a été libéré on lui attribue l'indice 146 qui correspond
                //au dialogue du personnage après avoir été libéré !
+               if (!checkAlreadyExist(inventory, 701)){
+                   dispatch({
+                    type: INVENTORY_ADD_ACTION,
+                    payload: INVENTORY_OBJECTS[701]
+                    });
+                }
             }
+        }
+
+        if (objectInfo === DIALOGUE[82]){
+            //Si l'objet n'a pas été ajouté on l'ajoute
+               if (!checkAlreadyExist(inventory, 82)){
+                   dispatch({
+                    type: INVENTORY_ADD_ACTION,
+                    payload: INVENTORY_OBJECTS[82]
+                    });
+                }
+        }
+
+        if(objectInfo === DIALOGUE[147]){          
+            if(checkAlreadyExist(inventory, 702)){
+                if(checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
+                    objectInfo=DIALOGUE[152];
+                }else{
+                    objectInfo=DIALOGUE[151];
+                }
+            }else if(checkAlreadyExist(inventory, 703)){
+                objectInfo=DIALOGUE[153];
+            }else if(checkAlreadyExist(inventory, 82)){
+                objectInfo=DIALOGUE[148];
+            }
+        }
+                
+        if (objectInfo === DIALOGUE[200] && !checkAlreadyExist(inventory, 200)){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[200]
+            });
+        } else if (objectInfo === DIALOGUE[201] && !checkAlreadyExist(inventory, 201)){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[201]
+            });
+        } else if (objectInfo === DIALOGUE[202] && !checkAlreadyExist(inventory, 202)){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload: INVENTORY_OBJECTS[202]
+            });
+        }
+
+        //Ici on vérifie si le slivres ont été lus ou non
+        if(objectInfo === DIALOGUE[203] && checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
+            //S'ils ont été lus, le dialogue du tableau change
+            objectInfo = DIALOGUE[204]
         }
 
         const dialogues = objectInfo.description;

@@ -184,7 +184,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     48: {
-        url: 'gris.png',
+        url: 'porte_droite.png',
         type: 'porte',
     },
     49: {
@@ -216,7 +216,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     56: {
-        url: 'bleu.png', //sous-sol
+        url: 'bleu.png', //sous-sol escalier haut
         type: 'porte',
     },
     57: {
@@ -224,7 +224,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     58: {
-        url: 'bleu.png', //chambre roi
+        url: 'bleu.png', //sous-sol escalier bas
         type: 'porte',
     },
     59: {
@@ -305,7 +305,7 @@ export const MAP_TILES = {
     },
     82: {
         url: 'socle_droite.png',
-        type: 'objet',
+        type: 'panneau',
     },
     83: {
         url: 'escalier_haut.png',
@@ -563,71 +563,160 @@ export const MAP_TILES = {
         url: 'vide_bleu.png',
         type: 'panneau',
     },
-    //Livres/
+    //Bibliothèque/
+    185: {
+        url: 'bibilio_1.png',
+        type: 'mur',
+    },
+    186: {
+        url: 'bibilio_2.png',
+        type: 'mur',
+    },
+    187: {
+        url: 'bibilio_3.png',
+        type: 'mur',
+    },
+    188: {
+        url: 'bibilio_4.png',
+        type: 'mur',
+    },
+    189: {
+        url: 'mur_porte_bord_droitebas.png',
+        type: 'mur',
+    },
+    190: {
+        url: 'mur_porte_bord_droitehaut.png',
+        type: 'mur',
+    },
+    191: {
+        url: 'mur_porte_bord_droitecentre.png',
+        type: 'mur',
+    },
+    192: {
+        url: 'mur_porte_droitebas.png',
+        type: 'mur',
+    },
+    193: {
+        url: 'mur_porte_droitehaut.png',
+        type: 'mur',
+    },
+    194: {
+        url: 'sol_biblio.png',
+        type: 'sol',
+    },
+    195: {
+        url: 'cptoir_milbas.png',
+        type: 'mur',
+    },
+    196: {
+        url: 'cptoir_bas.png',
+        type: 'mur',
+    },
+    197: {
+        url: 'cptoir_angle.png',
+        type: 'mur',
+    },
+    198: {
+        url: 'cptoir_mildroite.png',
+        type: 'mur',
+    },
+    199: {
+        url: 'cptoir_droite.png',
+        type: 'mur',
+    },
     200: {
-        url: 'violet.png',
+        url: 'bibilio_3.png',
         type: 'panneau',
     },
     201: {
-        url: 'violet.png',
+        url: 'bibilio_2.png',
         type: 'panneau',
     },
     202: {
-        url: 'violet.png',
+        url: 'bibilio_1.png',
         type: 'panneau',
     },
-    //Tuiles chambre héro
+    //Tuiles hall château
     203: {
         url: 'blanc.png',
         type: 'panneau',
     },
     205: {
-        url: 'blanc.png', //miroir bas gauche
-        type: 'panneau',
+        url: 'jaune.png', //tapis horizontal
+        type: 'sol',
     },
     206: {
-        url: 'blanc.png', //miroir bas milieu
-        type: 'panneau',
+        url: 'jaune.png', //tapis coin
+        type: 'sol',
     },
     207: {
-        url: 'blanc.png', //miroir bas droite
-        type: 'panneau',
+        url: 'jaune.png', //tapis vertical
+        type: 'sol',
     },
     208: {
-        url: 'blanc.png', //baignoire *6 donc jusqu'à 213 à mettre en place
-        type: 'panneau',
-    },
-    214: {
-        url: 'jaune.png', //pot de chambre
-        type: 'panneau',
-    },
-    215: {
-        url: 'bleu.png', //fauteuil *4 donc jusqu'à 218
-        type: 'panneau',
-    },
-    216: {
-        url: 'jaune.png', //tapis, garder 30 cases au cas où donc jusqu'à 247
-        type: 'sol',
-    },
-    248: {
-        url: 'violet.png', //commode *2
+        url: 'tortue.png', //a voir avec les visu ><
         type: 'mur',
     },
-    250: {
-        url: 'gris.png', //lit *15 mais *9 panneau
-        type: 'panneau',
+    209: {
+        url: 'herbe_enchantee.png', //a voir avec les visu ><
+        type: 'mur',
     },
-    276: {
-        url: 'blanc.png', //couronne
-        type: 'panneau',
+    210: {
+        url: 'fee_abeille.png', //a voir avec les visu ><
+        type: 'mur',
     },
-    277: {
-        url: 'gris.png', //paravent *12
-        type: 'panneau',
+    211: {
+        url: 'Toby_C.png', //a voir avec les visu ><
+        type: 'mur',
     },
-    290: {
-        url: 'jaune.png', //escalier*2
-        type: 'sol',
+    212: {
+        url: 'pontepais.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    213: {
+        url: 'cleroyale.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    214: {
+        url: 'arbres.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    215: {
+        url: 'eau.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    216: {
+        url: 'fontaine22.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    217: {
+        url: 'fleurs_font.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    218: {
+        url: 'miroir_gauche.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    219: {
+        url: 'panneau_dos.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    220: {
+        url: 'rayon_angle4.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    221: {
+        url: 'porte_bas.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    222: {
+        url: 'portechateaubas.png', //a voir avec les visu ><
+        type: 'mur',
+    },
+    //Prévoir assez donc 240 au cas où pour les murs etou portes
+    241: {
+        url: 'eauroche.png', //débris
+        type: 'panneau',
     },
     // Tuiles fontaine
     500: {
@@ -796,7 +885,7 @@ export const MAP_TILES = {
         type: 'mur',
     },
     603: {
-        url: 'jaune.png',
+        url: 'tortue.png',
         type: 'panneau',
     },
     604: {
@@ -840,5 +929,10 @@ export const MAP_TILES = {
     700: {
         url: 'bottes.png',
         type: 'botte',
-    }
+    },
+    //clé du château
+    701: {
+        url: 'cleroyale.png',
+        type: 'cle',
+    },
 }

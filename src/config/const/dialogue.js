@@ -31,6 +31,40 @@ export const DIALOGUE = {
             }
         ],
     },
+    82: {
+        id: 82,
+        name: 'Epee',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Une épée au premier abord simple, cependant elle dégage une force incommensurable, vous vous sentez inspiré.e en la saisissant.',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'L’envie irrépressible de vous lancez dans la bataille vous submerge. Des souvenirs vous reviennent : vous brandissez votre imposante épée devant un scène effroyable, une mer de corps inerte se tient à vos pieds… Vous revenez à vous.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Des souvenirs vous reviennent : vous brandissez votre imposante épée devant un scène effroyable, une mer de corps inerte se tient à vos pieds… Vous revenez à vous.',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            }
+        ],
+    },
     96: {
         id: 96,
         name: 'Panneau Château',
@@ -144,7 +178,99 @@ export const DIALOGUE = {
         complexChoices: false,
         description: [
             {
-                text: 'Blabla le texte du méchant',
+                text: 'Votre adversaire est bien trop fort, et vous n’avez pas d’arme, vous n’essayez pas de le combattre et fuyez',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+    148: {
+        id: 148,
+        name: 'Le méchant avec épée mais sans biblio',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Te voilà! Je t’attendais, ce petit coup que tu as reçu à la tête ne t’aura pas retenu longtemps.',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Tu viens pour te battre ? Tu penses vraiment pouvoir me vaincre ?',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Haha ! Ignorant ! En garde',
+                yes: {
+                    text: 'Ok',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+
+    151: {
+        id: 151,
+        name: 'Victoire nulle',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Vous tuez le chevalier noir. Il a causé de gros dégâts dans votre petit royaume, mais vos habitants et vous reconstruirez ensemble, dans la paix. ',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+    152: {
+        id: 152,
+        name: 'Victoire bien',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Vous triomphez de votre frère maudit, vous le neutralisez et l’enchainez dans votre salle du trône le temps de trouver un moyen de lever l’emprise de la malédiction ',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other : null
+            },
+        ],
+    },
+    153: {
+        id: 153,
+        name: 'Looser',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Votre épée vole après un coup d’estoc de votre adversaire, désarmé vous êtes incapable de vous défendre, il touche votre épaule, soudainement, votre vue se trouble, vos sens s’engourdissent...',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Vous avez été maudit, vous n’êtes plus maître de votre corps, il déambule, vous êtes prisonnier de votre propre corps, impuissant.',
                 yes: {
                     text: 'OK',
                     next: null
@@ -355,6 +481,72 @@ export const DIALOGUE = {
             }
         ],
     },
+    203: {
+        id: 203,
+        name: 'Tableau si livres non lus',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Une scène d’une rare violence.',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
+    204: {
+        id: 204,
+        name: 'Tableau si livres lus',
+        complexChoices: false,
+        description: [
+            {
+                text: 'C’est vous, votre épée, et... votre frère, DarkSasoupex.',
+                yes: {
+                    text: 'Suite',
+                    next: 1
+                },
+                no: null,
+                other: null
+            },
+            {
+                text: 'C’est la bataille de 1326 contre les trolls, vous frissonnez, ces souvenirs vous sont fortement désagréables, vous auriez voulu éviter cette guerre inutile...',
+                yes: {
+                    text: 'Suite',
+                    next: 2
+                },
+                no: null,
+                other: null
+            },
+            {
+                text: 'Si seulement vous aviez été plus persuasifs...',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
+    241: {
+        id: 241,
+        name: 'Débris de la statue',
+        complexChoices: false,
+        description: [
+            {
+                text: 'Il serait peut-être temps de passer un coup de balais… ',
+                yes: {
+                    text: 'OK',
+                    next: null
+                },
+                no: null,
+                other: null
+            },
+        ],
+    },
     526: {
         id: 526,
         name: 'Fée fontaine',
@@ -410,200 +602,6 @@ export const DIALOGUE = {
                 },
                 no: null,
                 other : null
-            },
-        ],
-    },
-    203: {
-        id: 203,
-        name: 'Tableau si livres non lus',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Une scène d’une rare violence.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    204: {
-        id: 204,
-        name: 'Tableau si livres lus',
-        complexChoices: false,
-        description: [
-            {
-                text: 'C’est vous, votre épée, et... votre frère, DarkSasoupex.',
-                yes: {
-                    text: 'Suite',
-                    next: 1
-                },
-                no: null,
-                other: null
-            },
-            {
-                text: 'C’est la bataille de 1326 contre les trolls, vous frissonnez, ces souvenirs vous sont fortement désagréables, vous auriez voulu éviter cette guerre inutile...',
-                yes: {
-                    text: 'Suite',
-                    next: 2
-                },
-                no: null,
-                other: null
-            },
-            {
-                text: 'Si seulement vous aviez été plus persuasifs...',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    205: {
-        id: 205,
-        name: 'Miroir',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est trop poussiéreux pour refléter quoi que ce soit.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    206: {
-        id: 206,
-        name: 'Miroir',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est trop poussiéreux pour refléter quoi que ce soit.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    207: {
-        id: 207,
-        name: 'Miroir',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est trop poussiéreux pour refléter quoi que ce soit.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    208: {
-        id: 208,
-        name: 'Baignoire',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Elle commence à bien prendre à poussière.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    214: {
-        id: 214,
-        name: 'Pot de chambre',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il serait peut-être temps de le vider...',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    215: {
-        id: 215,
-        name: 'Fauteuil',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il est tellement grand qu’il serait facile de s’assoir à deux dedans.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    250: {
-        id: 250,
-        name: 'Lit',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Il a l’air très confortable.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    276: {
-        id: 276,
-        name: 'Couronne',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Une couronne délicate se trouve devant vous, voulez-vous l’équiper ?',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
-            },
-        ],
-    },
-    277: {
-        id: 277,
-        name: 'Paravent',
-        complexChoices: false,
-        description: [
-            {
-                text: 'Oh, un trou.',
-                yes: {
-                    text: 'OK',
-                    next: null
-                },
-                no: null,
-                other: null
             },
         ],
     },

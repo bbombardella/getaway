@@ -156,7 +156,7 @@ export const DOORS = {
     },
     57: {
         id: '57',
-        nextWorld: '14', //a changer quand la salle du trone sera faite
+        nextWorld: '14',
         newPosition: {
             x: 10*SPRITE_SIZE,
             y: (11*SPRITE_SIZE)
@@ -165,10 +165,10 @@ export const DOORS = {
     },
     58: {
         id: '58',
-        nextWorld: '15',
+        nextWorld: '3',
         newPosition: {
-            x: 17*SPRITE_SIZE,
-            y: (5*SPRITE_SIZE)
+            x: 1*SPRITE_SIZE,
+            y: (3*SPRITE_SIZE)
         },
         keyNeeded: 77,
     },
@@ -177,7 +177,7 @@ export const DOORS = {
         nextWorld: '13',
         newPosition: {
             x: 10*SPRITE_SIZE,
-            y: 3*SPRITE_SIZE
+            y: SPRITE_SIZE
         },
         keyNeeded: 77,
     },
@@ -275,9 +275,9 @@ export const DOORS = {
         id: '117',
         nextWorld: '13',
         newPosition: {
-            x: SPRITE_SIZE,
+            x: 2*SPRITE_SIZE,
             y: (6*SPRITE_SIZE)
         },
-        keyNeeded: 77,
+        keyNeeded: 701,
     }
 }
