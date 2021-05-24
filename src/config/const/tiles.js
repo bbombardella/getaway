@@ -228,7 +228,7 @@ export const MAP_TILES = {
         type: 'porte',
     },
     59: {
-        url: 'jaune.png', //chambre roi
+        url: 'hall_tapisescalier.png', //chambre roi
         type: 'porte',
     },
     60: {
@@ -558,9 +558,9 @@ export const MAP_TILES = {
         url: 'sol_colisee.png',
         type: 'panneau',
     },
-    //Tuiles trône
+    //Tuiles roi
     147: {
-        url: 'vide_bleu.png',
+        url: 'king.png',
         type: 'panneau',
     },
     //Bibliothèque/
@@ -781,7 +781,6 @@ export const MAP_TILES = {
         url: 'hall_tapisescalier.png',
         type: 'sol',
     },
-    //Prévoir assez donc 240 au cas où pour les murs etou portes
     241: {
         url: 'hall_soldebris.png',
         type: 'panneau',
@@ -821,6 +820,31 @@ export const MAP_TILES = {
     250: {
         url: 'hall_socle9.png', 
         type: 'panneau',
+    },
+    //Tuiles salle du trône
+    251: {
+        url: 'trone_1.png', 
+        type: 'mur',
+    },
+    252: {
+        url: 'trone_2.png', 
+        type: 'mur',
+    },
+    253: {
+        url: 'pilier_rev2.png', 
+        type: 'panneau',
+    },
+    254: {
+        url: 'pilier_rev1.png', 
+        type: 'panneau',
+    },
+    255: {
+        url: 'pilier_rev3.png', 
+        type: 'panneau',
+    },
+    256: {
+        url: 'sol_or.png', 
+        type: 'sol',
     },
     // Tuiles fontaine
     500: {
