@@ -79,7 +79,7 @@ export const INVENTORY_OBJECTS = {
         description: "C'est une clé couverte de mousse.",
         pickable: true,
         descVisible : true,
-        visible: false,
+        visible: true,
     },
     82: {
         id: 82,
@@ -115,8 +115,8 @@ export const INVENTORY_OBJECTS = {
     },
     700: {
         id: 700,
-        name: 'Bottes',
-        description: 'Bottes........',
+        name: 'Bottes d\'Hermès',
+        description: 'Des bottes équipées d\'ailes',
         pickable: true,
         descVisible: true,
         visible: true,
@@ -144,5 +144,13 @@ export const INVENTORY_OBJECTS = {
         pickable: true,
         descVisible: true,
         visible: false,
+    },
+    704: {
+        id: 704,
+        name: "Votre épée",
+        description: 'Votre épée... Vraisemblablement. Aussi terrifiante qu’imposante',
+        pickable: true,
+        descVisible: true,
+        visible: true,
     }
 }

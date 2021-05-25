@@ -284,7 +284,7 @@ export const MAP_TILES = {
         type: 'objet',
     },
     77: {
-        url: 'cle_poisseuse.png',
+        url: 'cle3.png',
         type: 'cle',
     },
     78: {
@@ -1065,4 +1065,9 @@ export const MAP_TILES = {
         url: 'cleroyale.png',
         type: 'cle',
     },
+    //épée
+    704: {
+        url: 'epee.png',
+        type: 'arme'
+    }
 }

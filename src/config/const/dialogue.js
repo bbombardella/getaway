@@ -55,10 +55,19 @@ export const DIALOGUE = {
                 other : null
             },
             {
-                text: 'Des souvenirs vous reviennent : vous brandissez votre imposante épée devant un scène effroyable, une mer de corps inerte se tient à vos pieds… Vous revenez à vous.',
+                text: 'Des souvenirs vous reviennent : vous brandissez votre imposante épée devant un scène effroyable, une mer de corps inerte se tient à vos pieds…',
                 yes: {
                     text: 'Suite',
-                    next: 2
+                    next: 3
+                },
+                no: null,
+                other : null
+            },
+            {
+                text: 'Vous revenez à vous, votre épée en main.',
+                yes: {
+                    text: 'OK',
+                    next: null
                 },
                 no: null,
                 other : null

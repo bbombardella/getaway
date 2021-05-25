@@ -125,10 +125,10 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
 
         if (objectInfo === DIALOGUE[82]){
             //Si l'objet n'a pas été ajouté on l'ajoute
-               if (!checkAlreadyExist(inventory, 82)){
+               if (!checkAlreadyExist(inventory, 704)){
                    dispatch({
                     type: INVENTORY_ADD_ACTION,
-                    payload: INVENTORY_OBJECTS[82]
+                    payload: INVENTORY_OBJECTS[704]
                     });
                 }
         }
