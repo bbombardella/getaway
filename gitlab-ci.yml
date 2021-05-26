@@ -1,0 +1,33 @@
+image: node:latest
+
+before_script:
+  - apt-get update -qq
+  - apt-get install -qq git
+  # Setup SSH deploy keys
+  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+stages:
+  - build
+  - deploy
+
+build-code-job:
+  stage: build
+  script:
+    - echo "Mise à jour de npm"
+    - npm install npm@latest -g
+    - echo "Démarre du build du projet"
+    - echo "Installation des dépendances nécessaires"
+    - npm install
+    - echo "Build du projet"
+    - npm build
+
+deploy-code-job:
+  stage: deploy
+  script:
+    - echo "Démarrage de l'auto-deployment sur le serveur"
+    - echo "Transfert du dossier build sur le serveur..."
+    - scp -r /build deployer@ssh.bastienbc.fr /var/www/getaway/
