@@ -1,0 +1,73 @@
+before_script:
+  - apt-get update -qq
+  - apt-get install -qq git
+
+stages:
+  - install
+  - build
+  - deploy
+
+npm_install:
+  image: node:latest
+  tags:
+    - private
+  stage: install
+  script:
+    - echo "On se place dans le dossier du projet"
+    - cd $CI_PROJECT_DIR
+    - echo "Démarrage de l'installation des dépendances"
+    - npm install
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - package-lock.json
+
+build-code-deploy:
+  stage: build
+  only:
+    - master
+  tags:
+    - private
+  image: node:latest
+  dependencies:
+    - npm_install
+  cache: 
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - node_modules/
+  script:
+    - echo "Démarre du build du projet"
+    - echo "On se place dans le dossier du projet"
+    - cd $CI_PROJECT_DIR
+    - echo "Build du projet"
+    - npm run build
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - build
+
+deploy-code-job:
+  stage: deploy
+  only:
+    - master
+  tags:
+    - private
+  script:
+    # Setup SSH deploy keys
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY" | base64 -d)
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - echo "Démarrage de l'auto-deployment sur le serveur"
+    - echo "Transfert du dossier build sur le serveur..."
+    - scp -r $CI_PROJECT_DIR/build/* deployer@ssh.bastienbc.fr:/var/www/getaway/
+    - echo "Déployé !"
+  environment:
+    name: production
+    url: https://getaway.bastienbc.fr/
