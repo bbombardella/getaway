@@ -1,6 +1,5 @@
 import React from 'react';
 import * as tiles from './collision/';
-import test from '../../../assets/tiles/mur_bas.png'
 import { SPRITE_SIZE, MAP_DIMENSION } from '../../../config/const/settings';
 import { MAP_TILES } from '../../../config/const/tiles';
 import './World.css';
@@ -11,7 +10,7 @@ function importAll(r) {
     return images;
 }
 
-const images = importAll(require.context('../../../assets/tiles', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../../../assets/tiles/map', false, /\.(png|jpe?g|svg)$/));
 
 function MapTile({ value }) {
     const tile = MAP_TILES[value];
@@ -23,8 +22,6 @@ function MapTile({ value }) {
     } else {
         image = images[background].default;
     }
-
-    console.log(images['mur_bas.png'].default);
 
     return (<div
         className='map-title'
