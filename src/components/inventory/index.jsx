@@ -3,12 +3,23 @@ import { useSelector } from 'react-redux';
 import { MAP_TILES } from '../../config/const/tiles';
 import './Inventory.css';
 
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const images = importAll(require.context('../../assets/tiles/map', false, /\.(png|jpe?g|svg)$/));
+
+
 function InventoryItem({ id, name, description }) {
+    const url = MAP_TILES[id].url;
+    console.log(url, images[url]);
     return (
         <div className="inventory-item" key={id}>
-            <img src={`./assets/tiles/${MAP_TILES[id].url}`} alt={name}></img>
+            <img src={images[url].default} alt={name}></img>
             <p><strong>{name}</strong>
-            <br></br><em>{description}</em></p>
+                <br></br><em>{description}</em></p>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 export const MAP_TILES = {
     '-1': {
-        url: '',
+        url: 'default.png',
         type: 'vide'
     },
     0: {

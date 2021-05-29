@@ -13,14 +13,14 @@ function importAll(r) {
 const images = importAll(require.context('../../../assets/tiles/map', false, /\.(png|jpe?g|svg)$/));
 
 function MapTile({ value }) {
-    const tile = MAP_TILES[value];
-    const background = tile.url;
+    const tile_data = MAP_TILES[value];
+    const url = tile_data.url;
     let image;
 
-    if (images[background] === undefined) {
-        image = "linear-gradient(315deg, #000000 0%, #414141 74%)"
+    if (images[url] === undefined) {
+        image = images['default'];
     } else {
-        image = images[background].default;
+        image = images[url].default;
     }
 
     return (<div
