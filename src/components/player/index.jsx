@@ -4,6 +4,7 @@ import Actor from '../actor';
 import useKeyPress from '../../hooks/use-key-pressed';
 import useWalk from "../../hooks/use-walk";
 import { SPRITE_SIZE } from '../../config/const/settings';
+import heros_sprite from '../../assets/tiles/skin/heros.png';
 
 export default function Player({ skin }) {
     const { dir, step, walk, position } = useWalk(4);
@@ -55,5 +56,5 @@ export default function Player({ skin }) {
         e.preventDefault();
     });
 
-    return <Actor sprite={`spritesheetHeros.png`} data={data} step={step} dir={dir} position={position} hidden={worldLoading.worldLoading} />
+    return <Actor sprite={heros_sprite} data={data} step={step} dir={dir} position={position} hidden={worldLoading.worldLoading} />
 }

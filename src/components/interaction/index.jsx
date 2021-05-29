@@ -9,6 +9,15 @@ import { useSelector } from 'react-redux';
 
 import './Interaction.css';
 
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const sceaux = importAll(require.context('../../assets/tiles/seaux', false, /\.(png|jpe?g|svg)$/));
+
+
 function checkAlreadyExist(array, id) {
     for(var i=0;i<array.length;i++) {
         if(array[i].id === id) {
@@ -194,8 +203,8 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             </div>
         );
     } else if(typeObject==='fontaine') {
-        const srcS3L = `../assets/seaux/s3c${contenu3L}.png`;
-        const srcS5L = `../assets/seaux/s5c${contenu5L}.png`;
+        const srcS3L = `s3c${contenu3L}.png`;
+        const srcS5L = `s5c${contenu5L}.png`;
         return(
             // besoin d'utiliser sass pour modifier dynamiquement le CSS ?
             <div className='tools-panel' id='interaction'>
@@ -209,7 +218,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                         <div className="seau" id="3">
                             <div className="seau-details">
                                 <p>{contenu3L}L / 3L</p>
-                                <img src={srcS3L} alt="Seau de 3 litres"></img>
+                                <img src={sceaux[srcS3L].default} alt="Seau de 3 litres"></img>
                             </div>
                             <div className="seau-button">
                                 <button onClick={() => {
@@ -232,7 +241,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                         <div className="seau" id="5">
                             <div className="seau-details">
                                 <p>{contenu5L}L / 5L</p>
-                                <img src={srcS5L} alt="Seau de 5 litres"></img>
+                                <img src={sceaux[srcS5L].default} alt="Seau de 5 litres"></img>
                             </div>
                             <div className="seau-button">
                                 <button onClick={() => {

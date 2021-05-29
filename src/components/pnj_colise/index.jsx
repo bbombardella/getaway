@@ -1,16 +1,19 @@
 import React from 'react';
 import { SPRITE_SIZE } from '../../config/const/settings';
+import toby_roche from '../../assets/tiles/skin/TobyRoche.png';
+import toby_c from '../../assets/tiles/skin/Toby_C.png';
+import sol_colisee from '../../assets/tiles/map/sol_colisee.png';
 
 export default function PnjColise({ petrified }) {
 
-    let image = "./assets/tiles/";
+    let image;
 
     if (petrified) {
-        image += "TobyRoche.png";
+        image = toby_roche;
     } else if (!petrified) {
-        image += "Toby_C.png";
+        image = toby_c;
     } else {
-        image += "sol_colisee.png";
+        image = sol_colisee;
     }
 
     return (
