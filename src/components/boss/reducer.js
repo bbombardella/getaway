@@ -1,4 +1,4 @@
-import { CHANGE_SCORE,NB_CIRCLE} from '../../config/const/settings';
+import { CHANGE_SCORE,NB_CIRCLE,SUCCESS} from '../../config/const/settings';
 
 
 function random(setPos) {
@@ -9,13 +9,13 @@ function random(setPos) {
 
 let coordonne =[ {
     coord:random(),
-    succes:false
+    success:false
   }];
 
 for ( let i = 0; i < NB_CIRCLE ; i++){
     coordonne.push({
         coord:random(),
-        succes:false
+        success:false
       })
 }
 
@@ -23,6 +23,10 @@ const initialState = coordonne;
 
 export default function bossReducer(state = initialState, action) {
     switch (action.type) {
+        case SUCCESS:
+            const num = action.payload.num;
+            state[num].success= true;
+            return state;
         default:
             return state
     }

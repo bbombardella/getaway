@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import {useSelector, useDispatch } from 'react-redux';
-import { CHANGE_SCORE } from '../../config/const/settings';
+import { CHANGE_SCORE, SUCCESS} from '../../config/const/settings';
 import { PathLine } from 'react-svg-pathline';
 import { useStopwatch } from 'react-timer-hook';
 
@@ -25,12 +25,12 @@ export default function Boss({ data }) {
     } = useStopwatch({ autoStart: true});
     
     const dispatch = useDispatch();
-
-    console.log(seconds);
-    console.log(score);
-    console.log(boss);
     let num = seconds/4|0
     let d=0
+    console.log(seconds);
+    console.log(score);
+    console.log(boss[num].success)
+    
 
     if (seconds%4==0){
         d=40;
@@ -42,15 +42,19 @@ export default function Boss({ data }) {
         d=0;
     }
 
-    function test(score){
-        console.log("helllo");
-        let newScore=score + 1
-        console.log(newScore)
-        if(seconds%4==3){
+    function test(score,num){
+        if(seconds%4==3 && !boss[num].success){
+            let newScore=score + 1
             dispatch({
                 type:CHANGE_SCORE,
                 payload:{
                     score:newScore
+                }
+            });
+            dispatch({
+                type:SUCCESS,
+                payload:{
+                    num:num
                 }
             });
         }
@@ -66,7 +70,7 @@ export default function Boss({ data }) {
             height: '524'
         }}>
             <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r={d} fill="white"/>
-            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{test(score)}}/>
+            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{test(score,num)}}/>
         </svg>
 )}
 
