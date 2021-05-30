@@ -1,4 +1,5 @@
 export const SPRITE_SIZE = 40;
+export const NB_CIRCLE = 20;
 
 export const DIRECTIONS = {
     down:0,

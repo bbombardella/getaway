@@ -28,6 +28,7 @@ export default function Boss({ data }) {
 
     console.log(seconds);
     console.log(score);
+    console.log(boss);
     let num = seconds/4|0
     let d=0
 
@@ -45,12 +46,15 @@ export default function Boss({ data }) {
         console.log("helllo");
         let newScore=score + 1
         console.log(newScore)
-        dispatch({
-            type:CHANGE_SCORE,
-            payload:{
-                score:newScore
-            }
-        });
+        if(seconds%4==3){
+            dispatch({
+                type:CHANGE_SCORE,
+                payload:{
+                    score:newScore
+                }
+            });
+        }
+        
         
     } 
     return (
@@ -61,8 +65,8 @@ export default function Boss({ data }) {
             width: '840',
             height: '524'
         }}>
-            <circle cx={boss[num].x} cy={boss[num].y} r={d} fill="white"/>
-            <circle cx={boss[num].x} cy={boss[num].y} r="15" fill="red" onClick={() =>{test(score)}}/>
+            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r={d} fill="white"/>
+            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{test(score)}}/>
         </svg>
 )}
 
