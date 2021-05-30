@@ -1,5 +1,5 @@
 export const SPRITE_SIZE = 40;
-export const NB_CIRCLE = 20;
+export const NB_CIRCLE = 5;
 
 export const DIRECTIONS = {
     down:0,
@@ -34,3 +34,5 @@ export const CHANGE_LUMINOSITY = 'CHANGE_LUMINOSITY';
 export const CHANGE_SCORE ='CHANGE_SCORE';
 
 export const SUCCESS ='SUCCESS';
+
+export const PLAYING ='PLAYING';

@@ -10,10 +10,11 @@ import './Map.css';
 
 export default function Map(props) {
 
-    const { world, miroirs, pnj_colise } = useSelector(state => ({
+    const { world, miroirs, pnj_colise, playing } = useSelector(state => ({
         world: state.world,
         miroirs: state.miroirs,
         pnj_colise: state.pnj_colise,
+        playing:state.playing
     }));
 
     const [rayons, setRayons] = useState([
@@ -55,7 +56,7 @@ export default function Map(props) {
                 {props.children}
             </div>
         );
-    } else if (parseInt(world) === 14) { // ajouter une autre condition objet? store?
+    } else if (parseInt(world) === 14 && playing) { // ajouter une autre condition objet? store?
         return (
             <div className='map'>
                 <World world={world} />

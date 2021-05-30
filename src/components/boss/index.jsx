@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import {useSelector, useDispatch } from 'react-redux';
-import { CHANGE_SCORE, SUCCESS} from '../../config/const/settings';
+import { CHANGE_SCORE, NB_CIRCLE, SUCCESS, PLAYING} from '../../config/const/settings';
 import { PathLine } from 'react-svg-pathline';
 import { useStopwatch } from 'react-timer-hook';
 
@@ -31,6 +31,15 @@ export default function Boss({ data }) {
     console.log(score);
     console.log(boss[num].success)
     
+    if (num == NB_CIRCLE){
+        reset()
+        dispatch({
+            type:PLAYING,
+            payload:{
+                playing:false
+            }
+        });
+    }
 
     if (seconds%4==0){
         d=40;

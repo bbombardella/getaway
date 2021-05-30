@@ -1,4 +1,4 @@
-import { CHANGE_SCORE,NB_CIRCLE,SUCCESS} from '../../config/const/settings';
+import { CHANGE_SCORE,NB_CIRCLE,SUCCESS,PLAYING} from '../../config/const/settings';
 
 
 function random(setPos) {
@@ -38,6 +38,17 @@ export function scoreReducer(state = initialStateScore, action) {
     switch (action.type) {
         case CHANGE_SCORE:
             return action.payload.score;
+        default:
+            return state;
+    }
+}
+
+const initPlaying = true;
+
+export function playingReducer(state = initPlaying, action) {
+    switch (action.type) {
+        case PLAYING:
+            return action.payload.playing;
         default:
             return state;
     }
