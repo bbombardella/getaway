@@ -1,7 +1,8 @@
+import { CHANGE_SCORE} from '../../config/const/settings';
 
 function random(setPos) {
-    var x = Math.floor(Math.random() * 750) + 100 ;
-    var y = Math.floor(Math.random() * 450) + 100 ;
+    var x = Math.floor(Math.random() * 700) + 100 ;
+    var y = Math.floor(Math.random() * 400) + 100 ;
     return({x,y});
 }
 
@@ -26,3 +27,13 @@ export default function bossReducer(state = initialState, action) {
     }
 }
 
+const initialStateScore = 0;
+
+export function scoreReducer(state = initialStateScore, action) {
+    switch (action.type) {
+        case CHANGE_SCORE:
+            return action.payload.score;
+        default:
+            return state;
+    }
+}

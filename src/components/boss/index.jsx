@@ -1,16 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import {useSelector, useDispatch } from 'react-redux';
-import { CHANGE_LUMINOSITY, CHANGE_SETTING } from '../../config/const/settings';
+import { CHANGE_SCORE } from '../../config/const/settings';
 import { PathLine } from 'react-svg-pathline';
-//import "./boss.css";
 import { useStopwatch } from 'react-timer-hook';
 
 
 export default function Boss({ data }) {
 
-    const { boss} = useSelector(state => ({
+    const {score,boss} = useSelector(state => ({
         boss : state.boss,
+        score : state.score,
     }));
     
     const {
@@ -24,8 +24,10 @@ export default function Boss({ data }) {
         reset,
     } = useStopwatch({ autoStart: true});
     
+    const dispatch = useDispatch();
+
     console.log(seconds);
-    console.log(boss)
+    console.log(score);
     let num = seconds/4|0
     let d=0
 
@@ -36,10 +38,23 @@ export default function Boss({ data }) {
     }else if(seconds%4==2){
         d=20;
     }else{
-        console.log("ty")
+        d=0;
     }
 
+    function test(score){
+        console.log("helllo");
+        let newScore=score + 1
+        console.log(newScore)
+        dispatch({
+            type:CHANGE_SCORE,
+            payload:{
+                score:newScore
+            }
+        });
+        
+    } 
     return (
+        
         <svg style={{
             position: 'absolute',
             top: '0',
@@ -47,7 +62,7 @@ export default function Boss({ data }) {
             height: '524'
         }}>
             <circle cx={boss[num].x} cy={boss[num].y} r={d} fill="white"/>
-            <circle cx={boss[num].x} cy={boss[num].y} r="15" fill="red"/>
+            <circle cx={boss[num].x} cy={boss[num].y} r="15" fill="red" onClick={() =>{test(score)}}/>
         </svg>
 )}
 
