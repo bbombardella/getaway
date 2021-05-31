@@ -22,7 +22,6 @@ export default function useWalk(maxSteps) {
     const [step, setStep] = useState(0);
     const [interact, setInteract] = useState(false);
     const [object, setObject] = useState(0);
-    const [hasKey, setHasKey] = useState(false);
     const directions = DIRECTIONS;
 
     const stepSize = SPRITE_SIZE;
@@ -74,6 +73,8 @@ export default function useWalk(maxSteps) {
         const tempy = (y + modifier[dir].y) / SPRITE_SIZE;
         const tile = MAP_TILES[collisionArray[tempy][tempx]];
 
+        console.log(tile);
+
         if (tile === undefined) {
             return ({
                 x,
@@ -109,7 +110,7 @@ export default function useWalk(maxSteps) {
         } else if (tile.type === 'porte') {
             const doorNumber = collisionArray[tempy][tempx];
             const door = DOORS[doorNumber];
-            setHasKey(() => containKey(door.keyNeeded));
+            let hasKey = containKey(door.keyNeeded);
             if (hasKey) {
                 dispatch({
                     type: WORLD_SET_LOADING,
