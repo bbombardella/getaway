@@ -12,7 +12,7 @@ let coordonne =[ {
     success:false
   }];
 
-for ( let i = 0; i < NB_CIRCLE ; i++){
+for ( let i = 0; i <= NB_CIRCLE+1 ; i++){
     coordonne.push({
         coord:random(),
         success:false
