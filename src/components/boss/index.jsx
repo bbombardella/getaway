@@ -15,26 +15,16 @@ export default function Boss({ data }) {
     
     const {
         seconds,
-        minutes,
-        hours,
-        days,
-        isRunning,
-        start,
-        pause,
         reset,
     } = useStopwatch({ autoStart: true});
     
     const dispatch = useDispatch();
-    let num = seconds/4|0
-    let d=0
-    let clickable=false;
-    let step
-    console.log(seconds);
-    console.log(score);
+    let d    //diamètre cercle 
+    let clickable=false;   
+    let num  //num de la position des cercles
+    let step //étape du num
     
-    console.log("test")
-    
-
+    //SET de num et step
     if (seconds<STAGE1*4){
         num=seconds/4|0
         step=seconds%4
@@ -52,11 +42,13 @@ export default function Boss({ data }) {
         num=STAGE1+STAGE2+STAGE3+(seconds-STAGE1*4 -STAGE2*3-STAGE3*2)
         step=(seconds-STAGE1*4 -STAGE2*3-STAGE3*2)
     }
+    console.log("-----")
+    console.log("sec: "+seconds)
+    console.log("num: "+num)
+    console.log("step: "+step)
+    console.log("pts: "+score)
 
-    console.log(num)
-    console.log(step)
-    console.log(score)
-
+    //arrête l'enigme
     if (num == NB_CIRCLE){
         reset()
         dispatch({
@@ -67,6 +59,7 @@ export default function Boss({ data }) {
         });
     }
 
+    //distribution du diamètre du cercle blanc
     if (num<STAGE1){
         if (step==0){
             d=40;
@@ -99,16 +92,18 @@ export default function Boss({ data }) {
         clickable=true;
     }
 
-
-    function test(score,num, clickable){
+    //gestion du clique sur le cercle rouge
+    function clic(score,num, clickable){
         if(clickable && !boss[num].success){
             let newScore=score + 1
+            //incrémentation du score
             dispatch({
                 type:CHANGE_SCORE,
                 payload:{
                     score:newScore
                 }
             });
+            //passage à true du boolean associé au coordonné
             dispatch({
                 type:SUCCESS,
                 payload:{
@@ -128,7 +123,7 @@ export default function Boss({ data }) {
             height: '524'
         }}>
             <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r={d} fill="white"/>
-            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{test(score,num,clickable)}}/>
+            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{clic(score,num,clickable)}}/>
         </svg>
 )}
 

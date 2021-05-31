@@ -1,18 +1,20 @@
 import { CHANGE_SCORE,NB_CIRCLE,SUCCESS,PLAYING} from '../../config/const/settings';
 
-
+//création d'une position random
 function random(setPos) {
     var x = Math.floor(Math.random() * 700) + 100 ;
     var y = Math.floor(Math.random() * 400) + 100 ;
     return({x,y});
 }
 
+//début du tableau
 let coordonne =[ {
     coord:random(),
-    success:false
+    success:false 
   }];
 
-for ( let i = 0; i <= NB_CIRCLE+1 ; i++){
+// construction du tableau
+for ( let i = 0; i < NB_CIRCLE ; i++){
     coordonne.push({
         coord:random(),
         success:false

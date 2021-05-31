@@ -1,8 +1,8 @@
 export const SPRITE_SIZE = 40;
-export const NB_CIRCLE = 12;
-export const STAGE1 = 1;
-export const STAGE2= 1;
-export const STAGE3= 3;
+export const NB_CIRCLE = 2;
+export const STAGE1 = 2; //nb de cercle de 4 temps
+export const STAGE2= 2;  //nb de cercle de 3 temps
+export const STAGE3= 2;  //nb de cercle de 2 temps
 
 export const DIRECTIONS = {
     down:0,
