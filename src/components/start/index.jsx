@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/start/get_away.png';
 import background from '../../assets/start/start_background.jpg';
 import start from '../../assets/start/start.png';
+import './Start.css';
 
 export default function Start({ nextButton }) {
     return (
@@ -33,11 +34,13 @@ export default function Start({ nextButton }) {
                 marginTop: "5em"
             }}>
                 <img src={start} alt="Start" style={{
-                    width: "10%"
+                    width: "10%",
+                    animation: 'fade 3s infinite'
                 }} />
                 <p style={{
                     padding: "0.5em",
-                    backgroundColor: "rgb(0,0,0,0.75)"
+                    backgroundColor: "rgb(0,0,0,0.75)",
+                    animation: 'fade 3s infinite'
                 }}>Pour commencer, appuyez sur l'écran</p>
             </div>
         </div>
