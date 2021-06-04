@@ -53,25 +53,23 @@ export default function Boss({ data }) {
         dispatch({
             type: CHANGE_LUMINOSITY,
             payload: {
-                lum: 0,
+                lum: 5,
             }
         });
-        //if(/*score.score*100/NB_CIRCLE>=75*/){
+        if(score*100/NB_CIRCLE>=75){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
-                payload:{
-                   payload: INVENTORY_OBJECTS[702]
-                }
+                payload: INVENTORY_OBJECTS[702],
+                
             });
             console.log("on est la");
-        //}else{
+        }else{
             dispatch({
                 type: INVENTORY_ADD_ACTION,
-                payload:{
-                   payload: INVENTORY_OBJECTS[703]
-                }
+                payload: INVENTORY_OBJECTS[703],
+                
             });
-        //}
+        }
         reset();
         dispatch({
             type:PLAYING,
