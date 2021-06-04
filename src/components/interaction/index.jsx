@@ -129,7 +129,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                 }
         }
 
-        if(objectInfo === DIALOGUE[147]){          
+        if(objectInfo === DIALOGUE[147] || DIALOGUE[148]){          
             if(checkAlreadyExist(inventory, 702)){
                 if(checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
                     objectInfo=DIALOGUE[152];

@@ -1,9 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
-import {useSelector, useDispatch } from 'react-redux';
-import { CHANGE_SCORE, NB_CIRCLE, SUCCESS, PLAYING, STAGE1, STAGE2,STAGE3} from '../../config/const/settings';
-import { PathLine } from 'react-svg-pathline';
+import { useSelector, useDispatch } from 'react-redux';
+import { CHANGE_SCORE, NB_CIRCLE, SUCCESS, PLAYING, STAGE1, STAGE2,STAGE3, CHANGE_LUMINOSITY, INVENTORY_ADD_ACTION} from '../../config/const/settings';
 import { useStopwatch } from 'react-timer-hook';
+import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 
 
 export default function Boss({ data }) {
@@ -49,8 +48,31 @@ export default function Boss({ data }) {
     console.log("pts: "+score)
 
     //arrête l'enigme
-    if (num == NB_CIRCLE){
-        reset()
+    if (num === NB_CIRCLE){
+        
+        dispatch({
+            type: CHANGE_LUMINOSITY,
+            payload: {
+                lum: 0,
+            }
+        });
+        //if(/*score.score*100/NB_CIRCLE>=75*/){
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload:{
+                   payload: INVENTORY_OBJECTS[702]
+                }
+            });
+            console.log("on est la");
+        //}else{
+            dispatch({
+                type: INVENTORY_ADD_ACTION,
+                payload:{
+                   payload: INVENTORY_OBJECTS[703]
+                }
+            });
+        //}
+        reset();
         dispatch({
             type:PLAYING,
             payload:{
@@ -61,27 +83,27 @@ export default function Boss({ data }) {
 
     //distribution du diamètre du cercle blanc
     if (num<STAGE1){
-        if (step==0){
+        if (step===0){
             d=40;
-        }else if(step==1){
+        }else if(step===1){
             d=30;
-        }else if(step==2){
+        }else if(step===2){
             d=20;
         }else{
             d=0;
             clickable=true;
         }
     }else if(num<STAGE2+STAGE1){
-        if (step==0){
+        if (step===0){
             d=35;
-        }else if(step==1){
+        }else if(step===1){
             d=22;
         }else{
             d=0;
             clickable=true;
         }
     }else if(num<STAGE3+STAGE2+STAGE1){
-        if (step==0){
+        if (step===0){
             d=25;
         }else{
             d=0;
@@ -103,6 +125,9 @@ export default function Boss({ data }) {
                     score:newScore
                 }
             });
+ 
+            
+
             //passage à true du boolean associé au coordonné
             dispatch({
                 type:SUCCESS,
