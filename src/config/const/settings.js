@@ -39,3 +39,5 @@ export const CHANGE_SCORE ='CHANGE_SCORE';
 export const SUCCESS ='SUCCESS';
 
 export const PLAYING ='PLAYING';
+
+export const CLICKABLE = 'STATE_CHANGE_CLICK';

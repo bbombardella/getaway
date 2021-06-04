@@ -1,4 +1,4 @@
-import { CHANGE_SCORE,NB_CIRCLE,SUCCESS,PLAYING} from '../../config/const/settings';
+import { CHANGE_SCORE,NB_CIRCLE,SUCCESS,PLAYING, CLICKABLE} from '../../config/const/settings';
 
 //création d'une position random
 function random(setPos) {
@@ -51,6 +51,17 @@ export function playingReducer(state = initPlaying, action) {
     switch (action.type) {
         case PLAYING:
             return action.payload.playing;
+        default:
+            return state;
+    }
+}
+
+const initClickable = false;
+
+export function clickableReducer(state = initClickable, action) {
+    switch (action.type) {
+        case CLICKABLE:
+            return action.payload.clickable;
         default:
             return state;
     }

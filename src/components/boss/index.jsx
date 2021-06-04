@@ -1,25 +1,25 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { CHANGE_SCORE, NB_CIRCLE, SUCCESS, PLAYING, STAGE1, STAGE2,STAGE3, CHANGE_LUMINOSITY, INVENTORY_ADD_ACTION} from '../../config/const/settings';
+import { CHANGE_SCORE, NB_CIRCLE, SUCCESS, PLAYING, STAGE1, STAGE2,STAGE3, CHANGE_LUMINOSITY, INVENTORY_ADD_ACTION, CLICKABLE} from '../../config/const/settings';
 import { useStopwatch } from 'react-timer-hook';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 
 
 export default function Boss({ data }) {
 
-    const {score,boss} = useSelector(state => ({
+    const {score,boss, clickable} = useSelector(state => ({
         boss : state.boss,
         score : state.score,
+        clickable : state.clickable,
     }));
     
     const {
         seconds,
         reset,
     } = useStopwatch({ autoStart: true});
-    
+    console.log(clickable);
     const dispatch = useDispatch();
-    let d    //diamètre cercle 
-    let clickable=true;   
+    let d    //diamètre cercle    
     let num  //num de la position des cercles
     let step //étape du num
     
@@ -81,6 +81,14 @@ export default function Boss({ data }) {
     //distribution du diamètre du cercle blanc
     if (num<STAGE1){
         if (step===0){
+            if(!clickable){
+                dispatch({
+                    type: CLICKABLE,
+                    payload:{
+                        clickable: true,
+                    }
+                });
+            }
             d=40;
         }else if(step===1){
             d=30;
@@ -91,6 +99,14 @@ export default function Boss({ data }) {
         }
     }else if(num<STAGE2+STAGE1){
         if (step===0){
+            if(!clickable){
+                dispatch({
+                    type: CLICKABLE,
+                    payload:{
+                        clickable: true,
+                    }
+                });
+            }
             d=35;
         }else if(step===1){
             d=22;
@@ -99,6 +115,14 @@ export default function Boss({ data }) {
         }
     }else if(num<STAGE3+STAGE2+STAGE1){
         if (step===0){
+            if(!clickable){
+                dispatch({
+                    type: CLICKABLE,
+                    payload:{
+                        clickable: true,
+                    }
+                });
+            }
             d=25;
         }else{
             d=0;
@@ -110,7 +134,14 @@ export default function Boss({ data }) {
     //gestion du clique sur le cercle rouge
     function clic(score,num, clickable,d){
         if(clickable && !boss[num].success && d!==0){
-            clickable=false;
+            if(clickable){
+                dispatch({
+                    type: CLICKABLE,
+                    payload:{
+                        clickable: false,
+                    }
+                });
+            }
         }else{
             if(clickable){
                 let newScore=score + 1
