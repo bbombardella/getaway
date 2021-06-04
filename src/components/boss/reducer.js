@@ -45,7 +45,7 @@ export function scoreReducer(state = initialStateScore, action) {
     }
 }
 
-const initPlaying = true;
+const initPlaying = false;
 
 export function playingReducer(state = initPlaying, action) {
     switch (action.type) {
