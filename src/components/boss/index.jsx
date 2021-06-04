@@ -19,7 +19,7 @@ export default function Boss({ data }) {
     
     const dispatch = useDispatch();
     let d    //diamètre cercle 
-    let clickable=false;   
+    let clickable=true;   
     let num  //num de la position des cercles
     let step //étape du num
     
@@ -62,7 +62,6 @@ export default function Boss({ data }) {
                 payload: INVENTORY_OBJECTS[702],
                 
             });
-            console.log("on est la");
         }else{
             dispatch({
                 type: INVENTORY_ADD_ACTION,
@@ -89,7 +88,6 @@ export default function Boss({ data }) {
             d=20;
         }else{
             d=0;
-            clickable=true;
         }
     }else if(num<STAGE2+STAGE1){
         if (step===0){
@@ -98,42 +96,46 @@ export default function Boss({ data }) {
             d=22;
         }else{
             d=0;
-            clickable=true;
         }
     }else if(num<STAGE3+STAGE2+STAGE1){
         if (step===0){
             d=25;
         }else{
             d=0;
-            clickable=true;
         }
     }else{
         d=0;
-        clickable=true;
     }
 
     //gestion du clique sur le cercle rouge
-    function clic(score,num, clickable){
-        if(clickable && !boss[num].success){
-            let newScore=score + 1
-            //incrémentation du score
-            dispatch({
-                type:CHANGE_SCORE,
-                payload:{
-                    score:newScore
-                }
-            });
- 
+    function clic(score,num, clickable,d){
+        if(clickable && !boss[num].success && d!==0){
+            clickable=false;
+        }else{
+            if(clickable){
+                let newScore=score + 1
+                //incrémentation du score
+                dispatch({
+                    type:CHANGE_SCORE,
+                    payload:{
+                        score:newScore
+                    }
+                });
+
+                //passage à true du boolean associé au coordonné
+                dispatch({
+                    type:SUCCESS,
+                    payload:{
+                        num:num
+                    }
+                });
+            }
+        }
+        
+    
             
 
-            //passage à true du boolean associé au coordonné
-            dispatch({
-                type:SUCCESS,
-                payload:{
-                    num:num
-                }
-            });
-        }
+            
         
         
     } 
@@ -146,7 +148,7 @@ export default function Boss({ data }) {
             height: '524'
         }}>
             <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r={d} fill="white"/>
-            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{clic(score,num,clickable)}}/>
+            <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{clic(score,num,clickable,d)}}/>
         </svg>
 )}
 
