@@ -16,7 +16,7 @@ function checkAlreadyExist(array, id) {
 }
 
 export default function useWalk(maxSteps) {
-    const [position, setPos] = useState({ x: 10 * SPRITE_SIZE, y: 6 * SPRITE_SIZE });
+    const [position, setPos] = useState({ x: 10 * SPRITE_SIZE, y: 3 * SPRITE_SIZE });
     const [dir, setDir] = useState(0);
     const [prevdir, setprevDir] = useState(0);
     const [step, setStep] = useState(0);
