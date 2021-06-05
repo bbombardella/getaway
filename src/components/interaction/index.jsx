@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION, PLAYING, CHANGE_LUMINOSITY, INGAME } from '../../config/const/settings';
+import { INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION, PLAYING, CHANGE_LUMINOSITY } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
@@ -22,10 +22,9 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
 
     const dispatch = useDispatch();
 
-    const { pnj_colise, inventory, ingame } = useSelector(state => ({
+    const { pnj_colise, inventory } = useSelector(state => ({
         pnj_colise: state.pnj_colise,
-        inventory: state.inventory,
-        ingame: state.ingame,
+        inventory: state.inventory
     }));
 
     const [objectTaken, setObjectTaken] = useState(false);
@@ -161,8 +160,6 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             });
         }
 
-
-
         //Ici on vérifie si le slivres ont été lus ou non
         if(objectInfo === DIALOGUE[203] && checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
             //S'ils ont été lus, le dialogue du tableau change
@@ -174,36 +171,6 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
         const isLastDialogue = currentDialogue.yes.next==null;
         const noAvailable = currentDialogue.no!==null;
         const otherAvailable = currentDialogue.other!==null;
-
-        if(objectInfo === DIALOGUE[151]|| DIALOGUE[152]||DIALOGUE[153]){
-            return(
-                <div className='tools-panel' id='interaction'>
-                    <button className="panel-button" onClick={() => closeDialog()}>x</button>
-                    <p>{currentDialogue.text}</p>
-                    <div>
-                        {isLastDialogue ? (
-                            <button onClick={() => dispatch({
-                                type: INGAME,
-                                payload: {
-                                    ingame: false,
-                                }
-                            })
-                            &&
-                            closeDialog()
-                            
-                        }>{currentDialogue.yes.text}</button>
-                        ) : (
-                            <>
-                                <button onClick={() => setIndexDialogue(currentDialogue.yes.next)}>{currentDialogue.yes.text}</button>
-                                {noAvailable && <button onClick={() => setIndexDialogue(currentDialogue.no.next)}>{currentDialogue.no.text}</button>}
-                                {otherAvailable && <button onClick={() => setIndexDialogue(currentDialogue.other.next)}>{currentDialogue.other.text}</button>}
-                            </>
-                        )}
-                    </div>
-                </div>
-            );    
-            
-        }
 
         if(objectInfo === DIALOGUE[148]){
             return(

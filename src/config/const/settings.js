@@ -41,5 +41,3 @@ export const SUCCESS ='SUCCESS';
 export const PLAYING ='PLAYING';
 
 export const CLICKABLE = 'STATE_CHANGE_CLICK';
-
-export const INGAME = 'CHANGE_IN_GAME';
