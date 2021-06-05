@@ -6,6 +6,7 @@ import { miroirsReducer } from '../../components/miroir/reducer';
 import { pnj_coliseReducer } from '../../components/pnj_colise/reducer';
 import { settingsReducer, luminosityReducer} from '../../components/settings/reducer';
 import bossReducer, { clickableReducer, playingReducer, scoreReducer } from '../../components/boss/reducer';
+import { ingameReducer } from '../../components/inGame/reducer';
 
 export default createStore(
     combineReducers({
@@ -21,7 +22,7 @@ export default createStore(
         score: scoreReducer,
         playing: playingReducer,
         clickable: clickableReducer,
-        
+        ingame: ingameReducer,       
     }),
     // À enlever lors du build final, les users peuvent changer les states
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

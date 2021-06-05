@@ -4,30 +4,48 @@ import Player from './components/player';
 import Map from './components/map';
 import Tools from './components/tools/';
 import Introduction from './components/introduction';
-import { useSelector } from'react-redux';
+import { useDispatch, useSelector } from'react-redux';
+import { INGAME } from './config/const/settings';
 
 
 export default function App() {
+  const dispatch = useDispatch();
   const [isIntro, setIsIntro] = useState(true);
-  const { luminosity } = useSelector(state => ({
+  const { luminosity, ingame } = useSelector(state => ({
     luminosity : state.luminosity,
+    ingame: state.ingame,
+
 }));
 var lum = "lum_"+luminosity;
-console.log(lum);
+console.log(ingame);
   if (isIntro) {
     return (
       <div className='game' >
-        <Introduction><button onClick={() => setIsIntro(false)}>Passer</button></Introduction>
+        <Introduction><button onClick={() => dispatch({
+          type: INGAME,
+          payload:{
+            ingame: true,
+          }
+        })
+        &&
+        setIsIntro(false)
+        }>Passer</button></Introduction>
       </div>
     );
   } else {
-    return (
-      <div className='game' id={lum}>
-        <Map>
-          <Player skin={1} />
-        </Map>
-        <Tools />
-      </div>
-    );
+    if(ingame){
+      return (
+        <div className='game' id={lum}>
+          <Map>
+            <Player skin={1} />
+          </Map>
+          <Tools />
+        </div>
+      );
+    } else {
+      if(!ingame){
+        return;
+      }
+    }
   }
 }
