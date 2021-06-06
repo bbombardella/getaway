@@ -49,13 +49,6 @@ export default function Boss({ data }) {
 
     //arrête l'enigme
     if (num === NB_CIRCLE){
-        
-        dispatch({
-            type: CHANGE_LUMINOSITY,
-            payload: {
-                lum: 5,
-            }
-        });
         if(score*100/NB_CIRCLE>=75){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
@@ -81,14 +74,6 @@ export default function Boss({ data }) {
     //distribution du diamètre du cercle blanc
     if (num<STAGE1){
         if (step===0){
-            if(!clickable){
-                dispatch({
-                    type: CLICKABLE,
-                    payload:{
-                        clickable: true,
-                    }
-                });
-            }
             d=40;
         }else if(step===1){
             d=30;
@@ -99,14 +84,6 @@ export default function Boss({ data }) {
         }
     }else if(num<STAGE2+STAGE1){
         if (step===0){
-            if(!clickable){
-                dispatch({
-                    type: CLICKABLE,
-                    payload:{
-                        clickable: true,
-                    }
-                });
-            }
             d=35;
         }else if(step===1){
             d=22;
@@ -115,20 +92,23 @@ export default function Boss({ data }) {
         }
     }else if(num<STAGE3+STAGE2+STAGE1){
         if (step===0){
-            if(!clickable){
-                dispatch({
-                    type: CLICKABLE,
-                    payload:{
-                        clickable: true,
-                    }
-                });
-            }
             d=25;
         }else{
             d=0;
         }
     }else{
         d=0;
+    }
+    
+    if (step===0){
+        if(!clickable){
+            dispatch({
+                type: CLICKABLE,
+                payload:{
+                    clickable: true,
+                }
+            });
+        }
     }
 
     //gestion du clique sur le cercle rouge
@@ -163,12 +143,6 @@ export default function Boss({ data }) {
             }
         }
         
-    
-            
-
-            
-        
-        
     } 
     return (
         
@@ -178,6 +152,7 @@ export default function Boss({ data }) {
             width: '840',
             height: '524'
         }}>
+            <rect height="520" width="840" fill="black" fill-opacity="0.8"/>
             <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r={d} fill="white"/>
             <circle cx={boss[num].coord.x} cy={boss[num].coord.y} r="15" fill="red" onClick={() =>{clic(score,num,clickable,d)}}/>
         </svg>

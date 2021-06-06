@@ -180,13 +180,6 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                 <div>
                     {isLastDialogue ? (
                         <button onClick={() => dispatch({
-                            type: CHANGE_LUMINOSITY,
-                            payload: {
-                                lum: 0,
-                            }
-                        })
-                        &&
-                        dispatch({
                             type: PLAYING,
                             payload: {
                                 playing: true,
