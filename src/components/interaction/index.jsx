@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION } from '../../config/const/settings';
+import { INVENTORY_ADD_ACTION, MIROIR_SET_ORIENTATION, PLAYING, CHANGE_LUMINOSITY } from '../../config/const/settings';
 import { INVENTORY_OBJECTS } from '../../config/const/inventory';
 import { MAP_TILES } from '../../config/const/tiles';
 import { DIALOGUE } from '../../config/const/dialogue';
@@ -142,7 +142,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                 }
         }
 
-        if(objectInfo === DIALOGUE[147]){          
+        if(objectInfo === DIALOGUE[147] || DIALOGUE[148]){          
             if(checkAlreadyExist(inventory, 702)){
                 if(checkAlreadyExist(inventory, 200) && checkAlreadyExist(inventory, 201) && checkAlreadyExist(inventory, 202)){
                     objectInfo=DIALOGUE[152];
@@ -151,7 +151,7 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
                 }
             }else if(checkAlreadyExist(inventory, 703)){
                 objectInfo=DIALOGUE[153];
-            }else if(checkAlreadyExist(inventory, 82)){
+            }else /*if(checkAlreadyExist(inventory, 82))*/{
                 objectInfo=DIALOGUE[148];
             }
         }
@@ -185,6 +185,33 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
         const noAvailable = currentDialogue.no!==null;
         const otherAvailable = currentDialogue.other!==null;
 
+        if(objectInfo === DIALOGUE[148]){
+            return(
+            <div className='tools-panel' id='interaction'>
+                <button className="panel-button" onClick={() => closeDialog()}>x</button>
+                <p>{currentDialogue.text}</p>
+                <div>
+                    {isLastDialogue ? (
+                        <button onClick={() => dispatch({
+                            type: PLAYING,
+                            payload: {
+                                playing: true,
+                            }
+                        }) &&
+                        closeDialog()
+                        
+                    }>{currentDialogue.yes.text}</button>
+                    ) : (
+                        <>
+                            <button onClick={() => setIndexDialogue(currentDialogue.yes.next)}>{currentDialogue.yes.text}</button>
+                            {noAvailable && <button onClick={() => setIndexDialogue(currentDialogue.no.next)}>{currentDialogue.no.text}</button>}
+                            {otherAvailable && <button onClick={() => setIndexDialogue(currentDialogue.other.next)}>{currentDialogue.other.text}</button>}
+                        </>
+                    )}
+                </div>
+            </div>
+        );    
+        }
         return(
             <div className='tools-panel' id='interaction'>
                 <button className="panel-button" onClick={() => closeDialog()}>x</button>
@@ -306,4 +333,5 @@ export default function PopUpInteraction({closeDialog, objectdata, miroirs}) {
             </div>
         );
     } 
-}
+};
+
