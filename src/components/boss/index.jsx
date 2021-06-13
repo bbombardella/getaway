@@ -49,7 +49,7 @@ export default function Boss({ data }) {
 
     //arrête l'enigme
     if (num === NB_CIRCLE){
-        if(score*100/NB_CIRCLE>=75){
+        if(score*100/NB_CIRCLE>=80){
             dispatch({
                 type: INVENTORY_ADD_ACTION,
                 payload: INVENTORY_OBJECTS[702],
