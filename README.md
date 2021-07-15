@@ -2,7 +2,7 @@
 
 ![Logo](./public/assets/logo_accueil/get_away.png)
 
-Projet tutoré de jeu vidéo en ligne. Il a été codé avec le framework **ReactJS** en language **JavaScript**.
+Projet tutoré de jeu vidéo en ligne. Il a été codé avec le framework **ReactJS** en langage **JavaScript**.
 
 ## Composition du groupe
 
